@@ -1,0 +1,44 @@
+1. welcome
+    Background
+    Logo
+    GreenRectangleButton
+    PlayText
+    SettingsIcon
+    SoundIcon
+    MusicIcon
+
+2. settings
+    BoyAvatar
+    GirlAvatar
+    ButtonClose
+    AvatarBorder
+    Radiobutton
+    RadiobuttonChecked
+    SoundIcon
+    SliderGrey
+    SliderButton
+    MusicIcon
+    GreenRectangleButton
+    Line
+    ResetIcon
+    RedRectangleButton
+    HelpIcon
+    InfoIcon
+
+3. level chooser
+    LevelMapFinal
+    LevelMap5
+    LevelMap4
+    LevelMap3
+    LevelMap2
+    LevelMap1
+    LifeIcon
+
+4. lives shop
+5. coins shop
+6. goal
+7. game
+8. booster shop
+9. quit
+10. lose
+11. win
