@@ -1,4 +1,4 @@
-import blockPng from "./images/block.png"
+import blockPng from "./images/Block.png"
 import pixiPng from "./images/pixi.png"
 import ConfettiYellowPng from "./particles/ConfettiYellow.png"
 import ConfettiGreenPng from "./particles/ConfettiGreen.png"
