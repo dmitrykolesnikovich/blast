@@ -1,1 +1,1 @@
-# Blast
+https://dmitrykolesnikovich.github.io/blast
