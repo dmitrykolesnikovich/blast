@@ -1,7 +1,6 @@
 {
-	"frames": [
-		{
-			"filename": "buttonBooster.png",
+	"frames": {
+		"buttonBooster.png": {
 			"frame": {
 				"x": 1,
 				"y": 1,
@@ -21,8 +20,7 @@
 				"h": 180
 			}
 		},
-		{
-			"filename": "buttonCheckbox.png",
+		"buttonCheckbox.png": {
 			"frame": {
 				"x": 183,
 				"y": 1,
@@ -42,8 +40,7 @@
 				"h": 140
 			}
 		},
-		{
-			"filename": "buttonCircleBlue.png",
+		"buttonCircleBlue.png": {
 			"frame": {
 				"x": 535,
 				"y": 1,
@@ -63,8 +60,7 @@
 				"h": 102
 			}
 		},
-		{
-			"filename": "buttonCircleGreen.png",
+		"buttonCircleGreen.png": {
 			"frame": {
 				"x": 639,
 				"y": 1,
@@ -84,8 +80,7 @@
 				"h": 102
 			}
 		},
-		{
-			"filename": "buttonCircleGrey.png",
+		"buttonCircleGrey.png": {
 			"frame": {
 				"x": 743,
 				"y": 1,
@@ -105,8 +100,7 @@
 				"h": 79
 			}
 		},
-		{
-			"filename": "buttonCircleRed.png",
+		"buttonCircleRed.png": {
 			"frame": {
 				"x": 824,
 				"y": 1,
@@ -126,8 +120,7 @@
 				"h": 102
 			}
 		},
-		{
-			"filename": "buttonClose.png",
+		"buttonClose.png": {
 			"frame": {
 				"x": 535,
 				"y": 105,
@@ -147,8 +140,7 @@
 				"h": 102
 			}
 		},
-		{
-			"filename": "buttonIndicator.png",
+		"buttonIndicator.png": {
 			"frame": {
 				"x": 639,
 				"y": 105,
@@ -168,8 +160,7 @@
 				"h": 126
 			}
 		},
-		{
-			"filename": "buttonLevel.png",
+		"buttonLevel.png": {
 			"frame": {
 				"x": 764,
 				"y": 105,
@@ -189,8 +180,7 @@
 				"h": 82
 			}
 		},
-		{
-			"filename": "buttonLevelDisabled.png",
+		"buttonLevelDisabled.png": {
 			"frame": {
 				"x": 1,
 				"y": 189,
@@ -210,8 +200,7 @@
 				"h": 82
 			}
 		},
-		{
-			"filename": "buttonLevelShadow.png",
+		"buttonLevelShadow.png": {
 			"frame": {
 				"x": 99,
 				"y": 189,
@@ -231,8 +220,7 @@
 				"h": 103
 			}
 		},
-		{
-			"filename": "buttonLevelShine.png",
+		"buttonLevelShine.png": {
 			"frame": {
 				"x": 249,
 				"y": 233,
@@ -252,8 +240,7 @@
 				"h": 415
 			}
 		},
-		{
-			"filename": "buttonRadio.png",
+		"buttonRadio.png": {
 			"frame": {
 				"x": 862,
 				"y": 105,
@@ -273,8 +260,7 @@
 				"h": 56
 			}
 		},
-		{
-			"filename": "buttonRectangleBlue.png",
+		"buttonRectangleBlue.png": {
 			"frame": {
 				"x": 1,
 				"y": 650,
@@ -294,8 +280,7 @@
 				"h": 183
 			}
 		},
-		{
-			"filename": "buttonRectangleGreen.png",
+		"buttonRectangleGreen.png": {
 			"frame": {
 				"x": 928,
 				"y": 1,
@@ -315,8 +300,7 @@
 				"h": 183
 			}
 		},
-		{
-			"filename": "buttonRectangleGreenDark.png",
+		"buttonRectangleGreenDark.png": {
 			"frame": {
 				"x": 862,
 				"y": 186,
@@ -336,8 +320,7 @@
 				"h": 183
 			}
 		},
-		{
-			"filename": "buttonRectangleGreenSmall.png",
+		"buttonRectangleGreenSmall.png": {
 			"frame": {
 				"x": 724,
 				"y": 371,
@@ -357,8 +340,7 @@
 				"h": 152
 			}
 		},
-		{
-			"filename": "buttonRectanglePink.png",
+		"buttonRectanglePink.png": {
 			"frame": {
 				"x": 724,
 				"y": 525,
@@ -378,8 +360,7 @@
 				"h": 183
 			}
 		},
-		{
-			"filename": "buttonRectangleRed.png",
+		"buttonRectangleRed.png": {
 			"frame": {
 				"x": 511,
 				"y": 710,
@@ -399,7 +380,7 @@
 				"h": 183
 			}
 		}
-	],
+	},
 	"meta": {
 		"app": "http://www.codeandweb.com/texturepacker",
 		"version": "1.0",

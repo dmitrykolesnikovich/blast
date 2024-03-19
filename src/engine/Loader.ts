@@ -26,6 +26,7 @@ export class Loader {
         if (Array.isArray(resources)) {
             resources.forEach((resource) => this.add(resource))
         } else if (typeof resources === 'string') {
+            console.log(resources)
             this.urls.push(resources)
         } else {
             Object.values(resources).forEach((resource) => this.add(resource))

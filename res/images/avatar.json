@@ -1,7 +1,6 @@
 {
-	"frames": [
-		{
-			"filename": "avatarBorder.png",
+	"frames": {
+		"avatarBorder.png": {
 			"frame": {
 				"x": 1,
 				"y": 1,
@@ -21,8 +20,7 @@
 				"h": 325
 			}
 		},
-		{
-			"filename": "avatarBorderShadow.png",
+		"avatarBorderShadow.png": {
 			"frame": {
 				"x": 328,
 				"y": 1,
@@ -42,8 +40,7 @@
 				"h": 342
 			}
 		},
-		{
-			"filename": "avatarBoy.png",
+		"avatarBoy.png": {
 			"frame": {
 				"x": 1,
 				"y": 345,
@@ -63,8 +60,7 @@
 				"h": 256
 			}
 		},
-		{
-			"filename": "avatarGirl.png",
+		"avatarGirl.png": {
 			"frame": {
 				"x": 259,
 				"y": 345,
@@ -84,8 +80,7 @@
 				"h": 256
 			}
 		},
-		{
-			"filename": "avatarIndicator.png",
+		"avatarIndicator.png": {
 			"frame": {
 				"x": 672,
 				"y": 1,
@@ -105,8 +100,7 @@
 				"h": 278
 			}
 		},
-		{
-			"filename": "avatarIndicatorShine.png",
+		"avatarIndicatorShine.png": {
 			"frame": {
 				"x": 672,
 				"y": 281,
@@ -126,7 +120,7 @@
 				"h": 321
 			}
 		}
-	],
+	},
 	"meta": {
 		"app": "http://www.codeandweb.com/texturepacker",
 		"version": "1.0",
