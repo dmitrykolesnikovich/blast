@@ -1,0 +1,99 @@
+{
+	"frames": [
+		{
+			"filename": "boosterColorBomb.png",
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 130,
+				"h": 130
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 130,
+				"h": 130
+			},
+			"sourceSize": {
+				"w": 130,
+				"h": 130
+			}
+		},
+		{
+			"filename": "boosterDynamite.png",
+			"frame": {
+				"x": 133,
+				"y": 1,
+				"w": 130,
+				"h": 130
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 130,
+				"h": 130
+			},
+			"sourceSize": {
+				"w": 130,
+				"h": 130
+			}
+		},
+		{
+			"filename": "boosterHorizontalBomb.png",
+			"frame": {
+				"x": 1,
+				"y": 133,
+				"w": 130,
+				"h": 130
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 130,
+				"h": 130
+			},
+			"sourceSize": {
+				"w": 130,
+				"h": 130
+			}
+		},
+		{
+			"filename": "boosterVerticalBomb.png",
+			"frame": {
+				"x": 133,
+				"y": 133,
+				"w": 130,
+				"h": 130
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 130,
+				"h": 130
+			},
+			"sourceSize": {
+				"w": 130,
+				"h": 130
+			}
+		}
+	],
+	"meta": {
+		"app": "http://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"image": "booster.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 264,
+			"h": 264
+		},
+		"scale": "1"
+	}
+}
