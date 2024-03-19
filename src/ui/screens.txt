@@ -6,6 +6,8 @@
     iconSound
     particlesShineRadial1
     particlesShineRadial2
+    logo
+    play
 
 2. settings
     avatarBoy
@@ -24,6 +26,7 @@
     iconInfo
     iconReset
     panelAlert1
+    starBigGrey
 
 3. level chooser
     avatarIndicator
@@ -47,6 +50,8 @@
     coins1
     iconArrowBack
     life1
+    starSmallYellow
+    starSmallGrey
 
 4. lives shop
     buttonClose
@@ -78,6 +83,7 @@
     life1
     panelAlert1
     panelGoal
+    starBigGrey
 
 7. game
     boosterColorBomb
@@ -87,6 +93,9 @@
     buttonBooster
     buttonCircleBlue
     iconExit
+    starSmallYellow
+    starSmallGrey
+    block
 
 8. quit
     buttonClose
@@ -119,3 +128,5 @@
     particlesShine
     particlesShineRadial1
     particlesShineRadial2
+    starBigGrey
+    starBigYellow
