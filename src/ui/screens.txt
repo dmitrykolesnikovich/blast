@@ -4,6 +4,8 @@
     iconMusic
     iconSettings
     iconSound
+    particlesShineRadial1
+    particlesShineRadial2
 
 2. settings
     avatarBoy
@@ -103,6 +105,7 @@
     panelAlert2
     panelFlagGrey
     panelHeadline
+    particlesRain
 
 10. win
     buttonCircleRed
@@ -113,3 +116,6 @@
     panelAlert2
     panelFlagBlue
     panelHeadlineDark
+    particlesShine
+    particlesShineRadial1
+    particlesShineRadial2
