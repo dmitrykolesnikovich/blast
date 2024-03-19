@@ -3,7 +3,7 @@
     "version": "1",
     "scripts": {
         "build": "webpack --config webpack/production.ts",
-        "start": "webpack serve --open --config webpack/development.ts",        
+        "start": "webpack serve --open --config webpack/development.ts",
         "test": "jest"
     },
     "devDependencies": {

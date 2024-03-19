@@ -2,6 +2,7 @@ import path from 'path'
 import {DefinePlugin, ProvidePlugin} from 'webpack'
 import {title, version} from '../package.json'
 
+// noinspection JSUnusedGlobalSymbols
 export default {
     mode: 'development',
     devtool: 'inline-source-map',
@@ -13,7 +14,7 @@ export default {
     module: {
         rules: [
             {
-                test: /\.ts?$/,
+                test: /\.ts$/,
                 use: 'ts-loader',
                 exclude: /node_modules/
             },

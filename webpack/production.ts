@@ -4,19 +4,16 @@ import {CleanWebpackPlugin} from "clean-webpack-plugin"
 import CopyPlugin from "copy-webpack-plugin"
 import {title, version} from '../package.json'
 
+// noinspection JSUnusedGlobalSymbols
 export default {
     mode: 'production',
     entry: {
         app: './src/main.ts',
     },
-    performance: {
-        maxEntrypointSize: 9000000,
-        maxAssetSize: 9000000
-    },
     module: {
         rules: [
             {
-                test: /\.ts?$/,
+                test: /\.ts$/,
                 use: 'ts-loader',
                 exclude: /node_modules/
             },

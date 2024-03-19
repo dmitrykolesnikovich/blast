@@ -1,10 +1,10 @@
 import {title, version} from './package.json'
 
+// noinspection JSUnusedGlobalSymbols
 export default {
     preset: 'ts-jest',
     transform: {
-        '^.+\\.(ts|tsx)?$': 'ts-jest',
-        '^.+\\.(js|jsx)$': 'babel-jest',
+        '^.+\\.ts$': 'ts-jest',
     },
     rootDir: "./test",
     testMatch: ["**/*.ts"],
