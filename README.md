@@ -5,5 +5,5 @@ git clone https://github.com/dmitrykolesnikovich/blast
 cd blast
 npm install
 npm run build
-http-server dist
+http-server build
 ```
