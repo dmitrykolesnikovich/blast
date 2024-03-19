@@ -18,6 +18,7 @@ export default [
     "./images/backgroundGame.jpg",
 ]
 
+// images
 export const avatarBorderPng = "avatarBorder.png"
 export const avatarBorderShadowPng = "avatarBorderShadow.png"
 export const avatarBoyPng = "avatarBoy.png"
