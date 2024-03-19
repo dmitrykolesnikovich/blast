@@ -1,5 +1,4 @@
-import path from 'path'
-import {DefinePlugin, ProvidePlugin} from 'webpack'
+import {DefinePlugin} from 'webpack'
 import {title, version} from '../package.json'
 
 // noinspection JSUnusedGlobalSymbols
@@ -7,49 +6,26 @@ export default {
     mode: 'development',
     devtool: 'inline-source-map',
     devServer: {
-        static: './',
-        port: 1234
+        static: './'
     },
     entry: './src/main.ts',
     module: {
         rules: [
-            {
-                test: /\.ts$/,
-                use: 'ts-loader',
-                exclude: /node_modules/
-            },
-            {
-                test: /\.(png|jpg)$/,
-                loader: 'file-loader',
-                options: {
-                    name: '[name].[ext]',
-                },
-            },
-            {
-                test: /\.(mp3|wav)$/,
-                loader: 'file-loader',
-                options: {
-                    outputPath: 'assets/sounds',
-                },
-            }
+            {test: /\.ts$/, use: 'ts-loader'},
+            {test: /\.(png|jpg|mp3)$/, loader: 'file-loader'}
         ]
     },
     resolve: {
-        extensions: ['.ts', '.js', '.css', '.png', '.mp3'],
+        extensions: ['.js', '.ts', '.png', '.jpg', '.mp3']
     },
     output: {
-        path: path.resolve(__dirname, '../dist'),
-        filename: 'index.js',
-        clean: true,
+        filename: 'index.js'
     },
     plugins: [
-        new ProvidePlugin({
-            PIXI: 'pixi.js'
-        }),
         new DefinePlugin({
             build: JSON.stringify('development'),
             title: JSON.stringify(title),
-            version: JSON.stringify(version),
+            version: JSON.stringify(version)
         })
-    ],
+    ]
 }
