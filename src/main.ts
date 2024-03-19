@@ -1,10 +1,10 @@
 import {bootstrap, context} from "./engine"
 import * as resources from "../res"
-import dynamiteTest from "../test/dynamite.test"
+import dynamiteExample from "../examples/dynamite.example"
 
 bootstrap(main)
 
 async function main() {
     await context.loader.load(resources)
-    dynamiteTest()
+    dynamiteExample()
 }

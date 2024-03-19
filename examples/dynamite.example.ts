@@ -5,7 +5,7 @@ import {Emitter, upgradeConfig} from "@pixi/particle-emitter"
 import gsap from "gsap"
 import {avatarBoyPng} from "../res"
 
-export default function dynamiteTest() {
+export default function dynamiteExample() {
     const dynamite: Sprite = createSprite({
         image: avatarBoyPng,
         anchor: {x: 0.5, y: 0.5},

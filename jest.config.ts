@@ -6,8 +6,8 @@ export default {
     transform: {
         '^.+\\.ts$': 'ts-jest',
     },
-    rootDir: "./test",
-    testMatch: ["**/*.ts"],
+    roots: ["./test"],
+    testMatch: ['**/*.test.ts'],
     globals: {
         build: "test",
         title: title,

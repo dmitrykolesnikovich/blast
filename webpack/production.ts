@@ -1,7 +1,7 @@
+import {title, version} from '../package.json'
 import path from 'path'
 import {DefinePlugin} from 'webpack'
 import CopyPlugin from "copy-webpack-plugin"
-import {title, version} from '../package.json'
 
 // noinspection JSUnusedGlobalSymbols
 export default {
@@ -9,7 +9,7 @@ export default {
     entry: './src/main.ts',
     module: {
         rules: [
-            {test: /\.ts$/, use: 'ts-loader'},
+            {test: /\.ts$/, loader: 'ts-loader'},
             {test: /\.(png|jpg|mp3)$/, loader: 'file-loader'}
         ]
     },

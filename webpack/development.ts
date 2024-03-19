@@ -1,5 +1,5 @@
-import {DefinePlugin} from 'webpack'
 import {title, version} from '../package.json'
+import {DefinePlugin} from 'webpack'
 
 // noinspection JSUnusedGlobalSymbols
 export default {
@@ -11,7 +11,7 @@ export default {
     entry: './src/main.ts',
     module: {
         rules: [
-            {test: /\.ts$/, use: 'ts-loader'},
+            {test: /\.ts$/, loader: 'ts-loader'},
             {test: /\.(png|jpg|mp3)$/, loader: 'file-loader'}
         ]
     },
