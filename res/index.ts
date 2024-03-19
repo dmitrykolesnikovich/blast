@@ -115,4 +115,3 @@ export const starBigGreyPng = "starBigGrey.png"
 export const starBigYellowPng = "starBigYellow.png"
 export const starSmallGreyPng = "starSmallGrey.png"
 export const starSmallYellowPng = "starSmallYellow.png"
-	

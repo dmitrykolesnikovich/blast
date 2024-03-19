@@ -29,6 +29,7 @@ export default {
         new CopyPlugin({
             patterns: [
                 {from: './*.(html|css)'},
+                {from: './res/**/*.(png|jpg|mp3|json)', filter: (path) => !path.includes('-original')},
             ]
         })
     ]
