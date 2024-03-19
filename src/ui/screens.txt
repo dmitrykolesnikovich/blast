@@ -1,6 +1,9 @@
 1. welcome
     buttonRectangleGreenSmall
     play
+    iconMusic
+    iconSettings
+    iconSound
 
 2. settings
     avatarBoy
@@ -15,6 +18,10 @@
     buttonRadio
     buttonRectangleGreen
     buttonRectangleRed
+    iconHelp
+    iconInfo
+    iconReset
+    panelAlert1
 
 3. level chooser
     avatarIndicator
@@ -36,18 +43,40 @@
     cloud2
     cloud3
     coins1
+    iconArrowBack
+    life1
 
 4. lives shop
     buttonClose
     buttonRectangleBlue
     coins1
+    life1
+    life1Shadow
+    life1Grey
+    life3
+    panelAlert1
+    panelInfo
+
 5. coins shop
     buttonClose
     buttonRectangleGreenSmall
     coins1
+    coins2
+    coins3
+    coins4
+    coins5
+    coins6
+    panelAlert1
+    panelCoins
+    panelList
+
 6. goal
     buttonClose
     buttonRectangleRed
+    life1
+    panelAlert1
+    panelGoal
+
 7. game
     boosterColorBomb
     boosterDynamite
@@ -55,14 +84,32 @@
     boosterVerticalBomb
     buttonBooster
     buttonCircleBlue
+    iconExit
+
 8. quit
     buttonClose
     buttonRectangleGreenDark
     buttonRectanglePink
+    lifeBroken
+    lifeBrokenShadow
+    panelAlert1
+
 9. lose
     buttonCircleRed
     buttonCircleGreen
     cloudLose
+    iconLevel
+    iconRepeat
+    panelAlert2
+    panelFlagGrey
+    panelHeadline
+
 10. win
     buttonCircleRed
     buttonCircleGreen
+    iconLevel
+    iconNext
+    iconRepeat
+    panelAlert2
+    panelFlagBlue
+    panelHeadlineDark
