@@ -1,37 +1,118 @@
-const avatarJson = "./images/avatar.json"
-const boosterJson = "./images/booster.json"
-const buttonJson = "./images/button.json"
-const cloudJson = "./images/cloud.json"
-const coinsJson = "./images/coins.json"
-const iconJson = "./images/icon.json"
-const lifeJson = "./images/life.json"
-const miscJson = "./images/misc.json"
-const panelJson = "./images/panel.json"
-const particlesJson = "./images/particles.json"
-const starJson = "./images/star.json"
-import background1Jpg from "./images/background1.jpg"
-import background2Jpg from "./images/background2.jpg"
-import background3Jpg from "./images/background3.jpg"
-import background4Jpg from "./images/background4.jpg"
-import background5Jpg from "./images/background5.jpg"
-import backgroundGameJpg from "./images/backgroundGame.jpg"
+export default [
+    "./images/avatar.json",
+    "./images/booster.json",
+    "./images/button.json",
+    "./images/cloud.json",
+    "./images/coins.json",
+    "./images/icon.json",
+    "./images/life.json",
+    "./images/misc.json",
+    "./images/panel.json",
+    "./images/particles.json",
+    "./images/star.json",
+    "./images/background1.jpg",
+    "./images/background2.jpg",
+    "./images/background3.jpg",
+    "./images/background4.jpg",
+    "./images/background5.jpg",
+    "./images/backgroundGame.jpg",
+]
 
-export {
-    avatarJson,
-    boosterJson,
-    buttonJson,
-    cloudJson,
-    coinsJson,
-    iconJson,
-    lifeJson,
-    miscJson,
-    panelJson,
-    particlesJson,
-    starJson,
-    background1Jpg,
-    background2Jpg,
-    background3Jpg,
-    background4Jpg,
-    background5Jpg,
-    backgroundGameJpg,
-}
+export const avatarBorderPng = "avatarBorder.png"
+export const avatarBorderShadowPng = "avatarBorderShadow.png"
+export const avatarBoyPng = "avatarBoy.png"
+export const avatarGirlPng = "avatarGirl.png"
+export const avatarIndicatorPng = "avatarIndicator.png"
+export const avatarIndicatorShinePng = "avatarIndicatorShine.png"
+export const background1Jpg = "./images/background1.jpg"
+export const background2Jpg = "./images/background2.jpg"
+export const background3Jpg = "./images/background3.jpg"
+export const background4Jpg = "./images/background4.jpg"
+export const background5Jpg = "./images/background5.jpg"
+export const backgroundGameJpg = "./images/backgroundGame.jpg"
+export const boosterColorBombPng = "boosterColorBomb.png"
+export const boosterDynamitePng = "boosterDynamite.png"
+export const boosterHorizontalBombPng = "boosterHorizontalBomb.png"
+export const boosterVerticalBombPng = "boosterVerticalBomb.png"
+export const buttonBoosterPng = "buttonBooster.png"
+export const buttonCheckboxPng = "buttonCheckbox.png"
+export const buttonCircleBluePng = "buttonCircleBlue.png"
+export const buttonCircleGreenPng = "buttonCircleGreen.png"
+export const buttonCircleGreyPng = "buttonCircleGrey.png"
+export const buttonCircleRedPng = "buttonCircleRed.png"
+export const buttonClosePng = "buttonClose.png"
+export const buttonIndicatorPng = "buttonIndicator.png"
+export const buttonLevelPng = "buttonLevel.png"
+export const buttonLevelDisabledPng = "buttonLevelDisabled.png"
+export const buttonLevelShadowPng = "buttonLevelShadow.png"
+export const buttonLevelShinePng = "buttonLevelShine.png"
+export const buttonRadioPng = "buttonRadio.png"
+export const buttonRectangleBluePng = "buttonRectangleBlue.png"
+export const buttonRectangleGreenPng = "buttonRectangleGreen.png"
+export const buttonRectangleGreenDarkPng = "buttonRectangleGreenDark.png"
+export const buttonRectangleGreenSmallPng = "buttonRectangleGreenSmall.png"
+export const buttonRectanglePinkPng = "buttonRectanglePink.png"
+export const buttonRectangleRedPng = "buttonRectangleRed.png"
+export const cloud1Png = "cloud1.png"
+export const cloud2Png = "cloud2.png"
+export const cloud3Png = "cloud3.png"
+export const cloudLevelPng = "cloudLevel.png"
+export const cloudLosePng = "cloudLose.png"
+export const coins1Png = "coins1.png"
+export const coins2Png = "coins2.png"
+export const coins3Png = "coins3.png"
+export const coins4Png = "coins4.png"
+export const coins5Png = "coins5.png"
+export const coins6Png = "coins6.png"
+export const iconArrowBackPng = "iconArrowBack.png"
+export const iconExitPng = "iconExit.png"
+export const iconHelpPng = "iconHelp.png"
+export const iconInfoPng = "iconInfo.png"
+export const iconLevelPng = "iconLevel.png"
+export const iconMorePng = "iconMore.png"
+export const iconMusicPng = "iconMusic.png"
+export const iconNextPng = "iconNext.png"
+export const iconRepeatPng = "iconRepeat.png"
+export const iconResetPng = "iconReset.png"
+export const iconSettingsPng = "iconSettings.png"
+export const iconSoundPng = "iconSound.png"
+export const life1Png = "life1.png"
+export const life1GreyPng = "life1Grey.png"
+export const life1ShadowPng = "life1Shadow.png"
+export const life3Png = "life3.png"
+export const lifeBrokenPng = "lifeBroken.png"
+export const lifeBrokenShadowPng = "lifeBrokenShadow.png"
+export const blockPng = "block.png"
+export const dividerPng = "divider.png"
+export const logoPng = "logo.png"
+export const playPng = "play.png"
+export const panelAlert1Png = "panelAlert1.png"
+export const panelAlert2Png = "panelAlert2.png"
+export const panelBoostersPng = "panelBoosters.png"
+export const panelCoinsPng = "panelCoins.png"
+export const panelFlagBluePng = "panelFlagBlue.png"
+export const panelFlagGreyPng = "panelFlagGrey.png"
+export const panelGoalPng = "panelGoal.png"
+export const panelHeadlinePng = "panelHeadline.png"
+export const panelHeadlineDarkPng = "panelHeadlineDark.png"
+export const panelInfoPng = "panelInfo.png"
+export const panelListPng = "panelList.png"
+export const panelMovesPng = "panelMoves.png"
+export const panelProgressPng = "panelProgress.png"
+export const panelTitlePng = "panelTitle.png"
+export const particlesBlockBluePng = "particlesBlockBlue.png"
+export const particlesBlockGreenPng = "particlesBlockGreen.png"
+export const particlesBlockPurplePng = "particlesBlockPurple.png"
+export const particlesBlockRedPng = "particlesBlockRed.png"
+export const particlesBlockYellowPng = "particlesBlockYellow.png"
+export const particlesColorBombPng = "particlesColorBomb.png"
+export const particlesGlitterPng = "particlesGlitter.png"
+export const particlesRainPng = "particlesRain.png"
+export const particlesShinePng = "particlesShine.png"
+export const particlesShineRadial1Png = "particlesShineRadial1.png"
+export const particlesShineRadial2Png = "particlesShineRadial2.png"
+export const starBigGreyPng = "starBigGrey.png"
+export const starBigYellowPng = "starBigYellow.png"
+export const starSmallGreyPng = "starSmallGrey.png"
+export const starSmallYellowPng = "starSmallYellow.png"
+	

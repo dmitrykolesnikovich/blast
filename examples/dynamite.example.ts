@@ -3,15 +3,11 @@ import {createSprite} from "../src/engine/Sprite"
 import {Assets, Sprite} from "pixi.js"
 import {Emitter, upgradeConfig} from "@pixi/particle-emitter"
 import gsap from "gsap"
-import {avatarJson} from "../res"
+import {avatarBorderPng, background1Jpg} from "../res"
 
 export default function dynamiteExample() {
-    const cache = Assets.cache
-
-
-
     const dynamite: Sprite = createSprite({
-        image: "avatarBorder.png",
+        image: background1Jpg,
         anchor: {x: 0.5, y: 0.5},
         position: {x: 225, y: 600},
         size: {width: 200, height: 200}
