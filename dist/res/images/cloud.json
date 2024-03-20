@@ -1,0 +1,115 @@
+{
+    "frames": {
+        "images/cloud/cloud1.png": {
+            "frame": {
+                "x": 4,
+                "y": 4,
+                "w": 550,
+                "h": 450
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 550,
+                "h": 450
+            },
+            "sourceSize": {
+                "w": 550,
+                "h": 450
+            }
+        },
+        "images/cloud/cloud2.png": {
+            "frame": {
+                "x": 562,
+                "y": 4,
+                "w": 450,
+                "h": 350
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 450,
+                "h": 350
+            },
+            "sourceSize": {
+                "w": 450,
+                "h": 350
+            }
+        },
+        "images/cloud/cloud3.png": {
+            "frame": {
+                "x": 562,
+                "y": 362,
+                "w": 600,
+                "h": 500
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 600,
+                "h": 500
+            },
+            "sourceSize": {
+                "w": 600,
+                "h": 500
+            }
+        },
+        "images/cloud/cloudLevel.png": {
+            "frame": {
+                "x": 1170,
+                "y": 4,
+                "w": 900,
+                "h": 500
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 900,
+                "h": 500
+            },
+            "sourceSize": {
+                "w": 900,
+                "h": 500
+            }
+        },
+        "images/cloud/cloudLose.png": {
+            "frame": {
+                "x": 1170,
+                "y": 512,
+                "w": 1000,
+                "h": 450
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 1000,
+                "h": 450
+            },
+            "sourceSize": {
+                "w": 1000,
+                "h": 450
+            }
+        }
+    },
+    "meta": {
+        "app": "http://www.codeandweb.com/texturepacker",
+        "version": "1.0",
+        "image": "cloud.png",
+        "format": "RGBA8888",
+        "size": {
+            "w": 2174,
+            "h": 966
+        },
+        "scale": "1"
+    }
+}

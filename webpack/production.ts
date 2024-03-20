@@ -1,6 +1,8 @@
 import {title, version} from '../package.json'
 import {DefinePlugin} from 'webpack'
 import CopyPlugin from "copy-webpack-plugin"
+import path from "path"
+import fs from "fs"
 
 // noinspection JSUnusedGlobalSymbols
 export default {
@@ -27,9 +29,26 @@ export default {
         }),
         new CopyPlugin({
             patterns: [
-                {from: './public', to: './'},
-                {from: './gen', to: './res'}
-            ]
+                {
+                    from: './public',
+                    to: './'
+                },
+                {
+                    from: './gen',
+                    to: './res',
+                    globOptions: {
+                        ignore: ["**/*.ts"],
+                    },
+                },
+                {
+                    from: './res/',
+                    to: './res',
+                    globOptions: {
+                        ignore: ["**/*.ts"],
+                    },
+                    filter: (filepath) => !fs.existsSync(`${path.dirname(filepath).replace("/res/", "/gen/")}.json`)
+                },
+            ],
         })
     ]
 }

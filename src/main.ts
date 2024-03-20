@@ -1,6 +1,6 @@
 import {bootstrap, context} from "./engine"
 import * as resources from "../res"
-import productionResources from "../res/production"
+import * as productionResources from "../gen"
 import dynamiteExample from "../examples/dynamite.example"
 import nineSlicePlaneExample from "../examples/nineSlicePlane.example"
 import bradPng from "../examples/brad.png"

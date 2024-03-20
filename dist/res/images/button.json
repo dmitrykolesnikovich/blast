@@ -1,0 +1,395 @@
+{
+	"frames": {
+		"images/button/buttonBooster.png": {
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 180,
+				"h": 180
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 180,
+				"h": 180
+			},
+			"sourceSize": {
+				"w": 180,
+				"h": 180
+			}
+		},
+		"images/button/buttonCheckbox.png": {
+			"frame": {
+				"x": 183,
+				"y": 1,
+				"w": 350,
+				"h": 140
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 350,
+				"h": 140
+			},
+			"sourceSize": {
+				"w": 350,
+				"h": 140
+			}
+		},
+		"images/button/buttonCircleBlue.png": {
+			"frame": {
+				"x": 535,
+				"y": 1,
+				"w": 102,
+				"h": 102
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 102,
+				"h": 102
+			},
+			"sourceSize": {
+				"w": 102,
+				"h": 102
+			}
+		},
+		"images/button/buttonCircleGreen.png": {
+			"frame": {
+				"x": 639,
+				"y": 1,
+				"w": 102,
+				"h": 102
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 102,
+				"h": 102
+			},
+			"sourceSize": {
+				"w": 102,
+				"h": 102
+			}
+		},
+		"images/button/buttonCircleGrey.png": {
+			"frame": {
+				"x": 743,
+				"y": 1,
+				"w": 79,
+				"h": 79
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 79,
+				"h": 79
+			},
+			"sourceSize": {
+				"w": 79,
+				"h": 79
+			}
+		},
+		"images/button/buttonCircleRed.png": {
+			"frame": {
+				"x": 824,
+				"y": 1,
+				"w": 102,
+				"h": 102
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 102,
+				"h": 102
+			},
+			"sourceSize": {
+				"w": 102,
+				"h": 102
+			}
+		},
+		"images/button/buttonClose.png": {
+			"frame": {
+				"x": 535,
+				"y": 105,
+				"w": 102,
+				"h": 102
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 102,
+				"h": 102
+			},
+			"sourceSize": {
+				"w": 102,
+				"h": 102
+			}
+		},
+		"images/button/buttonIndicator.png": {
+			"frame": {
+				"x": 639,
+				"y": 105,
+				"w": 123,
+				"h": 126
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 123,
+				"h": 126
+			},
+			"sourceSize": {
+				"w": 123,
+				"h": 126
+			}
+		},
+		"images/button/buttonLevel.png": {
+			"frame": {
+				"x": 764,
+				"y": 105,
+				"w": 96,
+				"h": 82
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 96,
+				"h": 82
+			},
+			"sourceSize": {
+				"w": 96,
+				"h": 82
+			}
+		},
+		"images/button/buttonLevelDisabled.png": {
+			"frame": {
+				"x": 1,
+				"y": 189,
+				"w": 96,
+				"h": 82
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 96,
+				"h": 82
+			},
+			"sourceSize": {
+				"w": 96,
+				"h": 82
+			}
+		},
+		"images/button/buttonLevelShadow.png": {
+			"frame": {
+				"x": 99,
+				"y": 189,
+				"w": 148,
+				"h": 103
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 148,
+				"h": 103
+			},
+			"sourceSize": {
+				"w": 148,
+				"h": 103
+			}
+		},
+		"images/button/buttonLevelShine.png": {
+			"frame": {
+				"x": 249,
+				"y": 233,
+				"w": 473,
+				"h": 415
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 473,
+				"h": 415
+			},
+			"sourceSize": {
+				"w": 473,
+				"h": 415
+			}
+		},
+		"images/button/buttonRadio.png": {
+			"frame": {
+				"x": 862,
+				"y": 105,
+				"w": 56,
+				"h": 56
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 56,
+				"h": 56
+			},
+			"sourceSize": {
+				"w": 56,
+				"h": 56
+			}
+		},
+		"images/button/buttonRectangleBlue.png": {
+			"frame": {
+				"x": 1,
+				"y": 650,
+				"w": 508,
+				"h": 183
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 508,
+				"h": 183
+			},
+			"sourceSize": {
+				"w": 508,
+				"h": 183
+			}
+		},
+		"images/button/buttonRectangleGreen.png": {
+			"frame": {
+				"x": 928,
+				"y": 1,
+				"w": 508,
+				"h": 183
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 508,
+				"h": 183
+			},
+			"sourceSize": {
+				"w": 508,
+				"h": 183
+			}
+		},
+		"images/button/buttonRectangleGreenDark.png": {
+			"frame": {
+				"x": 862,
+				"y": 186,
+				"w": 508,
+				"h": 183
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 508,
+				"h": 183
+			},
+			"sourceSize": {
+				"w": 508,
+				"h": 183
+			}
+		},
+		"images/button/buttonRectangleGreenSmall.png": {
+			"frame": {
+				"x": 724,
+				"y": 371,
+				"w": 342,
+				"h": 152
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 342,
+				"h": 152
+			},
+			"sourceSize": {
+				"w": 342,
+				"h": 152
+			}
+		},
+		"images/button/buttonRectanglePink.png": {
+			"frame": {
+				"x": 724,
+				"y": 525,
+				"w": 508,
+				"h": 183
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 508,
+				"h": 183
+			},
+			"sourceSize": {
+				"w": 508,
+				"h": 183
+			}
+		},
+		"images/button/buttonRectangleRed.png": {
+			"frame": {
+				"x": 511,
+				"y": 710,
+				"w": 508,
+				"h": 183
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 508,
+				"h": 183
+			},
+			"sourceSize": {
+				"w": 508,
+				"h": 183
+			}
+		}
+	},
+	"meta": {
+		"app": "http://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"image": "button.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 1437,
+			"h": 894
+		},
+		"scale": "1"
+	}
+}
