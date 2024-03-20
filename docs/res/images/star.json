@@ -1,6 +1,6 @@
 {
     "frames": {
-        "starBigGrey.png": {
+        "images/star/starBigGrey.png": {
             "frame": {
                 "x": 1,
                 "y": 1,
@@ -20,7 +20,7 @@
                 "h": 209
             }
         },
-        "starBigYellow.png": {
+        "images/star/starBigYellow.png": {
             "frame": {
                 "x": 215,
                 "y": 1,
@@ -40,7 +40,7 @@
                 "h": 209
             }
         },
-        "starSmallGrey.png": {
+        "images/star/starSmallGrey.png": {
             "frame": {
                 "x": 429,
                 "y": 1,
@@ -60,7 +60,7 @@
                 "h": 58
             }
         },
-        "starSmallYellow.png": {
+        "images/star/starSmallYellow.png": {
             "frame": {
                 "x": 429,
                 "y": 61,

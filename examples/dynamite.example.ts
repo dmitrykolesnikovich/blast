@@ -3,14 +3,14 @@ import {createSprite} from "../src/engine/Sprite"
 import {Assets, Sprite} from "pixi.js"
 import {Emitter, upgradeConfig} from "@pixi/particle-emitter"
 import gsap from "gsap"
-import {avatarBorderPng, background1Jpg} from "../res"
+import {boosterDynamitePng} from "../res"
 
 export default function dynamiteExample() {
     const dynamite: Sprite = createSprite({
-        image: background1Jpg,
+        image: boosterDynamitePng,
         anchor: {x: 0.5, y: 0.5},
         position: {x: 225, y: 600},
-        size: {width: 200, height: 200}
+        size: {width: 130, height: 130}
     })
     // const glitter: Emitter = new Emitter(dynamite, upgradeConfig({
     //     pos: {

@@ -1,6 +1,6 @@
 {
 	"frames": {
-		"avatarBorder.png": {
+		"images/avatar/avatarBorder.png": {
 			"frame": {
 				"x": 1,
 				"y": 1,
@@ -20,7 +20,7 @@
 				"h": 325
 			}
 		},
-		"avatarBorderShadow.png": {
+		"images/avatar/avatarBorderShadow.png": {
 			"frame": {
 				"x": 328,
 				"y": 1,
@@ -40,7 +40,7 @@
 				"h": 342
 			}
 		},
-		"avatarBoy.png": {
+		"images/avatar/avatarBoy.png": {
 			"frame": {
 				"x": 1,
 				"y": 345,
@@ -60,7 +60,7 @@
 				"h": 256
 			}
 		},
-		"avatarGirl.png": {
+		"images/avatar/avatarGirl.png": {
 			"frame": {
 				"x": 259,
 				"y": 345,
@@ -80,7 +80,7 @@
 				"h": 256
 			}
 		},
-		"avatarIndicator.png": {
+		"images/avatar/avatarIndicator.png": {
 			"frame": {
 				"x": 672,
 				"y": 1,
@@ -100,7 +100,7 @@
 				"h": 278
 			}
 		},
-		"avatarIndicatorShine.png": {
+		"images/avatar/avatarIndicatorShine.png": {
 			"frame": {
 				"x": 672,
 				"y": 281,

@@ -1,6 +1,6 @@
 {
     "frames": {
-        "cloud1.png": {
+        "images/cloud/cloud1.png": {
             "frame": {
                 "x": 4,
                 "y": 4,
@@ -20,7 +20,7 @@
                 "h": 450
             }
         },
-        "cloud2.png": {
+        "images/cloud/cloud2.png": {
             "frame": {
                 "x": 562,
                 "y": 4,
@@ -40,7 +40,7 @@
                 "h": 350
             }
         },
-        "cloud3.png": {
+        "images/cloud/cloud3.png": {
             "frame": {
                 "x": 562,
                 "y": 362,
@@ -60,7 +60,7 @@
                 "h": 500
             }
         },
-        "cloudLevel.png": {
+        "images/cloud/cloudLevel.png": {
             "frame": {
                 "x": 1170,
                 "y": 4,
@@ -80,7 +80,7 @@
                 "h": 500
             }
         },
-        "cloudLose.png": {
+        "images/cloud/cloudLose.png": {
             "frame": {
                 "x": 1170,
                 "y": 512,

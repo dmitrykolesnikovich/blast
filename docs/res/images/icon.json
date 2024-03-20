@@ -1,6 +1,6 @@
 {
     "frames": {
-        "iconArrowBack.png": {
+        "images/icon/iconArrowBack.png": {
             "frame": {
                 "x": 1,
                 "y": 1,
@@ -20,7 +20,7 @@
                 "h": 120
             }
         },
-        "iconExit.png": {
+        "images/icon/iconExit.png": {
             "frame": {
                 "x": 123,
                 "y": 1,
@@ -40,7 +40,7 @@
                 "h": 120
             }
         },
-        "iconHelp.png": {
+        "images/icon/iconHelp.png": {
             "frame": {
                 "x": 245,
                 "y": 1,
@@ -60,7 +60,7 @@
                 "h": 120
             }
         },
-        "iconInfo.png": {
+        "images/icon/iconInfo.png": {
             "frame": {
                 "x": 1,
                 "y": 123,
@@ -80,7 +80,7 @@
                 "h": 120
             }
         },
-        "iconLevel.png": {
+        "images/icon/iconLevel.png": {
             "frame": {
                 "x": 123,
                 "y": 123,
@@ -100,7 +100,7 @@
                 "h": 120
             }
         },
-        "iconMore.png": {
+        "images/icon/iconMore.png": {
             "frame": {
                 "x": 245,
                 "y": 123,
@@ -120,7 +120,7 @@
                 "h": 120
             }
         },
-        "iconMusic.png": {
+        "images/icon/iconMusic.png": {
             "frame": {
                 "x": 1,
                 "y": 245,
@@ -140,7 +140,7 @@
                 "h": 120
             }
         },
-        "iconNext.png": {
+        "images/icon/iconNext.png": {
             "frame": {
                 "x": 123,
                 "y": 245,
@@ -160,7 +160,7 @@
                 "h": 120
             }
         },
-        "iconRepeat.png": {
+        "images/icon/iconRepeat.png": {
             "frame": {
                 "x": 245,
                 "y": 245,
@@ -180,7 +180,7 @@
                 "h": 120
             }
         },
-        "iconReset.png": {
+        "images/icon/iconReset.png": {
             "frame": {
                 "x": 367,
                 "y": 1,
@@ -200,7 +200,7 @@
                 "h": 120
             }
         },
-        "iconSettings.png": {
+        "images/icon/iconSettings.png": {
             "frame": {
                 "x": 367,
                 "y": 123,
@@ -220,7 +220,7 @@
                 "h": 120
             }
         },
-        "iconSound.png": {
+        "images/icon/iconSound.png": {
             "frame": {
                 "x": 367,
                 "y": 245,

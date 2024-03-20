@@ -1,7 +1,8 @@
-import {Application, Assets, Container, Text} from "pixi.js"
+import {Application, Assets, Container, Spritesheet, Text} from "pixi.js"
 import {delay} from "./Timer"
 import {Environment} from "./Environment"
 import {debug} from "./Debug"
+import {quickfixSpritesheetForProduction} from "./Production";
 
 type FontInstance = { url: string, family: string, weight: string }
 
@@ -47,7 +48,8 @@ export class Loader {
         for (const url of this.urls) {
             Assets.add(url, url)
             debug(`load: ${url}`)
-            await Assets.load(url)
+            const asset: any = await Assets.load(url)
+            if (asset instanceof Spritesheet) quickfixSpritesheetForProduction(asset) // todo improve
             const progress: number = this.urls.indexOf(url) / this.urls.length
             this.onProgress(progress)
         }

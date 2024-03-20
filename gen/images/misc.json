@@ -1,6 +1,6 @@
 {
     "frames": {
-        "block.png": {
+        "images/misc/block.png": {
             "frame": {
                 "x": 1,
                 "y": 1,
@@ -20,7 +20,7 @@
                 "h": 192
             }
         },
-        "divider.png": {
+        "images/misc/divider.png": {
             "frame": {
                 "x": 1,
                 "y": 195,
@@ -40,7 +40,7 @@
                 "h": 13
             }
         },
-        "logo.png": {
+        "images/misc/logo.png": {
             "frame": {
                 "x": 1097,
                 "y": 1,
@@ -60,7 +60,7 @@
                 "h": 259
             }
         },
-        "play.png": {
+        "images/misc/play.png": {
             "frame": {
                 "x": 1,
                 "y": 210,

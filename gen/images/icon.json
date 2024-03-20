@@ -1,108 +1,28 @@
 {
     "frames": {
-        "particlesBlockBlue.png": {
+        "images/icon/iconArrowBack.png": {
             "frame": {
                 "x": 1,
                 "y": 1,
-                "w": 60,
-                "h": 60
+                "w": 120,
+                "h": 120
             },
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 60,
-                "h": 60
+                "w": 120,
+                "h": 120
             },
             "sourceSize": {
-                "w": 60,
-                "h": 60
+                "w": 120,
+                "h": 120
             }
         },
-        "particlesBlockGreen.png": {
+        "images/icon/iconExit.png": {
             "frame": {
-                "x": 63,
-                "y": 1,
-                "w": 60,
-                "h": 60
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 60,
-                "h": 60
-            },
-            "sourceSize": {
-                "w": 60,
-                "h": 60
-            }
-        },
-        "particlesBlockPurple.png": {
-            "frame": {
-                "x": 125,
-                "y": 1,
-                "w": 60,
-                "h": 60
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 60,
-                "h": 60
-            },
-            "sourceSize": {
-                "w": 60,
-                "h": 60
-            }
-        },
-        "particlesBlockRed.png": {
-            "frame": {
-                "x": 187,
-                "y": 1,
-                "w": 60,
-                "h": 60
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 60,
-                "h": 60
-            },
-            "sourceSize": {
-                "w": 60,
-                "h": 60
-            }
-        },
-        "particlesBlockYellow.png": {
-            "frame": {
-                "x": 249,
-                "y": 1,
-                "w": 60,
-                "h": 60
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 60,
-                "h": 60
-            },
-            "sourceSize": {
-                "w": 60,
-                "h": 60
-            }
-        },
-        "particlesColorBomb.png": {
-            "frame": {
-                "x": 311,
+                "x": 123,
                 "y": 1,
                 "w": 120,
                 "h": 120
@@ -120,115 +40,215 @@
                 "h": 120
             }
         },
-        "particlesGlitter.png": {
+        "images/icon/iconHelp.png": {
             "frame": {
-                "x": 433,
+                "x": 245,
                 "y": 1,
-                "w": 30,
-                "h": 30
+                "w": 120,
+                "h": 120
             },
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 30,
-                "h": 30
+                "w": 120,
+                "h": 120
             },
             "sourceSize": {
-                "w": 30,
-                "h": 30
+                "w": 120,
+                "h": 120
             }
         },
-        "particlesRain.png": {
-            "frame": {
-                "x": 465,
-                "y": 1,
-                "w": 400,
-                "h": 400
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 400,
-                "h": 400
-            },
-            "sourceSize": {
-                "w": 400,
-                "h": 400
-            }
-        },
-        "particlesShine.png": {
-            "frame": {
-                "x": 867,
-                "y": 1,
-                "w": 100,
-                "h": 100
-            },
-            "rotated": false,
-            "trimmed": false,
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 100,
-                "h": 100
-            },
-            "sourceSize": {
-                "w": 100,
-                "h": 100
-            }
-        },
-        "particlesShineRadial1.png": {
+        "images/icon/iconInfo.png": {
             "frame": {
                 "x": 1,
-                "y": 403,
-                "w": 900,
-                "h": 900
+                "y": 123,
+                "w": 120,
+                "h": 120
             },
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 900,
-                "h": 900
+                "w": 120,
+                "h": 120
             },
             "sourceSize": {
-                "w": 900,
-                "h": 900
+                "w": 120,
+                "h": 120
             }
         },
-        "particlesShineRadial2.png": {
+        "images/icon/iconLevel.png": {
             "frame": {
-                "x": 969,
-                "y": 1,
-                "w": 900,
-                "h": 900
+                "x": 123,
+                "y": 123,
+                "w": 120,
+                "h": 120
             },
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 900,
-                "h": 900
+                "w": 120,
+                "h": 120
             },
             "sourceSize": {
-                "w": 900,
-                "h": 900
+                "w": 120,
+                "h": 120
+            }
+        },
+        "images/icon/iconMore.png": {
+            "frame": {
+                "x": 245,
+                "y": 123,
+                "w": 120,
+                "h": 120
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 120,
+                "h": 120
+            },
+            "sourceSize": {
+                "w": 120,
+                "h": 120
+            }
+        },
+        "images/icon/iconMusic.png": {
+            "frame": {
+                "x": 1,
+                "y": 245,
+                "w": 120,
+                "h": 120
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 120,
+                "h": 120
+            },
+            "sourceSize": {
+                "w": 120,
+                "h": 120
+            }
+        },
+        "images/icon/iconNext.png": {
+            "frame": {
+                "x": 123,
+                "y": 245,
+                "w": 120,
+                "h": 120
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 120,
+                "h": 120
+            },
+            "sourceSize": {
+                "w": 120,
+                "h": 120
+            }
+        },
+        "images/icon/iconRepeat.png": {
+            "frame": {
+                "x": 245,
+                "y": 245,
+                "w": 120,
+                "h": 120
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 120,
+                "h": 120
+            },
+            "sourceSize": {
+                "w": 120,
+                "h": 120
+            }
+        },
+        "images/icon/iconReset.png": {
+            "frame": {
+                "x": 367,
+                "y": 1,
+                "w": 120,
+                "h": 120
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 120,
+                "h": 120
+            },
+            "sourceSize": {
+                "w": 120,
+                "h": 120
+            }
+        },
+        "images/icon/iconSettings.png": {
+            "frame": {
+                "x": 367,
+                "y": 123,
+                "w": 120,
+                "h": 120
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 120,
+                "h": 120
+            },
+            "sourceSize": {
+                "w": 120,
+                "h": 120
+            }
+        },
+        "images/icon/iconSound.png": {
+            "frame": {
+                "x": 367,
+                "y": 245,
+                "w": 120,
+                "h": 120
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 120,
+                "h": 120
+            },
+            "sourceSize": {
+                "w": 120,
+                "h": 120
             }
         }
     },
     "meta": {
         "app": "http://www.codeandweb.com/texturepacker",
         "version": "1.0",
-        "image": "particles.png",
+        "image": "icon.png",
         "format": "RGBA8888",
         "size": {
-            "w": 1870,
-            "h": 1304
+            "w": 488,
+            "h": 366
         },
         "scale": "1"
     }

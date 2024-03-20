@@ -1,6 +1,6 @@
 {
     "frames": {
-        "particlesBlockBlue.png": {
+        "images/particles/particlesBlockBlue.png": {
             "frame": {
                 "x": 1,
                 "y": 1,
@@ -20,7 +20,7 @@
                 "h": 60
             }
         },
-        "particlesBlockGreen.png": {
+        "images/particles/particlesBlockGreen.png": {
             "frame": {
                 "x": 63,
                 "y": 1,
@@ -40,7 +40,7 @@
                 "h": 60
             }
         },
-        "particlesBlockPurple.png": {
+        "images/particles/particlesBlockPurple.png": {
             "frame": {
                 "x": 125,
                 "y": 1,
@@ -60,7 +60,7 @@
                 "h": 60
             }
         },
-        "particlesBlockRed.png": {
+        "images/particles/particlesBlockRed.png": {
             "frame": {
                 "x": 187,
                 "y": 1,
@@ -80,7 +80,7 @@
                 "h": 60
             }
         },
-        "particlesBlockYellow.png": {
+        "images/particles/particlesBlockYellow.png": {
             "frame": {
                 "x": 249,
                 "y": 1,
@@ -100,7 +100,7 @@
                 "h": 60
             }
         },
-        "particlesColorBomb.png": {
+        "images/particles/particlesColorBomb.png": {
             "frame": {
                 "x": 311,
                 "y": 1,
@@ -120,7 +120,7 @@
                 "h": 120
             }
         },
-        "particlesGlitter.png": {
+        "images/particles/particlesGlitter.png": {
             "frame": {
                 "x": 433,
                 "y": 1,
@@ -140,7 +140,7 @@
                 "h": 30
             }
         },
-        "particlesRain.png": {
+        "images/particles/particlesRain.png": {
             "frame": {
                 "x": 465,
                 "y": 1,
@@ -160,7 +160,7 @@
                 "h": 400
             }
         },
-        "particlesShine.png": {
+        "images/particles/particlesShine.png": {
             "frame": {
                 "x": 867,
                 "y": 1,
@@ -180,7 +180,7 @@
                 "h": 100
             }
         },
-        "particlesShineRadial1.png": {
+        "images/particles/particlesShineRadial1.png": {
             "frame": {
                 "x": 1,
                 "y": 403,
@@ -200,7 +200,7 @@
                 "h": 900
             }
         },
-        "particlesShineRadial2.png": {
+        "images/particles/particlesShineRadial2.png": {
             "frame": {
                 "x": 969,
                 "y": 1,

@@ -2,7 +2,7 @@
     "title": "Blast",
     "version": "1",
     "scripts": {
-        "build": "webpack --config webpack/production.ts",
+        "dist": "webpack --config webpack/production.ts",
         "start": "webpack serve --open --config webpack/development.ts",
         "test": "jest"
     },

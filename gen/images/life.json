@@ -1,6 +1,6 @@
 {
     "frames": {
-        "life1.png": {
+        "images/life/life1.png": {
             "frame": {
                 "x": 1,
                 "y": 1,
@@ -20,7 +20,7 @@
                 "h": 380
             }
         },
-        "life1Grey.png": {
+        "images/life/life1Grey.png": {
             "frame": {
                 "x": 523,
                 "y": 1,
@@ -40,7 +40,7 @@
                 "h": 115
             }
         },
-        "life1Shadow.png": {
+        "images/life/life1Shadow.png": {
             "frame": {
                 "x": 523,
                 "y": 118,
@@ -60,7 +60,7 @@
                 "h": 239
             }
         },
-        "life3.png": {
+        "images/life/life3.png": {
             "frame": {
                 "x": 1,
                 "y": 383,
@@ -80,7 +80,7 @@
                 "h": 410
             }
         },
-        "lifeBroken.png": {
+        "images/life/lifeBroken.png": {
             "frame": {
                 "x": 393,
                 "y": 383,
@@ -100,7 +100,7 @@
                 "h": 371
             }
         },
-        "lifeBrokenShadow.png": {
+        "images/life/lifeBrokenShadow.png": {
             "frame": {
                 "x": 799,
                 "y": 1,

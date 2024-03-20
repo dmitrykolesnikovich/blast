@@ -1,6 +1,6 @@
 {
     "frames": {
-        "boosterColorBomb.png": {
+        "images/booster/boosterColorBomb.png": {
             "frame": {
                 "x": 1,
                 "y": 1,
@@ -20,7 +20,7 @@
                 "h": 130
             }
         },
-        "boosterDynamite.png": {
+        "images/booster/boosterDynamite.png": {
             "frame": {
                 "x": 133,
                 "y": 1,
@@ -40,7 +40,7 @@
                 "h": 130
             }
         },
-        "boosterHorizontalBomb.png": {
+        "images/booster/boosterHorizontalBomb.png": {
             "frame": {
                 "x": 1,
                 "y": 133,
@@ -60,7 +60,7 @@
                 "h": 130
             }
         },
-        "boosterVerticalBomb.png": {
+        "images/booster/boosterVerticalBomb.png": {
             "frame": {
                 "x": 133,
                 "y": 133,

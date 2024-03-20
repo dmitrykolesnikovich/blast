@@ -1,6 +1,6 @@
 {
     "frames": {
-        "panelAlert1.png": {
+        "images/panel/panelAlert1.png": {
             "frame": {
                 "x": 1,
                 "y": 1,
@@ -20,7 +20,7 @@
                 "h": 550
             }
         },
-        "panelAlert2.png": {
+        "images/panel/panelAlert2.png": {
             "frame": {
                 "x": 803,
                 "y": 1,
@@ -40,7 +40,7 @@
                 "h": 500
             }
         },
-        "panelBoosters.png": {
+        "images/panel/panelBoosters.png": {
             "frame": {
                 "x": 803,
                 "y": 503,
@@ -60,7 +60,7 @@
                 "h": 255
             }
         },
-        "panelCoins.png": {
+        "images/panel/panelCoins.png": {
             "frame": {
                 "x": 1,
                 "y": 760,
@@ -80,7 +80,7 @@
                 "h": 160
             }
         },
-        "panelFlagBlue.png": {
+        "images/panel/panelFlagBlue.png": {
             "frame": {
                 "x": 523,
                 "y": 760,
@@ -100,7 +100,7 @@
                 "h": 250
             }
         },
-        "panelFlagGrey.png": {
+        "images/panel/panelFlagGrey.png": {
             "frame": {
                 "x": 1,
                 "y": 1012,
@@ -120,7 +120,7 @@
                 "h": 250
             }
         },
-        "panelGoal.png": {
+        "images/panel/panelGoal.png": {
             "frame": {
                 "x": 1072,
                 "y": 1012,
@@ -140,7 +140,7 @@
                 "h": 220
             }
         },
-        "panelHeadline.png": {
+        "images/panel/panelHeadline.png": {
             "frame": {
                 "x": 1072,
                 "y": 1234,
@@ -160,7 +160,7 @@
                 "h": 177
             }
         },
-        "panelHeadlineDark.png": {
+        "images/panel/panelHeadlineDark.png": {
             "frame": {
                 "x": 1594,
                 "y": 760,
@@ -180,7 +180,7 @@
                 "h": 88
             }
         },
-        "panelInfo.png": {
+        "images/panel/panelInfo.png": {
             "frame": {
                 "x": 1,
                 "y": 1264,
@@ -200,7 +200,7 @@
                 "h": 360
             }
         },
-        "panelList.png": {
+        "images/panel/panelList.png": {
             "frame": {
                 "x": 1605,
                 "y": 1,
@@ -220,7 +220,7 @@
                 "h": 240
             }
         },
-        "panelMoves.png": {
+        "images/panel/panelMoves.png": {
             "frame": {
                 "x": 1605,
                 "y": 243,
@@ -240,7 +240,7 @@
                 "h": 220
             }
         },
-        "panelProgress.png": {
+        "images/panel/panelProgress.png": {
             "frame": {
                 "x": 1524,
                 "y": 1234,
@@ -260,7 +260,7 @@
                 "h": 491
             }
         },
-        "panelTitle.png": {
+        "images/panel/panelTitle.png": {
             "frame": {
                 "x": 1927,
                 "y": 243,

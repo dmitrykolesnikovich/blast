@@ -1,6 +1,6 @@
 {
 	"frames": {
-		"buttonBooster.png": {
+		"images/button/buttonBooster.png": {
 			"frame": {
 				"x": 1,
 				"y": 1,
@@ -20,7 +20,7 @@
 				"h": 180
 			}
 		},
-		"buttonCheckbox.png": {
+		"images/button/buttonCheckbox.png": {
 			"frame": {
 				"x": 183,
 				"y": 1,
@@ -40,7 +40,7 @@
 				"h": 140
 			}
 		},
-		"buttonCircleBlue.png": {
+		"images/button/buttonCircleBlue.png": {
 			"frame": {
 				"x": 535,
 				"y": 1,
@@ -60,7 +60,7 @@
 				"h": 102
 			}
 		},
-		"buttonCircleGreen.png": {
+		"images/button/buttonCircleGreen.png": {
 			"frame": {
 				"x": 639,
 				"y": 1,
@@ -80,7 +80,7 @@
 				"h": 102
 			}
 		},
-		"buttonCircleGrey.png": {
+		"images/button/buttonCircleGrey.png": {
 			"frame": {
 				"x": 743,
 				"y": 1,
@@ -100,7 +100,7 @@
 				"h": 79
 			}
 		},
-		"buttonCircleRed.png": {
+		"images/button/buttonCircleRed.png": {
 			"frame": {
 				"x": 824,
 				"y": 1,
@@ -120,7 +120,7 @@
 				"h": 102
 			}
 		},
-		"buttonClose.png": {
+		"images/button/buttonClose.png": {
 			"frame": {
 				"x": 535,
 				"y": 105,
@@ -140,7 +140,7 @@
 				"h": 102
 			}
 		},
-		"buttonIndicator.png": {
+		"images/button/buttonIndicator.png": {
 			"frame": {
 				"x": 639,
 				"y": 105,
@@ -160,7 +160,7 @@
 				"h": 126
 			}
 		},
-		"buttonLevel.png": {
+		"images/button/buttonLevel.png": {
 			"frame": {
 				"x": 764,
 				"y": 105,
@@ -180,7 +180,7 @@
 				"h": 82
 			}
 		},
-		"buttonLevelDisabled.png": {
+		"images/button/buttonLevelDisabled.png": {
 			"frame": {
 				"x": 1,
 				"y": 189,
@@ -200,7 +200,7 @@
 				"h": 82
 			}
 		},
-		"buttonLevelShadow.png": {
+		"images/button/buttonLevelShadow.png": {
 			"frame": {
 				"x": 99,
 				"y": 189,
@@ -220,7 +220,7 @@
 				"h": 103
 			}
 		},
-		"buttonLevelShine.png": {
+		"images/button/buttonLevelShine.png": {
 			"frame": {
 				"x": 249,
 				"y": 233,
@@ -240,7 +240,7 @@
 				"h": 415
 			}
 		},
-		"buttonRadio.png": {
+		"images/button/buttonRadio.png": {
 			"frame": {
 				"x": 862,
 				"y": 105,
@@ -260,7 +260,7 @@
 				"h": 56
 			}
 		},
-		"buttonRectangleBlue.png": {
+		"images/button/buttonRectangleBlue.png": {
 			"frame": {
 				"x": 1,
 				"y": 650,
@@ -280,7 +280,7 @@
 				"h": 183
 			}
 		},
-		"buttonRectangleGreen.png": {
+		"images/button/buttonRectangleGreen.png": {
 			"frame": {
 				"x": 928,
 				"y": 1,
@@ -300,7 +300,7 @@
 				"h": 183
 			}
 		},
-		"buttonRectangleGreenDark.png": {
+		"images/button/buttonRectangleGreenDark.png": {
 			"frame": {
 				"x": 862,
 				"y": 186,
@@ -320,7 +320,7 @@
 				"h": 183
 			}
 		},
-		"buttonRectangleGreenSmall.png": {
+		"images/button/buttonRectangleGreenSmall.png": {
 			"frame": {
 				"x": 724,
 				"y": 371,
@@ -340,7 +340,7 @@
 				"h": 152
 			}
 		},
-		"buttonRectanglePink.png": {
+		"images/button/buttonRectanglePink.png": {
 			"frame": {
 				"x": 724,
 				"y": 525,
@@ -360,7 +360,7 @@
 				"h": 183
 			}
 		},
-		"buttonRectangleRed.png": {
+		"images/button/buttonRectangleRed.png": {
 			"frame": {
 				"x": 511,
 				"y": 710,
