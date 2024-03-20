@@ -2,7 +2,7 @@ import {Application, Assets, Container, Spritesheet, Text} from "pixi.js"
 import {delay} from "./Timer"
 import {Environment} from "./Environment"
 import {debug} from "./Debug"
-import {quickfixSpritesheetForProduction} from "./Production";
+import {quickfixSpritesheetForProduction} from "./Production"
 
 type FontInstance = { url: string, family: string, weight: string }
 

@@ -23,9 +23,11 @@ export default {
     },
     plugins: [
         new DefinePlugin({
-            build: JSON.stringify('production'),
-            title: JSON.stringify(title),
-            version: JSON.stringify(version)
+            manifest: {
+                build: JSON.stringify('production'),
+                title: JSON.stringify(title),
+                version: JSON.stringify(version)
+            }
         }),
         new CopyPlugin({
             patterns: [

@@ -21,9 +21,11 @@ export default {
     },
     plugins: [
         new DefinePlugin({
-            build: JSON.stringify('development'),
-            title: JSON.stringify(title),
-            version: JSON.stringify(version)
+            manifest: {
+                build: JSON.stringify('development'),
+                title: JSON.stringify(title),
+                version: JSON.stringify(version)
+            }
         })
     ],
     devServer: {
