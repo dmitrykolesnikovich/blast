@@ -5,7 +5,7 @@ import dynamiteExample from "../examples/dynamite.example"
 import nineSlicePlaneExample from "../examples/nineSlicePlane.example"
 import bradPng from "../examples/brad.png"
 import texturePackerExample from "../examples/texturePacker.example"
-import manifest from "./manifest";
+import manifest from "./manifest"
 
 bootstrap(main)
 

@@ -1,105 +1,197 @@
 import avatarBorderPng from "./images/avatar/avatarBorder.png"
 import background1Jpg from "./images/background/background1.jpg"
+import background2Jpg from "./images/background/background2.jpg"
+import background3Jpg from "./images/background/background3.jpg"
+import background4Jpg from "./images/background/background4.jpg"
+import background5Jpg from "./images/background/background5.jpg"
+import backgroundGameJpg from "./images/background/backgroundGame.jpg"
 import boosterDynamitePng from "./images/booster/boosterDynamite.png"
+import avatarBorderShadowPng from "./images/avatar/avatarBorderShadow.png"
+import avatarBoyPng from "./images/avatar/avatarBoy.png"
+import avatarGirlPng from "./images/avatar/avatarGirl.png"
+import avatarIndicatorPng from "./images/avatar/avatarIndicator.png"
+import avatarIndicatorShinePng from "./images/avatar/avatarIndicatorShine.png"
+import boosterColorBombPng from "./images/booster/boosterColorBomb.png"
+import boosterHorizontalBombPng from "./images/booster/boosterHorizontalBomb.png"
+import boosterVerticalBombPng from "./images/booster/boosterVerticalBomb.png"
+import buttonBoosterPng from "./images/button/buttonBooster.png"
+import buttonCheckboxPng from "./images/button/buttonCheckbox.png"
+import buttonCircleBluePng from "./images/button/buttonCircleBlue.png"
+import buttonCircleGreenPng from "./images/button/buttonCircleGreen.png"
+import buttonCircleGreyPng from "./images/button/buttonCircleGrey.png"
+import buttonCircleRedPng from "./images/button/buttonCircleRed.png"
+import buttonClosePng from "./images/button/buttonClose.png"
+import buttonIndicatorPng from "./images/button/buttonIndicator.png"
+import buttonLevelPng from "./images/button/buttonLevel.png"
+import buttonLevelDisabledPng from "./images/button/buttonLevelDisabled.png"
+import buttonLevelShadowPng from "./images/button/buttonLevelShadow.png"
+import buttonLevelShinePng from "./images/button/buttonLevelShine.png"
+import buttonRadioPng from "./images/button/buttonRadio.png"
+import buttonRectangleBluePng from "./images/button/buttonRectangleBlue.png"
+import buttonRectangleGreenPng from "./images/button/buttonRectangleGreen.png"
+import buttonRectangleGreenDarkPng from "./images/button/buttonRectangleGreenDark.png"
+import buttonRectangleGreenSmallPng from "./images/button/buttonRectangleGreenSmall.png"
+import buttonRectanglePinkPng from "./images/button/buttonRectanglePink.png"
+import buttonRectangleRedPng from "./images/button/buttonRectangleRed.png"
+import cloud1Png from "./images/cloud/cloud1.png"
+import cloud2Png from "./images/cloud/cloud2.png"
+import cloud3Png from "./images/cloud/cloud3.png"
+import cloudLevelPng from "./images/cloud/cloudLevel.png"
+import cloudLosePng from "./images/cloud/cloudLose.png"
+import coins1Png from "./images/coins/coins1.png"
+import coins2Png from "./images/coins/coins2.png"
+import coins3Png from "./images/coins/coins3.png"
+import coins4Png from "./images/coins/coins4.png"
+import coins5Png from "./images/coins/coins5.png"
+import coins6Png from "./images/coins/coins6.png"
+import iconArrowBackPng from "./images/icon/iconArrowBack.png"
+import iconExitPng from "./images/icon/iconExit.png"
+import iconHelpPng from "./images/icon/iconHelp.png"
+import iconInfoPng from "./images/icon/iconInfo.png"
+import iconLevelPng from "./images/icon/iconLevel.png"
+import iconMorePng from "./images/icon/iconMore.png"
+import iconMusicPng from "./images/icon/iconMusic.png"
+import iconNextPng from "./images/icon/iconNext.png"
+import iconRepeatPng from "./images/icon/iconRepeat.png"
+import iconResetPng from "./images/icon/iconReset.png"
+import iconSettingsPng from "./images/icon/iconSettings.png"
+import iconSoundPng from "./images/icon/iconSound.png"
+import life1Png from "./images/life/life1.png"
+import life1GreyPng from "./images/life/life1Grey.png"
+import life1ShadowPng from "./images/life/life1Shadow.png"
+import life3Png from "./images/life/life3.png"
+import lifeBrokenPng from "./images/life/lifeBroken.png"
+import lifeBrokenShadowPng from "./images/life/lifeBrokenShadow.png"
+import blockPng from "./images/misc/block.png"
+import dividerPng from "./images/misc/divider.png"
+import logoPng from "./images/misc/logo.png"
+import playPng from "./images/misc/play.png"
+import panelAlert1Png from "./images/panel/panelAlert1.png"
+import panelAlert2Png from "./images/panel/panelAlert2.png"
+import panelBoostersPng from "./images/panel/panelBoosters.png"
+import panelCoinsPng from "./images/panel/panelCoins.png"
+import panelFlagBluePng from "./images/panel/panelFlagBlue.png"
+import panelFlagGreyPng from "./images/panel/panelFlagGrey.png"
+import panelGoalPng from "./images/panel/panelGoal.png"
+import panelHeadlinePng from "./images/panel/panelHeadline.png"
+import panelHeadlineDarkPng from "./images/panel/panelHeadlineDark.png"
+import panelInfoPng from "./images/panel/panelInfo.png"
+import panelListPng from "./images/panel/panelList.png"
+import panelMovesPng from "./images/panel/panelMoves.png"
+import panelProgressPng from "./images/panel/panelProgress.png"
+import panelTitlePng from "./images/panel/panelTitle.png"
+import particlesBlockBluePng from "./images/particles/particlesBlockBlue.png"
+import particlesBlockGreenPng from "./images/particles/particlesBlockGreen.png"
+import particlesBlockPurplePng from "./images/particles/particlesBlockPurple.png"
+import particlesBlockRedPng from "./images/particles/particlesBlockRed.png"
+import particlesBlockYellowPng from "./images/particles/particlesBlockYellow.png"
+import particlesColorBombPng from "./images/particles/particlesColorBomb.png"
+import particlesGlitterPng from "./images/particles/particlesGlitter.png"
+import particlesRainPng from "./images/particles/particlesRain.png"
+import particlesShinePng from "./images/particles/particlesShine.png"
+import particlesShineRadial1Png from "./images/particles/particlesShineRadial1.png"
+import particlesShineRadial2Png from "./images/particles/particlesShineRadial2.png"
+import starBigGreyPng from "./images/star/starBigGrey.png"
+import starBigYellowPng from "./images/star/starBigYellow.png"
+import starSmallGreyPng from "./images/star/starSmallGrey.png"
+import starSmallYellowPng from "./images/star/starSmallYellow.png"
 
 export {
     avatarBorderPng,
     background1Jpg,
-    boosterDynamitePng
+    background2Jpg,
+    background3Jpg,
+    background4Jpg,
+    background5Jpg,
+    backgroundGameJpg,
+    boosterDynamitePng,
+    avatarBorderShadowPng,
+    avatarBoyPng,
+    avatarGirlPng,
+    avatarIndicatorPng,
+    avatarIndicatorShinePng,
+    boosterColorBombPng,
+    boosterHorizontalBombPng,
+    boosterVerticalBombPng,
+    buttonBoosterPng,
+    buttonCheckboxPng,
+    buttonCircleBluePng,
+    buttonCircleGreenPng,
+    buttonCircleGreyPng,
+    buttonCircleRedPng,
+    buttonClosePng,
+    buttonIndicatorPng,
+    buttonLevelPng,
+    buttonLevelDisabledPng,
+    buttonLevelShadowPng,
+    buttonLevelShinePng,
+    buttonRadioPng,
+    buttonRectangleBluePng,
+    buttonRectangleGreenPng,
+    buttonRectangleGreenDarkPng,
+    buttonRectangleGreenSmallPng,
+    buttonRectanglePinkPng,
+    buttonRectangleRedPng,
+    cloud1Png,
+    cloud2Png,
+    cloud3Png,
+    cloudLevelPng,
+    cloudLosePng,
+    coins1Png,
+    coins2Png,
+    coins3Png,
+    coins4Png,
+    coins5Png,
+    coins6Png,
+    iconArrowBackPng,
+    iconExitPng,
+    iconHelpPng,
+    iconInfoPng,
+    iconLevelPng,
+    iconMorePng,
+    iconMusicPng,
+    iconNextPng,
+    iconRepeatPng,
+    iconResetPng,
+    iconSettingsPng,
+    iconSoundPng,
+    life1Png,
+    life1GreyPng,
+    life1ShadowPng,
+    life3Png,
+    lifeBrokenPng,
+    lifeBrokenShadowPng,
+    blockPng,
+    dividerPng,
+    logoPng,
+    playPng,
+    panelAlert1Png,
+    panelAlert2Png,
+    panelBoostersPng,
+    panelCoinsPng,
+    panelFlagBluePng,
+    panelFlagGreyPng,
+    panelGoalPng,
+    panelHeadlinePng,
+    panelHeadlineDarkPng,
+    panelInfoPng,
+    panelListPng,
+    panelMovesPng,
+    panelProgressPng,
+    panelTitlePng,
+    particlesBlockBluePng,
+    particlesBlockGreenPng,
+    particlesBlockPurplePng,
+    particlesBlockRedPng,
+    particlesBlockYellowPng,
+    particlesColorBombPng,
+    particlesGlitterPng,
+    particlesRainPng,
+    particlesShinePng,
+    particlesShineRadial1Png,
+    particlesShineRadial2Png,
+    starBigGreyPng,
+    starBigYellowPng,
+    starSmallGreyPng,
+    starSmallYellowPng,
 }
-
-// images
-// export const avatarBorderShadowPng = "avatarBorderShadow.png"
-// export const avatarBoyPng = "avatarBoy.png"
-// export const avatarGirlPng = "avatarGirl.png"
-// export const avatarIndicatorPng = "avatarIndicator.png"
-// export const avatarIndicatorShinePng = "avatarIndicatorShine.png"
-// export const background2Jpg = "./images/background2.jpg"
-// export const background3Jpg = "./images/background3.jpg"
-// export const background4Jpg = "./images/background4.jpg"
-// export const background5Jpg = "./images/background5.jpg"
-// export const backgroundGameJpg = "./images/backgroundGame.jpg"
-// export const boosterColorBombPng = "boosterColorBomb.png"
-// export const boosterHorizontalBombPng = "boosterHorizontalBomb.png"
-// export const boosterVerticalBombPng = "boosterVerticalBomb.png"
-// export const buttonBoosterPng = "buttonBooster.png"
-// export const buttonCheckboxPng = "buttonCheckbox.png"
-// export const buttonCircleBluePng = "buttonCircleBlue.png"
-// export const buttonCircleGreenPng = "buttonCircleGreen.png"
-// export const buttonCircleGreyPng = "buttonCircleGrey.png"
-// export const buttonCircleRedPng = "buttonCircleRed.png"
-// export const buttonClosePng = "buttonClose.png"
-// export const buttonIndicatorPng = "buttonIndicator.png"
-// export const buttonLevelPng = "buttonLevel.png"
-// export const buttonLevelDisabledPng = "buttonLevelDisabled.png"
-// export const buttonLevelShadowPng = "buttonLevelShadow.png"
-// export const buttonLevelShinePng = "buttonLevelShine.png"
-// export const buttonRadioPng = "buttonRadio.png"
-// export const buttonRectangleBluePng = "buttonRectangleBlue.png"
-// export const buttonRectangleGreenPng = "buttonRectangleGreen.png"
-// export const buttonRectangleGreenDarkPng = "buttonRectangleGreenDark.png"
-// export const buttonRectangleGreenSmallPng = "buttonRectangleGreenSmall.png"
-// export const buttonRectanglePinkPng = "buttonRectanglePink.png"
-// export const buttonRectangleRedPng = "buttonRectangleRed.png"
-// export const cloud1Png = "cloud1.png"
-// export const cloud2Png = "cloud2.png"
-// export const cloud3Png = "cloud3.png"
-// export const cloudLevelPng = "cloudLevel.png"
-// export const cloudLosePng = "cloudLose.png"
-// export const coins1Png = "coins1.png"
-// export const coins2Png = "coins2.png"
-// export const coins3Png = "coins3.png"
-// export const coins4Png = "coins4.png"
-// export const coins5Png = "coins5.png"
-// export const coins6Png = "coins6.png"
-// export const iconArrowBackPng = "iconArrowBack.png"
-// export const iconExitPng = "iconExit.png"
-// export const iconHelpPng = "iconHelp.png"
-// export const iconInfoPng = "iconInfo.png"
-// export const iconLevelPng = "iconLevel.png"
-// export const iconMorePng = "iconMore.png"
-// export const iconMusicPng = "iconMusic.png"
-// export const iconNextPng = "iconNext.png"
-// export const iconRepeatPng = "iconRepeat.png"
-// export const iconResetPng = "iconReset.png"
-// export const iconSettingsPng = "iconSettings.png"
-// export const iconSoundPng = "iconSound.png"
-// export const life1Png = "life1.png"
-// export const life1GreyPng = "life1Grey.png"
-// export const life1ShadowPng = "life1Shadow.png"
-// export const life3Png = "life3.png"
-// export const lifeBrokenPng = "lifeBroken.png"
-// export const lifeBrokenShadowPng = "lifeBrokenShadow.png"
-// export const blockPng = "block.png"
-// export const dividerPng = "divider.png"
-// export const logoPng = "logo.png"
-// export const playPng = "play.png"
-// export const panelAlert1Png = "panelAlert1.png"
-// export const panelAlert2Png = "panelAlert2.png"
-// export const panelBoostersPng = "panelBoosters.png"
-// export const panelCoinsPng = "panelCoins.png"
-// export const panelFlagBluePng = "panelFlagBlue.png"
-// export const panelFlagGreyPng = "panelFlagGrey.png"
-// export const panelGoalPng = "panelGoal.png"
-// export const panelHeadlinePng = "panelHeadline.png"
-// export const panelHeadlineDarkPng = "panelHeadlineDark.png"
-// export const panelInfoPng = "panelInfo.png"
-// export const panelListPng = "panelList.png"
-// export const panelMovesPng = "panelMoves.png"
-// export const panelProgressPng = "panelProgress.png"
-// export const panelTitlePng = "panelTitle.png"
-// export const particlesBlockBluePng = "particlesBlockBlue.png"
-// export const particlesBlockGreenPng = "particlesBlockGreen.png"
-// export const particlesBlockPurplePng = "particlesBlockPurple.png"
-// export const particlesBlockRedPng = "particlesBlockRed.png"
-// export const particlesBlockYellowPng = "particlesBlockYellow.png"
-// export const particlesColorBombPng = "particlesColorBomb.png"
-// export const particlesGlitterPng = "particlesGlitter.png"
-// export const particlesRainPng = "particlesRain.png"
-// export const particlesShinePng = "particlesShine.png"
-// export const particlesShineRadial1Png = "particlesShineRadial1.png"
-// export const particlesShineRadial2Png = "particlesShineRadial2.png"
-// export const starBigGreyPng = "starBigGrey.png"
-// export const starBigYellowPng = "starBigYellow.png"
-// export const starSmallGreyPng = "starSmallGrey.png"
-// export const starSmallYellowPng = "starSmallYellow.png"
