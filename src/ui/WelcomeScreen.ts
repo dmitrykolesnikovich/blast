@@ -65,8 +65,9 @@ export default class WelcomeScreen extends View<Layout> {
                 size: {width: 40, height: 40},
                 image: iconSettingsPng,
                 background: buttonCircleGreenPng,
-                backgroundOff: buttonCircleGreyPng,
+                backgroundDisabled: buttonCircleGreyPng,
                 backgroundSize: {width: 80, height: 80},
+                enabled: true,
             }),
             iconSound: new Button({
                 position: {x: 225, y: 700},
@@ -74,7 +75,7 @@ export default class WelcomeScreen extends View<Layout> {
                 size: {width: 40, height: 40},
                 image: iconSoundPng,
                 background: buttonCircleGreenPng,
-                backgroundOff: buttonCircleGreyPng,
+                backgroundDisabled: buttonCircleGreyPng,
                 backgroundSize: {width: 80, height: 80},
             }),
             iconMusic: new Button({
@@ -83,7 +84,7 @@ export default class WelcomeScreen extends View<Layout> {
                 size: {width: 40, height: 40},
                 image: iconMusicPng,
                 background: buttonCircleGreenPng,
-                backgroundOff: buttonCircleGreyPng,
+                backgroundDisabled: buttonCircleGreyPng,
                 backgroundSize: {width: 80, height: 80},
             })
         }
