@@ -16,4 +16,6 @@ export default [
     "./images/panel.json",
     "./images/particles.json",
     "./images/star.json",
+    "./fonts/fredokaOne.ttf",
+    "./fonts/insanibu.ttf",
 ]
