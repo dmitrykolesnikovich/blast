@@ -1,5 +1,4 @@
-import {Sprite} from "pixi.js"
-import {createSprite, View} from "../engine"
+import {View} from "../engine"
 import {
     backgroundGameJpg,
     buttonCircleGreenPng,
@@ -15,12 +14,13 @@ import {
 } from "../../res"
 import Button from "./views/Button"
 import settings from "../features/settings"
+import Image from "./views/Image"
 
 type Layout = {
-    backgroundGame: Sprite
-    particlesShineRadial1: Sprite
-    particlesShineRadial2: Sprite
-    logo: Sprite
+    backgroundGame: Image
+    particlesShineRadial1: Image
+    particlesShineRadial2: Image
+    logo: Image
     play: Button
     iconSettings: Button
     iconSound: Button
@@ -31,24 +31,24 @@ export default class WelcomeScreen extends View<Layout> {
     constructor() {
         super({width: 450, height: 800})
         this.layout = {
-            backgroundGame: createSprite({
+            backgroundGame: new Image({
                 position: {x: -27.5, y: 0},
                 size: {width: 505, height: 800},
                 image: backgroundGameJpg
             }),
-            particlesShineRadial1: createSprite({
+            particlesShineRadial1: new Image({
                 position: {x: 225, y: 220},
                 anchor: {x: 0.5, y: 0.5},
                 size: {width: 900, height: 900},
                 image: particlesShineRadial1Png
             }),
-            particlesShineRadial2: createSprite({
+            particlesShineRadial2: new Image({
                 position: {x: 225, y: 220},
                 anchor: {x: 0.5, y: 0.5},
                 size: {width: 900, height: 900},
                 image: particlesShineRadial2Png
             }),
-            logo: createSprite({
+            logo: new Image({
                 position: {x: 225, y: 200},
                 anchor: {x: 0.5, y: 0.5},
                 size: {width: 226.8, height: 235},

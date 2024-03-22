@@ -1,14 +1,14 @@
 import {IPointData, ISize, NineSlicePlane, Texture} from "pixi.js"
 import {panelAlert1Png} from "../../res"
 import {Container} from "@pixi/display"
-import {check, checkSize} from "../engine"
+import {checkSize} from "../engine"
 
 type PopupOptions = {
     position: IPointData,
     size: ISize,
 }
 
-/** minimum size: (400, 240) */
+/** popup minimum size: (400, 240) */
 export default function popup1(options: PopupOptions): Container {
     checkSize(options.size, {min: {width: 400, height: 240}})
 

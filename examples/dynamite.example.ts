@@ -1,11 +1,12 @@
-import {context, createSprite, startTimer, View} from "../src/engine"
+import {context, startTimer, View} from "../src/engine"
 import {Assets, Sprite} from "pixi.js"
-import {Emitter, upgradeConfig} from "@pixi/particle-emitter"
 import gsap from "gsap"
 import {boosterDynamitePng} from "../res"
+import Image from "../src/ui/views/Image"
 
-export default function dynamiteExample() {
-    const dynamite: Sprite = createSprite({
+export function dynamiteExample() {
+    // 123
+    const dynamite: Sprite = new Image({
         image: boosterDynamitePng,
         anchor: {x: 0.5, y: 0.5},
         position: {x: 225, y: 600},

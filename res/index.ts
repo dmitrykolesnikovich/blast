@@ -1,17 +1,19 @@
+const fredokaOneTtf = "./fonts/fredokaOne.ttf"
+const insanibuTtf = "./fonts/insanibu.ttf"
 import avatarBorderPng from "./images/avatar/avatarBorder.png"
+import avatarBorderShadowPng from "./images/avatar/avatarBorderShadow.png"
+import avatarBoyPng from "./images/avatar/avatarBoy.png"
+import avatarGirlPng from "./images/avatar/avatarGirl.png"
+import avatarIndicatorPng from "./images/avatar/avatarIndicator.png"
+import avatarIndicatorShinePng from "./images/avatar/avatarIndicatorShine.png"
 import background1Jpg from "./images/background/background1.jpg"
 import background2Jpg from "./images/background/background2.jpg"
 import background3Jpg from "./images/background/background3.jpg"
 import background4Jpg from "./images/background/background4.jpg"
 import background5Jpg from "./images/background/background5.jpg"
 import backgroundGameJpg from "./images/background/backgroundGame.jpg"
-import boosterDynamitePng from "./images/booster/boosterDynamite.png"
-import avatarBorderShadowPng from "./images/avatar/avatarBorderShadow.png"
-import avatarBoyPng from "./images/avatar/avatarBoy.png"
-import avatarGirlPng from "./images/avatar/avatarGirl.png"
-import avatarIndicatorPng from "./images/avatar/avatarIndicator.png"
-import avatarIndicatorShinePng from "./images/avatar/avatarIndicatorShine.png"
 import boosterColorBombPng from "./images/booster/boosterColorBomb.png"
+import boosterDynamitePng from "./images/booster/boosterDynamite.png"
 import boosterHorizontalBombPng from "./images/booster/boosterHorizontalBomb.png"
 import boosterVerticalBombPng from "./images/booster/boosterVerticalBomb.png"
 import buttonBoosterPng from "./images/button/buttonBooster.png"
@@ -97,20 +99,22 @@ import starSmallGreyPng from "./images/star/starSmallGrey.png"
 import starSmallYellowPng from "./images/star/starSmallYellow.png"
 
 export {
+    fredokaOneTtf,
+    insanibuTtf,
     avatarBorderPng,
+    avatarBorderShadowPng,
+    avatarBoyPng,
+    avatarGirlPng,
+    avatarIndicatorPng,
+    avatarIndicatorShinePng,
     background1Jpg,
     background2Jpg,
     background3Jpg,
     background4Jpg,
     background5Jpg,
     backgroundGameJpg,
-    boosterDynamitePng,
-    avatarBorderShadowPng,
-    avatarBoyPng,
-    avatarGirlPng,
-    avatarIndicatorPng,
-    avatarIndicatorShinePng,
     boosterColorBombPng,
+    boosterDynamitePng,
     boosterHorizontalBombPng,
     boosterVerticalBombPng,
     buttonBoosterPng,

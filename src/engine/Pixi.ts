@@ -1,4 +1,4 @@
-import {ColorSource, Container, DisplayObject, IPointData, ISize, Sprite, Texture, TilingSprite} from "pixi.js"
+import {ColorSource, Container, DisplayObject, IPointData, ISize, Point, Sprite, Texture, TilingSprite} from "pixi.js"
 import {context} from "./Engine"
 import {Particle} from "@pixi/particle-emitter"
 
@@ -34,28 +34,8 @@ export function containerOf<T extends DisplayObject>(...children: T[]): Containe
 
 Particle.prototype.isInteractive = () => false
 
-type SpriteOptions = {
-    position: IPointData,
-    size: ISize,
-    image: string,
-    anchor?: IPointData,
-    tint?: ColorSource
-}
+export type Orientation = 'horizontal' | 'vertical'
 
-export function createSprite(options: SpriteOptions): Sprite {
-    const {position, size, image, anchor, tint} = options
-    const sprite: Sprite = new Sprite(Texture.from(image))
-    sprite.position = position
-    sprite.width = size.width
-    sprite.height = size.height
-    if (anchor) {
-        sprite.anchor.copyFrom(anchor)
-    }
-    if (tint) {
-        sprite.tint = tint
-    }
-    return sprite
-}
 
 type TilingSpriteOptions = {
     position: IPointData,
