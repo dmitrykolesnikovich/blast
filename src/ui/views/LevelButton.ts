@@ -52,6 +52,7 @@ export default class LevelButton extends Container {
         this.enabled = enabled
         this.active = active
         setupClickListener(this)
+        this.scale.set(0.5)
     }
 
     set enabled(enabled: boolean) {

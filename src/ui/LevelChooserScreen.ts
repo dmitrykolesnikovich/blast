@@ -60,6 +60,7 @@ export default class LevelChooserScreen extends View<Layout> {
             background: new Scroll({
                 position: {x: 0, y: 0},
                 size: {width: 450, height: 800},
+                range: {min: -3200, max: 0},
                 items: [
                     new Image({
                         position: {x: 0, y: 100},
@@ -87,24 +88,66 @@ export default class LevelChooserScreen extends View<Layout> {
                         foreground: background1Jpg
                     }),
                     new Image({
+                        position: {x: 0, y: 4007.5},
+                        size: {width: 450, height: 781.5},
+                        foreground: background5Jpg
+                    }),
+                    new Image({
                         position: {x: 0, y: 0},
                         size: {width: 450, height: 250},
                         foreground: cloudLevelPng
                     }),
 
+
                     // buttons
                     new LevelButton({
-                        position: {x: 225, y: 200},
-                        enabled: true,
-                        active: true,
-                        click: (button: LevelButton) => {
-                            button.active = !button.active
-                        }
+                        position: {x: 130, y: 3950},
                     }),
                     new LevelButton({
-                        position: {x: 225, y: 600},
-                        enabled: false
-                    })
+                        position: {x: 105, y: 3890},
+                    }),
+                    new LevelButton({
+                        position: {x: 112, y: 3828},
+                    }),
+                    new LevelButton({
+                        position: {x: 172, y: 3784},
+                    }),
+                    new LevelButton({
+                        position: {x: 255, y: 3730},
+                    }),
+                    new LevelButton({
+                        position: {x: 224, y: 3676},
+                    }),
+                    new LevelButton({
+                        position: {x: 176, y: 3647},
+                    }),
+                    new LevelButton({
+                        position: {x: 140, y: 3609},
+                    }),
+                    new LevelButton({
+                        position: {x: 110, y: 3561},
+                    }),
+                    new LevelButton({
+                        position: {x: 143, y: 3506},
+                    }),
+                    new LevelButton({
+                        position: {x: 195, y: 3472},
+                    }),
+                    new LevelButton({
+                        position: {x: 240, y: 3440},
+                    }),
+                    new LevelButton({
+                        position: {x: 286, y: 3400},
+                    }),
+                    new LevelButton({
+                        position: {x: 302, y: 3344},
+                    }),
+                    new LevelButton({
+                        position: {x: 290, y: 3290},
+                    }),
+                    new LevelButton({
+                        position: {x: 269, y: 3247},
+                    }),
                 ]
             }),
             // panelTitle: new Image({
@@ -178,5 +221,8 @@ export default class LevelChooserScreen extends View<Layout> {
             //     foreground: iconArrowBackPng
             // }),
         }
+
+        const {background} = this.layout
+        background.scrollTo(-400)
     }
 }

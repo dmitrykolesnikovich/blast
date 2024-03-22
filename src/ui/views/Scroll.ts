@@ -5,7 +5,10 @@ type ScrollOptions = {
     position: IPointData
     size: ISize
     items: Array<Container>
+    range: { min: number, max: number }
 }
+
+const MARGIN: number = 500
 
 export default class Scroll extends Container {
 
@@ -32,6 +35,7 @@ export default class Scroll extends Container {
             isDown = true
             const point = this.items.parent.toLocal(pointer.global)
             y = point.y
+            console.log(this.items.toLocal(pointer.global))
         })
         this.items.on('pointermove', (pointer) => {
             pointer.stopPropagation()
@@ -40,7 +44,7 @@ export default class Scroll extends Container {
                 const dy: number = point.y - y
                 if (dy != 0) {
                     this.items.position.y += dy
-                    this.items.position.y = this.clampScrollY(this.items.position.y)
+                    this.items.position.y = this.clampScrollY(this.items.position.y, MARGIN)
                     y = point.y
                     latestForce = dy
                 }
@@ -56,9 +60,6 @@ export default class Scroll extends Container {
             const deltaY: number = targetY - sourceY
             if (deltaY !== 0) {
                 animate(0.3, (progress) => this.items.position.y = sourceY + deltaY * Math.pow(progress, 0.33))
-            } else if (latestForce !== 0) {
-                const inertiaPath: number = latestForce * 10
-                animate(0.88, (progress) => this.items.position.y = this.clampScrollY(sourceY + inertiaPath * Math.pow(progress, 0.12)))
             }
         })
 
@@ -67,17 +68,22 @@ export default class Scroll extends Container {
         items.forEach(item => this.items.addChild(item))
     }
 
-    clear() {
-        this.items.removeChildren()
+    scrollToEnd() {
+        this.items.position.y = this.minY
     }
 
-    private clampScrollY(scrollY: number): number {
+    private clampScrollY(scrollY: number, margin: number = 0): number {
+        const {range} = this.options
+        return clamp(scrollY, Math.max(this.minY, range.min) - margin, Math.min(0, range.max) + margin)
+    }
+
+    private get minY(): number {
         const {size} = this.options
-        return clamp(scrollY, size.height - this.items.height, 0)
+        return size.height - this.items.height
     }
 
-    invalidateScroll() {
-        async(() => this.items.position.set(0, 0))
+    scrollTo(scrollY: number) {
+        this.items.position.y = this.clampScrollY(scrollY)
     }
 
 }
