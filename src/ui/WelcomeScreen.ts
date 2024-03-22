@@ -12,6 +12,7 @@ import {
     playPng
 } from "../../res"
 import Button from "./views/Button"
+import settings from "../features/settings";
 
 type Layout = {
     backgroundGame: Sprite
@@ -58,6 +59,9 @@ export default class WelcomeScreen extends View<Layout> {
                 image: playPng,
                 background: buttonRectangleGreenSmallPng,
                 backgroundSize: {width: 290, height: 128.9},
+                click: () => {
+                    console.log("play!!!")
+                },
             }),
             iconSettings: new Button({
                 position: {x: 125, y: 700},
@@ -67,7 +71,9 @@ export default class WelcomeScreen extends View<Layout> {
                 background: buttonCircleGreenPng,
                 backgroundDisabled: buttonCircleGreyPng,
                 backgroundSize: {width: 80, height: 80},
-                enabled: true,
+                click: () => {
+                    console.log("settings")
+                },
             }),
             iconSound: new Button({
                 position: {x: 225, y: 700},
@@ -77,6 +83,11 @@ export default class WelcomeScreen extends View<Layout> {
                 background: buttonCircleGreenPng,
                 backgroundDisabled: buttonCircleGreyPng,
                 backgroundSize: {width: 80, height: 80},
+                checkbox: true,
+                enabled: settings.soundEnabled,
+                click: (button) => {
+                    console.log(`sound: ${button.enabled}`)
+                },
             }),
             iconMusic: new Button({
                 position: {x: 325, y: 700},
@@ -86,6 +97,11 @@ export default class WelcomeScreen extends View<Layout> {
                 background: buttonCircleGreenPng,
                 backgroundDisabled: buttonCircleGreyPng,
                 backgroundSize: {width: 80, height: 80},
+                checkbox: true,
+                enabled: settings.musicEnabled,
+                click: (button) => {
+                    console.log(`music: ${button.enabled}`)
+                },
             })
         }
     }

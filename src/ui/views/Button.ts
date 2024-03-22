@@ -1,20 +1,24 @@
-import {ColorSource, Container, IPointData, ISize, Sprite, Texture} from "pixi.js";
+import {ColorSource, Container, IPointData, ISize, Sprite, Texture} from "pixi.js"
+
+type ButtonClickListener = (button: Button) => void
 
 type ButtonOptions = {
-    position: IPointData,
-    size: ISize,
-    image: string,
-    anchor?: IPointData,
-    tint?: ColorSource,
-    background: string,
-    backgroundDisabled?: string,
-    backgroundSize?: ISize,
+    position: IPointData
+    size: ISize
+    image: string
+    anchor?: IPointData
+    tint?: ColorSource
+    background: string
+    backgroundDisabled?: string
+    backgroundSize?: ISize
+    checkbox?: boolean
+    click?: ButtonClickListener
     enabled?: boolean
 }
 
 export default class Button extends Container {
 
-    private readonly options: ButtonOptions
+    readonly options: ButtonOptions
     private _isEnabled: boolean
     private backgroundSprite: Sprite = this.addChild(new Sprite())
     private foregroundSprite: Sprite = this.addChild(new Sprite())
@@ -22,6 +26,18 @@ export default class Button extends Container {
     constructor(options: ButtonOptions) {
         super()
         this.options = options
+
+        function setupButtonClickListener(button: Button) {
+            button.eventMode = "dynamic"
+            button.on("pointerdown", () => {
+                const {checkbox, click} = button.options
+                if (checkbox) {
+                    button.enabled = !button.enabled
+                } else if (button.enabled) {
+                    if (click) click(button)
+                }
+            })
+        }
 
         function setupSprite(sprite: Sprite, size: ISize, anchor?: IPointData, tint?: ColorSource, image?: string) {
             if (image) {
@@ -38,6 +54,7 @@ export default class Button extends Container {
         }
 
         const {position, size, image, anchor, tint, backgroundSize, enabled = true} = options
+        setupButtonClickListener(this)
         this.position = position
         setupSprite(this.backgroundSprite, backgroundSize ?? size, anchor, tint)
         setupSprite(this.foregroundSprite, size, anchor, tint, image)
@@ -45,10 +62,15 @@ export default class Button extends Container {
     }
 
     set enabled(enabled: boolean) {
+        const firstTime: boolean = this._isEnabled === undefined
         this._isEnabled = enabled
 
-        const {background, backgroundDisabled} = this.options
+        const {background, backgroundDisabled, checkbox, click} = this.options
         this.backgroundImage = enabled ? background : backgroundDisabled
+
+        if (!firstTime && checkbox) {
+            if (click) click(this)
+        }
     }
 
     get enabled(): boolean {
