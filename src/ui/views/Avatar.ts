@@ -7,7 +7,10 @@ import {
     avatarIndicatorPng,
     avatarIndicatorShinePng
 } from "../../../res"
-import {Container, IPointData} from "pixi.js";
+import {Container, IPointData, Point} from "pixi.js";
+import Scroll from "./Scroll";
+import LevelButton from "./LevelButton";
+import {IPoint} from "@pixi/math/lib/IPoint";
 
 export type Gender = 'boy' | 'girl'
 
@@ -56,6 +59,19 @@ export default class Avatar extends Container {
             this.avatarBorder1.size = {width: 100, height: 100}
             this.image.position.y = 0
         }
+    }
+
+    // quickfix todo improve
+    set level(level: number) {
+        if (this.parent == null) return
+        const buttonIndex = level - 1;
+        const buttons: LevelButton[] = this.parent.children.filter(it => it instanceof LevelButton) as LevelButton[]
+        const button: LevelButton = buttons[buttonIndex];
+        const buttonPosition: IPoint = button.position;
+        this.position.x = buttonPosition.x
+        this.position.y = buttonPosition.y - this.height / 2
+        for (let button of buttons) button.active = false
+        button.active = true
     }
 
 }

@@ -1,4 +1,4 @@
-import {IPointData, ISize, ITextStyle, Text} from "pixi.js"
+import {IPointData, ITextStyle, Text} from "pixi.js"
 
 export type LabelStyle = Partial<ITextStyle>
 

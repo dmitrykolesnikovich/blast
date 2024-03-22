@@ -1,9 +1,11 @@
 import {Container, Graphics, IPointData, ISize, Rectangle} from "pixi.js"
 import {animate, async, clamp, Environment} from "../../engine"
+import Avatar from "./Avatar";
 
 type ScrollOptions = {
     position: IPointData
     size: ISize
+    avatar: Avatar,
     items: Array<Container>
     range: { min: number, max: number }
 }
@@ -12,14 +14,14 @@ const MARGIN: number = 500
 
 export default class Scroll extends Container {
 
-    private readonly options: ScrollOptions
+    readonly options: ScrollOptions
     private readonly background: Graphics = this.addChild(new Graphics())
-    private readonly items: Container = this.addChild(new Container())
+    readonly items: Container = this.addChild(new Container())
 
     constructor(options: ScrollOptions) {
         super()
         this.options = options
-        const {position, size, items} = options
+        const {position, size, items, avatar} = options
 
         this.position.copyFrom(position)
         let isDown: boolean = false
@@ -66,10 +68,11 @@ export default class Scroll extends Container {
         if (Environment.isDebugEnabled) this.background.beginFill('red').drawRect(0, 0, size.width, size.height).endFill()
 
         items.forEach(item => this.items.addChild(item))
+        this.items.addChild(avatar)
     }
 
     scrollToEnd() {
-        this.items.position.y = this.minY
+        this.scrollTo(this.minY)
     }
 
     private clampScrollY(scrollY: number, margin: number = 0): number {

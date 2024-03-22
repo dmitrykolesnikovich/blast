@@ -9,13 +9,15 @@ import {
 
 import gsap from "gsap"
 import {ClickListener, setupClickListener} from "../../features/click"
+import Label from "./Label";
 
 
 type LevelButtonOptions = {
     position: IPointData
     enabled?: boolean
     active?: boolean
-    click?: ClickListener<any>
+    click?: ClickListener
+    level: number
 }
 
 export default class LevelButton extends Container {
@@ -47,11 +49,23 @@ export default class LevelButton extends Container {
     constructor(options: LevelButtonOptions) {
         super()
         this.options = options
-        const {position, enabled = false, active = false, click} = options
+        const {position, enabled = false, active = false, level} = options
         this.position = position
         this.enabled = enabled
         this.active = active
         setupClickListener(this)
+        this.addChild(new Label({
+            position: {x: 0, y: 0},
+            anchor: {x: 0.4, y: 0.75},
+            text: `${level}`,
+            style: {
+                fontSize: 28,
+                fill: 'white',
+                align: 'left',
+                fontFamily: 'fredokaOne',
+                fontWeight: '400'
+            }
+        }))
         this.scale.set(0.5)
     }
 
