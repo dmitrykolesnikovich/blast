@@ -4,6 +4,7 @@ import * as productionResources from "../gen"
 import manifest from "./manifest"
 import navigate from "./features/navigate";
 import WelcomeScreen from "./ui/WelcomeScreen";
+import SettingsScreen from "./ui/SettingsScreen"
 
 bootstrap(main)
 
@@ -12,5 +13,5 @@ async function main() {
     // dynamiteExample()
     // nineSlicePlaneExample()
     // texturePackerExample()
-    navigate(new WelcomeScreen())
+    navigate(new SettingsScreen())
 }

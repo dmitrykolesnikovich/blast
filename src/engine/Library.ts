@@ -9,3 +9,9 @@ export function isHtmlElementVisible(htmlElement: HTMLElement) {
 export function TODO(message?: string): any {
     throw new Error(`TODO: ${message}`)
 }
+
+export function check(predicate: boolean) {
+    if (!predicate) {
+        throw new Error("check")
+    }
+}

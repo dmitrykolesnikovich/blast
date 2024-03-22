@@ -1,7 +1,9 @@
 import {Sprite} from "pixi.js"
 import {createSprite, View} from "../engine"
 import {
-    backgroundGameJpg, buttonCircleGreenPng, buttonCircleGreyPng,
+    backgroundGameJpg,
+    buttonCircleGreenPng,
+    buttonCircleGreyPng,
     buttonRectangleGreenSmallPng,
     iconMusicPng,
     iconSettingsPng,
@@ -12,7 +14,7 @@ import {
     playPng
 } from "../../res"
 import Button from "./views/Button"
-import settings from "../features/settings";
+import settings from "../features/settings"
 
 type Layout = {
     backgroundGame: Sprite
