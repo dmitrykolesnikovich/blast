@@ -45,7 +45,7 @@ export default class SettingsScreen extends View<Layout> {
         this.layout = {
             panelAlert1: popup1({
                 position: {x: 225, y: 400},
-                size: {width: 700, height: 500},
+                size: {width: 600, height: 600},
             }),
             buttonClose: createSprite({
                 position: {x: 0, y: 0},
