@@ -1,19 +1,23 @@
-import {ColorSource, Container, IPointData, ISize, Sprite, Texture} from "pixi.js"
+import {ColorSource, Container, IPointData, ISize, Rectangle, Sprite, Texture} from "pixi.js"
+import gsap from "gsap";
+import Label from "./Label";
 
 type ButtonClickListener = (button: Button) => void
 
-type ButtonOptions = {
+export type ButtonOptions = {
     position: IPointData
     size: ISize
-    image: string
+    foreground?: string
     anchor?: IPointData
     tint?: ColorSource
-    background: string
+    background?: string
     backgroundDisabled?: string
     backgroundSize?: ISize
     checkbox?: boolean
+    toggle?: boolean,
     click?: ButtonClickListener
-    enabled?: boolean
+    enabled?: boolean,
+    label?: Label
 }
 
 export default class Button extends Container {
@@ -30,8 +34,8 @@ export default class Button extends Container {
         function setupButtonClickListener(button: Button) {
             button.eventMode = "dynamic"
             button.on("pointerdown", () => {
-                const {checkbox, click} = button.options
-                if (checkbox) {
+                const {checkbox, toggle, click} = button.options
+                if (checkbox || toggle) {
                     button.enabled = !button.enabled
                 } else if (button.enabled) {
                     if (click) click(button)
@@ -53,11 +57,14 @@ export default class Button extends Container {
             }
         }
 
-        const {position, size, image, anchor, tint, backgroundSize, enabled = true} = options
+        const {position, size, foreground, anchor, tint, backgroundSize, enabled = true, label} = options
         setupButtonClickListener(this)
         this.position = position
         setupSprite(this.backgroundSprite, backgroundSize ?? size, anchor, tint)
-        setupSprite(this.foregroundSprite, size, anchor, tint, image)
+        setupSprite(this.foregroundSprite, size, anchor, tint, foreground)
+        if (label) {
+            this.addChild(label)
+        }
         this.enabled = enabled
     }
 
@@ -65,11 +72,31 @@ export default class Button extends Container {
         const firstTime: boolean = this._isEnabled === undefined
         this._isEnabled = enabled
 
-        const {background, backgroundDisabled, checkbox, click} = this.options
-        this.backgroundImage = enabled ? background : backgroundDisabled
+        const {background, backgroundSize, backgroundDisabled, checkbox, toggle, click, size} = this.options
+        this.backgroundImage = enabled ? background : (backgroundDisabled ?? background)
+        if (toggle) {
+            const bounds: Rectangle = this.backgroundSprite.getLocalBounds();
+            const padding: number = (this.backgroundSprite.height - size.height) * 2
+            const positionX: number = (enabled ? bounds.right - padding : bounds.left + padding) * this.backgroundSprite.scale.x
+            const anchorX: number = enabled ? 1 : 0
+            if (firstTime) {
+                this.foregroundSprite.anchor.x = anchorX
+                this.foregroundSprite.x = positionX
+            } else {
+                gsap.timeline({ease: 'sine.inOut'})
+                    .to(this.foregroundSprite.anchor, {x: anchorX, duration: 0.22})
+                gsap.timeline({ease: 'sine.inOut'})
+                    .to(this.foregroundSprite, {x: positionX, duration: 0.22})
+            }
+        }
+        if (!firstTime) {
+            if (checkbox) {
+                if (click) click(this)
+            }
+            if (toggle) {
 
-        if (!firstTime && checkbox) {
-            if (click) click(this)
+                if (click) click(this)
+            }
         }
     }
 
@@ -80,6 +107,14 @@ export default class Button extends Container {
     /*internals*/
 
     private set backgroundImage(backgroundImage: string | undefined) {
+        if (backgroundImage !== undefined) {
+            this.backgroundSprite.texture = Texture.from(backgroundImage)
+        } else {
+            this.backgroundSprite.texture = Texture.EMPTY
+        }
+    }
+
+    private set foregroundImage(backgroundImage: string | undefined) {
         if (backgroundImage !== undefined) {
             this.backgroundSprite.texture = Texture.from(backgroundImage)
         } else {
