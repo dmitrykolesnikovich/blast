@@ -35,12 +35,12 @@ export default class RadioButtonGroup extends Container {
 
             button.background = button.addChild(new Image({
                 size: size,
-                image: buttonRadioPng,
+                foreground: buttonRadioPng,
                 anchor: {x: 0.5, y: 0.5}
             }))
             button.foreground = button.addChild(new Image({
                 size: {width: size.width * 0.5, height: size.height * 0.5},
-                image: indicator,
+                foreground: indicator,
                 anchor: {x: 0.5, y: 0.5},
                 visible: false
             }))

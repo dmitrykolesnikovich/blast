@@ -1,8 +1,8 @@
 import {ColorSource, Container, IPointData, ISize, Rectangle, Sprite, Texture} from "pixi.js"
 import gsap from "gsap";
 import Label from "./Label";
+import {ClickListener, setupClickListener} from "../../features/click";
 
-type ButtonClickListener = (button: Button) => void
 
 export type ButtonOptions = {
     position: IPointData
@@ -15,7 +15,7 @@ export type ButtonOptions = {
     backgroundSize?: ISize
     checkbox?: boolean
     toggle?: boolean,
-    click?: ButtonClickListener
+    click?: ClickListener
     enabled?: boolean,
     label?: Label
 }
@@ -30,18 +30,6 @@ export default class Button extends Container {
     constructor(options: ButtonOptions) {
         super()
         this.options = options
-
-        function setupButtonClickListener(button: Button) {
-            button.eventMode = "dynamic"
-            button.on("pointerdown", () => {
-                const {checkbox, toggle, click} = button.options
-                if (checkbox || toggle) {
-                    button.enabled = !button.enabled
-                } else if (button.enabled) {
-                    if (click) click(button)
-                }
-            })
-        }
 
         function setupSprite(sprite: Sprite, size: ISize, anchor?: IPointData, tint?: ColorSource, image?: string) {
             if (image) {
@@ -58,7 +46,7 @@ export default class Button extends Container {
         }
 
         const {position, size, foreground, anchor, tint, backgroundSize, enabled = true, label} = options
-        setupButtonClickListener(this)
+        setupClickListener(this)
         this.position = position
         setupSprite(this.backgroundSprite, backgroundSize ?? size, anchor, tint)
         setupSprite(this.foregroundSprite, size, anchor, tint, foreground)

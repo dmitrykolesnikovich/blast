@@ -2,9 +2,9 @@ import {bootstrap, context} from "./engine"
 import * as resources from "../res"
 import * as productionResources from "../gen"
 import manifest from "./manifest"
-import navigate from "./features/navigate";
-import WelcomeScreen from "./ui/WelcomeScreen";
-import SettingsScreen from "./ui/SettingsScreen"
+import navigate from "./features/navigate"
+import LevelChooserScreen from "./ui/LevelChooserScreen"
+import settings from "./features/settings";
 
 bootstrap(main)
 
@@ -13,5 +13,6 @@ async function main() {
     // dynamiteExample()
     // nineSlicePlaneExample()
     // texturePackerExample()
-    navigate(new SettingsScreen())
+    settings.gender = 'girl'
+    navigate(new LevelChooserScreen())
 }

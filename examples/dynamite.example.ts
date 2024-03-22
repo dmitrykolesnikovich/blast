@@ -7,7 +7,7 @@ import Image from "../src/ui/views/Image"
 export function dynamiteExample() {
     // 123
     const dynamite: Sprite = new Image({
-        image: boosterDynamitePng,
+        foreground: boosterDynamitePng,
         anchor: {x: 0.5, y: 0.5},
         position: {x: 225, y: 600},
         size: {width: 130, height: 130}

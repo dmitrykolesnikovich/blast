@@ -1,6 +1,9 @@
-const settings = {
-    soundEnabled: true,
-    musicEnabled: true,
+import {Gender} from "../ui/views/Avatar"
+
+class Settings {
+    soundEnabled: boolean = true
+    musicEnabled: boolean = true
+    gender: Gender
 }
 
-export default settings
+export default new Settings()

@@ -34,25 +34,25 @@ export default class WelcomeScreen extends View<Layout> {
             backgroundGame: new Image({
                 position: {x: -27.5, y: 0},
                 size: {width: 505, height: 800},
-                image: backgroundGameJpg
+                foreground: backgroundGameJpg
             }),
             particlesShineRadial1: new Image({
                 position: {x: 225, y: 220},
                 anchor: {x: 0.5, y: 0.5},
                 size: {width: 900, height: 900},
-                image: particlesShineRadial1Png
+                foreground: particlesShineRadial1Png
             }),
             particlesShineRadial2: new Image({
                 position: {x: 225, y: 220},
                 anchor: {x: 0.5, y: 0.5},
                 size: {width: 900, height: 900},
-                image: particlesShineRadial2Png
+                foreground: particlesShineRadial2Png
             }),
             logo: new Image({
                 position: {x: 225, y: 200},
                 anchor: {x: 0.5, y: 0.5},
                 size: {width: 226.8, height: 235},
-                image: logoPng
+                foreground: logoPng
             }),
             play: new Button({
                 position: {x: 225, y: 550},

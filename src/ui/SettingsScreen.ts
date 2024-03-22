@@ -24,16 +24,13 @@ import RadioButtonGroup from "./views/RadioButtonGroup"
 import Image from "./views/Image"
 import Label from "./views/Label"
 import Button from "./views/Button"
+import Avatar from "./views/Avatar";
 
 type Layout = {
     panelAlert1: Container
     buttonClose: Image
-    avatarGirl: Image
-    avatarBorder1: Image
-    avatarBorderShadow1: Image
-    avatarBoy: Image
-    avatarBorder2: Image
-    avatarBorderShadow2: Image
+    avatarGirl: Avatar
+    avatarBoy: Avatar
     radioButtons: Container
     divider1: Image
     divider2: Image
@@ -63,43 +60,15 @@ export default class SettingsScreen extends View<Layout> {
             buttonClose: new Image({
                 position: {x: 330, y: 110},
                 size: {width: 60, height: 60},
-                image: buttonClosePng
+                foreground: buttonClosePng
             }),
-            avatarGirl: new Image({
+            avatarGirl: new Avatar({
                 position: {x: 150, y: 240},
-                anchor: {x: 0.5, y: 0.5},
-                size: {width: 78, height: 78},
-                image: avatarGirlPng
+                gender: 'girl'
             }),
-            avatarBorderShadow1: new Image({
-                position: {x: 150, y: 240},
-                anchor: {x: 0.5, y: 0.5},
-                size: {width: 110, height: 110},
-                image: avatarBorderShadowPng
-            }),
-            avatarBorder1: new Image({
-                position: {x: 150, y: 240},
-                anchor: {x: 0.5, y: 0.5},
-                size: {width: 100, height: 100},
-                image: avatarBorderPng
-            }),
-            avatarBoy: new Image({
+            avatarBoy: new Avatar({
                 position: {x: 300, y: 240},
-                anchor: {x: 0.5, y: 0.5},
-                size: {width: 78, height: 78},
-                image: avatarBoyPng
-            }),
-            avatarBorderShadow2: new Image({
-                position: {x: 300, y: 240},
-                anchor: {x: 0.5, y: 0.5},
-                size: {width: 110, height: 110},
-                image: avatarBorderShadowPng
-            }),
-            avatarBorder2: new Image({
-                position: {x: 300, y: 240},
-                anchor: {x: 0.5, y: 0.5},
-                size: {width: 100, height: 100},
-                image: avatarBorderPng
+                gender: 'boy'
             }),
             radioButtons: new RadioButtonGroup({
                 position: {x: 120, y: 315},
@@ -121,13 +90,13 @@ export default class SettingsScreen extends View<Layout> {
                 position: {x: 225, y: 340},
                 anchor: {x: 0.5, y: 0.5},
                 size: {width: 300, height: 3.75},
-                image: dividerPng
+                foreground: dividerPng
             }),
             iconSound: new Image({
                 position: {x: 100, y: 370},
                 anchor: {x: 0, y: 0.5},
                 size: {width: 20, height: 20},
-                image: iconSoundPng,
+                foreground: iconSoundPng,
                 tint: 0x00b9e7
             }),
             textSound: new Label({
@@ -156,7 +125,7 @@ export default class SettingsScreen extends View<Layout> {
                 position: {x: 100, y: 410},
                 anchor: {x: 0, y: 0.5},
                 size: {width: 20, height: 20},
-                image: iconMusicPng,
+                foreground: iconMusicPng,
                 tint: 0x00b9e7
             }),
             textMusic: new Label({
@@ -206,13 +175,13 @@ export default class SettingsScreen extends View<Layout> {
                 position: {x: 225, y: 510},
                 anchor: {x: 0.5, y: 0.5},
                 size: {width: 300, height: 3.75},
-                image: dividerPng
+                foreground: dividerPng
             }),
             iconReset: new Image({
                 position: {x: 100, y: 540},
                 anchor: {x: 0.5, y: 0.5},
                 size: {width: 20, height: 20},
-                image: iconResetPng,
+                foreground: iconResetPng,
                 tint: 'red'
             }),
             textReset: new Label({
@@ -237,7 +206,7 @@ export default class SettingsScreen extends View<Layout> {
                 position: {x: 225, y: 565},
                 anchor: {x: 0.5, y: 0.5},
                 size: {width: 300, height: 3.75},
-                image: dividerPng
+                foreground: dividerPng
             }),
             buttonHelp: new Button({
                 position: {x: 190, y: 596},

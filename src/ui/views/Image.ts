@@ -3,7 +3,7 @@ import {ColorSource, IPointData, ISize, Point, Sprite, Texture} from "pixi.js";
 type SpriteOptions = {
     position?: IPointData,
     size: ISize,
-    image: string,
+    foreground?: string,
     anchor?: IPointData,
     tint?: ColorSource,
     visible?: boolean
@@ -13,8 +13,8 @@ export default class Image extends Sprite {
 
     constructor(options: SpriteOptions) {
         super()
-        const {position, size, image, anchor, tint, visible} = options
-        this.texture = Texture.from(image)
+        const {position, size, foreground, anchor, tint, visible} = options
+        this.texture = foreground ? Texture.from(foreground) : Texture.EMPTY
         this.position = position ?? new Point()
         this.width = size.width
         this.height = size.height
@@ -27,6 +27,15 @@ export default class Image extends Sprite {
         if (visible !== undefined) {
             this.visible = visible
         }
+    }
+
+    set foreground(foreground: string) {
+        this.texture = Texture.from(foreground)
+    }
+
+    set size(size: ISize) {
+        this.width = size.width
+        this.height = size.height
     }
 
 }
