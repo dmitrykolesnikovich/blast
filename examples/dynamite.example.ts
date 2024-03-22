@@ -1,5 +1,4 @@
-import {context, startTimer, View} from "../src/engine"
-import {createSprite} from "../src/engine/Sprite"
+import {context, createSprite, startTimer, View} from "../src/engine"
 import {Assets, Sprite} from "pixi.js"
 import {Emitter, upgradeConfig} from "@pixi/particle-emitter"
 import gsap from "gsap"
