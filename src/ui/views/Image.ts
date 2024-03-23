@@ -1,4 +1,4 @@
-import {ColorSource, IPointData, ISize, Point, Sprite, Texture} from "pixi.js";
+import {ColorSource, IPointData, ISize, Point, Sprite, Texture} from "pixi.js"
 
 type ImageOptions = {
     position?: IPointData,
@@ -7,13 +7,15 @@ type ImageOptions = {
     anchor?: IPointData,
     tint?: ColorSource,
     visible?: boolean
+    angle?: number
+    alpha?: number
 }
 
 export default class Image extends Sprite {
 
     constructor(options: ImageOptions) {
         super()
-        const {position, size, foreground, anchor, tint, visible} = options
+        const {position, size, foreground, anchor, tint, visible, angle, alpha} = options
         this.texture = foreground ? Texture.from(foreground) : Texture.EMPTY
         this.position = position ?? new Point()
         this.width = size.width
@@ -26,6 +28,12 @@ export default class Image extends Sprite {
         }
         if (visible !== undefined) {
             this.visible = visible
+        }
+        if (angle !== undefined) {
+            this.angle = angle
+        }
+        if (alpha !== undefined) {
+            this.alpha = alpha
         }
     }
 

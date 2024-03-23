@@ -1,15 +1,17 @@
 import {Container, IPointData} from "pixi.js"
 import {panelTitle} from "../../features/ninePatch"
 import Button from "./Button"
-import {
-    buttonCircleGreenPng,
-    buttonCircleGreyPng, coins1Png,
-    iconMorePng, life1Png
-} from "../../../res"
 import Image from "./Image"
 import Label from "./Label"
 import settings from "../../features/settings"
 import panel from "./Panel"
+import {
+    buttonCircleGreenPng,
+    buttonCircleGreyPng,
+    coins1Png,
+    iconMorePng,
+    life1Png
+} from "../../../res"
 
 type RefillPanelType = 'coins' | 'lives'
 

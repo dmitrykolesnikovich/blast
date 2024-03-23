@@ -35,6 +35,7 @@ import buttonRectangleGreenDarkPng from "./images/button/buttonRectangleGreenDar
 import buttonRectangleGreenSmallPng from "./images/button/buttonRectangleGreenSmall.png"
 import buttonRectanglePinkPng from "./images/button/buttonRectanglePink.png"
 import buttonRectangleRedPng from "./images/button/buttonRectangleRed.png"
+import buttonRectangleShadowPng from "./images/button/buttonRectangleShadow.png"
 import cloud1Png from "./images/cloud/cloud1.png"
 import cloud2Png from "./images/cloud/cloud2.png"
 import cloud3Png from "./images/cloud/cloud3.png"
@@ -136,6 +137,7 @@ export {
     buttonRectangleGreenSmallPng,
     buttonRectanglePinkPng,
     buttonRectangleRedPng,
+    buttonRectangleShadowPng,
     cloud1Png,
     cloud2Png,
     cloud3Png,

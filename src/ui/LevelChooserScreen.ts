@@ -1,33 +1,14 @@
 import {View} from "../engine"
 import Image from "./views/Image"
 import {
-    avatarBoyPng,
-    avatarGirlPng,
-    avatarIndicatorPng,
-    avatarIndicatorShinePng,
     background1Jpg,
     background2Jpg,
     background3Jpg,
     background4Jpg,
     background5Jpg,
     buttonCircleBluePng,
-    buttonCircleGreenPng,
-    buttonCircleGreyPng,
-    buttonLevelDisabledPng,
-    buttonLevelPng,
-    buttonLevelShadowPng,
-    buttonLevelShinePng,
-    cloud1Png,
-    cloud2Png,
-    cloud3Png,
     cloudLevelPng,
-    coins1Png,
-    iconArrowBackPng,
-    iconMorePng,
-    life1Png,
-    panelTitlePng,
-    starSmallGreyPng,
-    starSmallYellowPng
+    iconArrowBackPng
 } from "../../res"
 import Scroll from "./views/Scroll"
 import Avatar from "./views/Avatar"
@@ -42,12 +23,6 @@ type Layout = {
     back: Button
     refillLives: RefillPanel
     refillCoins: RefillPanel
-    // panelTitle: Sprite
-    // life1: Sprite
-    // coins1: Sprite
-    // buttonCircleGreen: Sprite
-    // buttonCircleGrey: Sprite
-    // iconMore: Sprite
 }
 
 export default class LevelChooserScreen extends View<Layout> {
@@ -205,72 +180,6 @@ export default class LevelChooserScreen extends View<Layout> {
                 position: {x: 355, y: 50},
                 type: 'coins'
             }),
-            // panelTitle: new Image({
-            //     position: {x: 0, y: 0},
-            //     size: {width: 100, height: 100},
-            //     foreground: panelTitlePng
-            // }),
-            // life1: new Image({
-            //     position: {x: 0, y: 0},
-            //     size: {width: 100, height: 100},
-            //     foreground: life1Png
-            // }),
-            // coins1: new Image({
-            //     position: {x: 0, y: 0},
-            //     size: {width: 100, height: 100},
-            //     foreground: coins1Png
-            // }),
-            // buttonCircleGreen: new Image({
-            //     position: {x: 0, y: 0},
-            //     size: {width: 100, height: 100},
-            //     foreground: buttonCircleGreenPng
-            // }),
-            // buttonCircleGrey: new Image({
-            //     position: {x: 0, y: 0},
-            //     size: {width: 100, height: 100},
-            //     foreground: buttonCircleGreyPng
-            // }),
-            // iconMore: new Image({
-            //     position: {x: 0, y: 0},
-            //     size: {width: 100, height: 100},
-            //     foreground: iconMorePng
-            // }),
-            // starSmallYellow: new Image({
-            //     position: {x: 0, y: 0},
-            //     size: {width: 100, height: 100},
-            //     foreground: starSmallYellowPng
-            // }),
-            // starSmallGrey: new Image({
-            //     position: {x: 0, y: 0},
-            //     size: {width: 100, height: 100},
-            //     foreground: starSmallGreyPng
-            // }),
-
-            // cloud1: new Image({
-            //     position: {x: 0, y: 0},
-            //     size: {width: 100, height: 100},
-            //     foreground: cloud1Png
-            // }),
-            // cloud2: new Image({
-            //     position: {x: 0, y: 0},
-            //     size: {width: 100, height: 100},
-            //     foreground: cloud2Png
-            // }),
-            // cloud3: new Image({
-            //     position: {x: 0, y: 0},
-            //     size: {width: 100, height: 100},
-            //     foreground: cloud3Png
-            // }),
-            // buttonCircleBlue: new Image({
-            //     position: {x: 0, y: 0},
-            //     size: {width: 100, height: 100},
-            //     foreground: buttonCircleBluePng
-            // }),
-            // iconArrowBack: new Image({
-            //     position: {x: 0, y: 0},
-            //     size: {width: 100, height: 100},
-            //     foreground: iconArrowBackPng
-            // }),
         }
 
         const {background, refillLives, refillCoins} = this.layout

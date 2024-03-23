@@ -28,7 +28,6 @@ import Avatar from "./views/Avatar";
 
 type Layout = {
     panelAlert1: Container
-    buttonClose: Image
     avatarGirl: Avatar
     avatarBoy: Avatar
     radioButtons: Container
@@ -56,11 +55,6 @@ export default class SettingsScreen extends View<Layout> {
             panelAlert1: popup1({
                 position: {x: 225, y: 400},
                 size: {width: 450, height: 620},
-            }),
-            buttonClose: new Image({
-                position: {x: 330, y: 110},
-                size: {width: 60, height: 60},
-                foreground: buttonClosePng
             }),
             avatarGirl: new Avatar({
                 position: {x: 150, y: 240},

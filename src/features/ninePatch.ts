@@ -1,9 +1,16 @@
 import {IPointData, ISize, NineSlicePlane, Texture} from "pixi.js"
-import {buttonRectangleRedPng, panelAlert1Png, panelTitlePng} from "../../res"
 import {Container} from "@pixi/display"
 import {checkSize} from "../engine"
 import Button, {ButtonOptions} from "../ui/views/Button"
 import Label from "../ui/views/Label"
+import Image from "../ui/views/Image"
+import {
+    buttonClosePng,
+    buttonRectangleRedPng,
+    panelAlert1Png,
+    panelInfoPng,
+    panelTitlePng
+} from "../../res"
 
 type PanelOptions = {
     position: IPointData,
@@ -11,26 +18,8 @@ type PanelOptions = {
     label?: Label
 }
 
-/** popup minimum size: (400, 240) */
-export function popup1(options: PanelOptions): Container {
-    checkSize(options.size, {min: {width: 400, height: 240}})
-
-    const {position, size} = options
-    const popup: NineSlicePlane = new NineSlicePlane(Texture.from(panelAlert1Png), 180, 100, 180, 100)
-    popup.position = position
-    popup.width = size.width
-    popup.height = size.height
-    popup.pivot.x = popup.width / 2
-    popup.pivot.y = popup.height / 2
-    return popup
-}
-
-/** popup minimum size: (90, 50) */
-export function panelTitle(options: PanelOptions): Container {
-    checkSize(options.size, {min: {width: 100, height: 50}})
-
+function setupPanelOptions(panel: Container, options: PanelOptions): Container {
     const {position, size, label} = options
-    const panel: NineSlicePlane = new NineSlicePlane(Texture.from(panelTitlePng), 25, 25, 25, 25)
     panel.position = position
     panel.width = size.width
     panel.height = size.height
@@ -41,6 +30,34 @@ export function panelTitle(options: PanelOptions): Container {
     }
     return panel
 }
+
+/** popup minimum size: (400, 240) */
+export function popup1(options: PanelOptions): Container {
+    checkSize(options.size, {min: {width: 400, height: 240}})
+    const popup: Container = setupPanelOptions(new NineSlicePlane(Texture.from(panelAlert1Png), 180, 100, 180, 100), options)
+
+    const {size} = options
+    const buttonClose: Image = popup.addChild(new Image({
+        position: {x: size.width - 90, y: 50},
+        anchor: {x: 0.5, y: 0.5},
+        size: {width: 60, height: 60},
+        foreground: buttonClosePng
+    }))
+    return popup
+}
+
+/** popup minimum size: (90, 50) */
+export function panelTitle(options: PanelOptions): Container {
+    checkSize(options.size, {min: {width: 100, height: 50}})
+    return setupPanelOptions(new NineSlicePlane(Texture.from(panelTitlePng), 25, 25, 25, 25), options)
+}
+
+/** popup minimum size: (100, 100) */
+export function paneInfo(options: PanelOptions): Container {
+    checkSize(options.size, {min: {width: 100, height: 100}})
+    return setupPanelOptions(new NineSlicePlane(Texture.from(panelInfoPng), 40, 60, 40, 60), options)
+}
+
 
 export function redButton(options: ButtonOptions): Button {
     const {size} = options

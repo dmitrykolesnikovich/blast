@@ -2,13 +2,14 @@ import {ColorSource, Container, IPointData, ISize, Rectangle, Sprite, Texture} f
 import gsap from "gsap";
 import Label from "./Label";
 import {ClickListener, setupClickListener} from "../../features/click";
-
+import Image from "./Image"
 
 export type ButtonOptions = {
     position: IPointData
     size: ISize
     foreground?: string
     anchor?: IPointData
+    backgroundAnchor?: IPointData
     tint?: ColorSource
     background?: string
     backgroundDisabled?: string
@@ -18,6 +19,7 @@ export type ButtonOptions = {
     click?: ClickListener
     enabled?: boolean,
     label?: Label
+    icons?: Array<Image>
 }
 
 export default class Button extends Container {
@@ -44,13 +46,16 @@ export default class Button extends Container {
             }
         }
 
-        const {position, size, foreground, anchor, tint, backgroundSize, enabled = true, label} = this.options = options
+        const {position, size, foreground, backgroundAnchor, anchor, tint, backgroundSize, enabled = true, label, icons} = this.options = options
         setupClickListener(this)
         this.position = position
-        setupSprite(this.backgroundSprite, backgroundSize ?? size, anchor, tint)
-        setupSprite(this.foregroundSprite, size, anchor, tint, foreground)
+        setupSprite(this.backgroundSprite, backgroundSize ?? size, backgroundAnchor ?? anchor, tint)
+        setupSprite(this.foregroundSprite, size, anchor, undefined, foreground)
         if (label) {
             this.addChild(label)
+        }
+        if (icons) {
+            icons.forEach(icon => this.addChild(icon))
         }
         this.enabled = enabled
     }
