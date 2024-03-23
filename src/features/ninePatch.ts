@@ -5,7 +5,7 @@ import Button, {ButtonOptions} from "../ui/views/Button"
 import Label from "../ui/views/Label"
 import Image from "../ui/views/Image"
 import {
-    buttonClosePng,
+    buttonClosePng, buttonRectangleGreenPng,
     buttonRectangleRedPng,
     panelAlert1Png,
     panelInfoPng,
@@ -59,9 +59,10 @@ export function paneInfo(options: PanelOptions): Container {
 }
 
 
-export function redButton(options: ButtonOptions): Button {
+export function buttonColored(color: 'green' | 'red', options: ButtonOptions): Button {
     const {size} = options
-    const image: Container = new NineSlicePlane(Texture.from(buttonRectangleRedPng), 32, 0, 32, 0)
+    const imagePath: string = color === 'red' ? buttonRectangleRedPng : buttonRectangleGreenPng
+    const image: Container = new NineSlicePlane(Texture.from(imagePath), 32, 0, 32, 0)
     image.width = size.width + 32
     image.height = size.height + 16
     image.pivot.x = image.width / 2

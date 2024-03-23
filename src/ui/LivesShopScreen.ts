@@ -1,3 +1,4 @@
+import {Container} from "pixi.js"
 import {View} from "../engine"
 import Image from "./views/Image"
 import {paneInfo, popup1} from "../features/ninePatch"
@@ -11,7 +12,6 @@ import {
     life1Png,
     life3Png,
 } from "../../res"
-import {Container} from "pixi.js"
 
 type Layout = {
     background: Image
@@ -147,7 +147,6 @@ export default class LivesShopScreen extends View<Layout> {
                 },
                 text: "FULL"
             }),
-
         }
     }
 }

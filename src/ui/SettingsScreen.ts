@@ -18,7 +18,7 @@ import {
     iconResetPng,
     iconSoundPng,
 } from "../../res"
-import {popup1, redButton} from "../features/ninePatch"
+import {popup1, buttonColored} from "../features/ninePatch"
 import {Container} from "@pixi/display"
 import RadioButtonGroup from "./views/RadioButtonGroup"
 import Image from "./views/Image"
@@ -190,7 +190,7 @@ export default class SettingsScreen extends View<Layout> {
                     fontWeight: '400'
                 }
             }),
-            reset: redButton({
+            reset: buttonColored('red', {
                 position: {x: 350, y: 540},
                 anchor: {x: 0.5, y: 0.5},
                 size: {width: 24, height: 24},
