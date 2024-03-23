@@ -5,8 +5,8 @@ import Button, {ButtonOptions} from "../ui/views/Button"
 import Label from "../ui/views/Label"
 import Image from "../ui/views/Image"
 import {
-    buttonClosePng,
-    buttonRectangleGreenPng,
+    buttonClosePng, buttonRectangleGreenDarkPng,
+    buttonRectangleGreenPng, buttonRectanglePinkPng,
     buttonRectangleRedPng, coins1Png,
     panelAlert1Png,
     panelCoinsPng, panelGoalPng,
@@ -66,9 +66,27 @@ export function panelGoal(options: PanelOptions): Container {
     return setupPanelOptions(new NineSlicePlane(Texture.from(panelGoalPng), 40, 60, 40, 60), options)
 }
 
-export function buttonColored(color: 'green' | 'red', options: ButtonOptions): Button {
+export function buttonColored(color: 'green' | 'greenDark' | 'pink' | 'red', options: ButtonOptions): Button {
     const {size} = options
-    const imagePath: string = color === 'red' ? buttonRectangleRedPng : buttonRectangleGreenPng
+    let imagePath: string
+    switch (color) {
+        case "green": {
+            imagePath = buttonRectangleGreenPng
+            break
+        }
+        case "greenDark": {
+            imagePath = buttonRectangleGreenDarkPng
+            break
+        }
+        case "pink": {
+            imagePath = buttonRectanglePinkPng
+            break
+        }
+        case "red": {
+            imagePath = buttonRectangleRedPng
+            break
+        }
+    }
     const image: Container = new NineSlicePlane(Texture.from(imagePath), 32, 0, 32, 0)
     image.width = size.width + 32
     image.height = size.height + 16

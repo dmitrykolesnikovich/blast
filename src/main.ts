@@ -4,7 +4,7 @@ import * as productionResources from "../gen"
 import manifest from "./manifest"
 import navigate from "./features/navigate"
 import settings from "./features/settings"
-import GameScreen from "./ui/GameScreen"
+import QuitScreen from "./ui/QuitScreen"
 
 bootstrap(main)
 
@@ -16,5 +16,5 @@ async function main() {
     settings.gender = 'girl'
     settings.lives = 5
     settings.coins = 88
-    navigate(new GameScreen())
+    navigate(new QuitScreen())
 }
