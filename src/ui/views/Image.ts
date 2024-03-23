@@ -1,4 +1,5 @@
 import {ColorSource, IPointData, ISize, Point, Sprite, Texture} from "pixi.js"
+import Label from "./Label"
 
 type ImageOptions = {
     position?: IPointData,
@@ -9,13 +10,16 @@ type ImageOptions = {
     visible?: boolean
     angle?: number
     alpha?: number
+    label?: Label
 }
 
 export default class Image extends Sprite {
 
+    private readonly options: ImageOptions
+
     constructor(options: ImageOptions) {
         super()
-        const {position, size, foreground, anchor, tint, visible, angle, alpha} = options
+        const {position, size, foreground, anchor, tint, visible, angle, alpha, label} = this.options = options
         this.texture = foreground ? Texture.from(foreground) : Texture.EMPTY
         this.position = position ?? new Point()
         this.width = size.width
@@ -35,6 +39,9 @@ export default class Image extends Sprite {
         if (alpha !== undefined) {
             this.alpha = alpha
         }
+        if (label !== undefined) {
+            this.addChild(label)
+        }
     }
 
     set foreground(foreground: string) {
@@ -44,6 +51,13 @@ export default class Image extends Sprite {
     set size(size: ISize) {
         this.width = size.width
         this.height = size.height
+    }
+
+    set text(text: string | number) {
+        const label: Label | undefined = this.options.label
+        if (label !== undefined) {
+            label.text = text
+        }
     }
 
 }
