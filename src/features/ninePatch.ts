@@ -5,9 +5,11 @@ import Button, {ButtonOptions} from "../ui/views/Button"
 import Label from "../ui/views/Label"
 import Image from "../ui/views/Image"
 import {
-    buttonClosePng, buttonRectangleGreenPng,
-    buttonRectangleRedPng,
+    buttonClosePng,
+    buttonRectangleGreenPng,
+    buttonRectangleRedPng, coins1Png,
     panelAlert1Png,
+    panelCoinsPng,
     panelInfoPng,
     panelTitlePng
 } from "../../res"
@@ -46,18 +48,17 @@ export function popup1(options: PanelOptions): Container {
     return popup
 }
 
-/** popup minimum size: (90, 50) */
+/** panel minimum size: (90, 50) */
 export function panelTitle(options: PanelOptions): Container {
     checkSize(options.size, {min: {width: 100, height: 50}})
     return setupPanelOptions(new NineSlicePlane(Texture.from(panelTitlePng), 25, 25, 25, 25), options)
 }
 
-/** popup minimum size: (100, 100) */
-export function paneInfo(options: PanelOptions): Container {
+/** panel minimum size: (100, 100) */
+export function panelInfo(options: PanelOptions): Container {
     checkSize(options.size, {min: {width: 100, height: 100}})
     return setupPanelOptions(new NineSlicePlane(Texture.from(panelInfoPng), 40, 60, 40, 60), options)
 }
-
 
 export function buttonColored(color: 'green' | 'red', options: ButtonOptions): Button {
     const {size} = options
@@ -73,4 +74,19 @@ export function buttonColored(color: 'green' | 'red', options: ButtonOptions): B
         button.addChildAt(image, 0)
     }
     return button
+}
+
+/** panel minimum size: (60, 40) */
+export function panelCoins(options: PanelOptions): Container {
+    checkSize(options.size, {min: {width: 60, height: 40}})
+    const panel: Container = setupPanelOptions(new NineSlicePlane(Texture.from(panelCoinsPng), 30, 20, 30, 20), options)
+
+    const {size} = options
+    panel.addChild(new Image({
+        position: {x: 0, y: size.height / 2},
+        anchor: {x: 0.4, y: 0.5},
+        size: {width: 0.97 * size.height * 1.15, height: size.height * 1.15},
+        foreground: coins1Png,
+    }))
+    return panel
 }

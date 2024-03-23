@@ -1,7 +1,7 @@
 import {Container} from "pixi.js"
 import {View} from "../engine"
 import Image from "./views/Image"
-import {paneInfo, popup1} from "../features/ninePatch"
+import {panelInfo, popup1} from "../features/ninePatch"
 import Label from "./views/Label"
 import Button from "./views/Button"
 import Life from "./views/Life"
@@ -44,7 +44,7 @@ export default class LivesShopScreen extends View<Layout> {
                 position: {x: 225, y: 400},
                 size: {width: 450, height: 490},
             }),
-            panelInfo: paneInfo({
+            panelInfo: panelInfo({
                 position: {x: 225, y: 340},
                 size: {width: 300, height: 170},
             }),
