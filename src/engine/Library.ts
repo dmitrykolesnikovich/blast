@@ -32,3 +32,7 @@ export function checkSize(size: ISize, range: { min?: ISize, max?: ISize }) {
         if (size.height > range.max.height) throw new Error(`${size.height} > ${range.max.height}`)
     }
 }
+
+export type Orientation = 'horizontal' | 'vertical'
+
+export type Direction = 'left' | 'right' | 'up' | 'down'

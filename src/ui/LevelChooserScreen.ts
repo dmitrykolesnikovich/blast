@@ -34,6 +34,7 @@ import Scroll from "./views/Scroll";
 import Avatar from "./views/Avatar";
 import settings from "../features/settings";
 import LevelButton from "./views/LevelButton";
+import clouds from "../features/clouds"
 
 type Layout = {
     background: Scroll
@@ -262,6 +263,6 @@ export default class LevelChooserScreen extends View<Layout> {
 
         const {background} = this.layout
         background.scrollToEnd()
-
+        clouds(background)
     }
 }

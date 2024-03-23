@@ -1,25 +1,9 @@
 import {DEG_TO_RAD} from "pixi.js"
 
-export function randomInt(max: number): number {
-    return Math.floor(Math.random() * max)
-}
-
-export function randomIntInRange(min: number, max: number): number {
-    min = Math.ceil(min)
-    max = Math.floor(max)
-    return Math.floor(Math.random() * (max - min + 1)) + min
-}
-
-// fixme quick and dirty
-export function randomIntsUnique(max: number, count: number): number[] {
-    const result: number[] = []
-    while (result.length != count) {
-        let int: number = randomInt(max)
-        if (!result.includes(int)) {
-            result.push(int)
-        }
-    }
-    return result
+/** inclusive range */
+export function randomInt(min: number, max: number): number {
+    const int: number = min + Math.random() * (max + 1 - min)
+    return Math.floor(int)
 }
 
 export function clamp(num: number, min: number, max: number): number {

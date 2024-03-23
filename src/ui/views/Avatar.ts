@@ -61,11 +61,11 @@ export default class Avatar extends Container {
         }
     }
 
-    // quickfix todo improve
     set level(level: number) {
-        if (this.parent == null) return
+        if (this.parent?.parent !instanceof Scroll) return // quickfix todo improve
+        const scroll: Scroll = this.parent?.parent as Scroll
         const buttonIndex = level - 1;
-        const buttons: LevelButton[] = this.parent.children.filter(it => it instanceof LevelButton) as LevelButton[]
+        const buttons: LevelButton[] = scroll.buttons
         const button: LevelButton = buttons[buttonIndex];
         const buttonPosition: IPoint = button.position;
         this.position.x = buttonPosition.x

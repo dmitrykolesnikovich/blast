@@ -34,9 +34,6 @@ export function containerOf<T extends DisplayObject>(...children: T[]): Containe
 
 Particle.prototype.isInteractive = () => false
 
-export type Orientation = 'horizontal' | 'vertical'
-
-
 type TilingSpriteOptions = {
     position: IPointData,
     size: ISize,
@@ -45,7 +42,6 @@ type TilingSpriteOptions = {
     anchor?: IPointData,
     tint?: ColorSource
 }
-
 
 export function createTilingSprite(options: TilingSpriteOptions): TilingSprite {
     const {position, size, scale = 1, image, anchor} = options
@@ -56,4 +52,9 @@ export function createTilingSprite(options: TilingSpriteOptions): TilingSprite {
         sprite.anchor.copyFrom(anchor)
     }
     return sprite
+}
+
+export function flipSpriteHorizontally(sprite: Sprite) {
+    sprite.anchor.x = 1
+    sprite.scale.x *= -1
 }

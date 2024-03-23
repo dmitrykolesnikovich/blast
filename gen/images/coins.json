@@ -1,6 +1,6 @@
 {
     "frames": {
-         "images/coins/coins1.png": {
+        "images/coins/coins1.png": {
             "frame": {
                 "x": 1,
                 "y": 1,
@@ -20,7 +20,7 @@
                 "h": 72
             }
         },
-         "images/coins/coins2.png": {
+        "images/coins/coins2.png": {
             "frame": {
                 "x": 73,
                 "y": 1,
@@ -40,7 +40,7 @@
                 "h": 140
             }
         },
-         "images/coins/coins3.png": {
+        "images/coins/coins3.png": {
             "frame": {
                 "x": 257,
                 "y": 1,
@@ -60,7 +60,7 @@
                 "h": 211
             }
         },
-         "images/coins/coins4.png": {
+        "images/coins/coins4.png": {
             "frame": {
                 "x": 1,
                 "y": 214,
@@ -80,7 +80,7 @@
                 "h": 209
             }
         },
-         "images/coins/coins5.png": {
+        "images/coins/coins5.png": {
             "frame": {
                 "x": 244,
                 "y": 214,
@@ -100,7 +100,7 @@
                 "h": 220
             }
         },
-         "images/coins/coins6.png": {
+        "images/coins/coins6.png": {
             "frame": {
                 "x": 476,
                 "y": 1,
@@ -124,7 +124,7 @@
     "meta": {
         "app": "http://www.codeandweb.com/texturepacker",
         "version": "1.0",
-        "image":  "coins.png",
+        "image": "coins.png",
         "format": "RGBA8888",
         "size": {
             "w": 834,

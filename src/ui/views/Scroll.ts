@@ -1,6 +1,7 @@
 import {Container, Graphics, IPointData, ISize, Rectangle} from "pixi.js"
 import {animate, async, clamp, Environment} from "../../engine"
 import Avatar from "./Avatar";
+import LevelButton from "./LevelButton";
 
 type ScrollOptions = {
     position: IPointData
@@ -87,6 +88,10 @@ export default class Scroll extends Container {
 
     scrollTo(scrollY: number) {
         this.items.position.y = this.clampScrollY(scrollY)
+    }
+
+    get buttons(): Array<LevelButton> {
+        return this.items.children.filter(it => it instanceof LevelButton) as LevelButton[]
     }
 
 }
