@@ -198,11 +198,11 @@ export default class LevelChooserScreen extends View<Layout> {
                 backgroundSize: {width: 64, height: 64}
             }),
             refillLives: new RefillPanel({
-                position: {x: 100, y: 50},
+                position: {x: 110, y: 50},
                 type: 'lives'
             }),
             refillCoins: new RefillPanel({
-                position: {x: 350, y: 50},
+                position: {x: 355, y: 50},
                 type: 'coins'
             }),
             // panelTitle: new Image({

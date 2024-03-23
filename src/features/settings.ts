@@ -5,6 +5,7 @@ class Settings {
     musicEnabled: boolean = true
     gender: Gender
     lives: number
+    coins: number
 }
 
 export default new Settings()

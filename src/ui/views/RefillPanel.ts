@@ -22,10 +22,10 @@ export default class RefillPanel extends Container {
 
     private readonly options: RefillPanelOptions
     private readonly title: Label = new Label({
-        position: {x: 90, y: 25},
+        position: {x: 0, y: 25},
         anchor: {x: 0.5, y: 0.5},
         style: {
-            fontSize: 18,
+            fontSize: 22,
             fill: 'white',
             align: 'left',
             fontFamily: 'fredokaOne',
@@ -34,11 +34,11 @@ export default class RefillPanel extends Container {
     })
     private readonly background: Container = this.addChild(panelTitle({
         position: {x: 0, y: 0},
-        size: {width: 160, height: 50},
+        size: {width: 170, height: 50},
         label: this.title
     }))
     readonly button: Button = this.addChild(new Button({
-        position: {x: 56, y: 0},
+        position: {x: 61, y: 0},
         anchor: {x: 0.5, y: 0.5},
         size: {width: 24, height: 24},
         foreground: iconMorePng,
@@ -47,7 +47,7 @@ export default class RefillPanel extends Container {
         backgroundSize: {width: 40, height: 40},
     }))
     private icon: Container = this.addChild(panel({
-        position: {x: -56, y: 0}
+        position: {x: -64, y: 0}
     }))
 
     constructor(options: RefillPanelOptions) {
@@ -57,6 +57,7 @@ export default class RefillPanel extends Container {
 
         switch (type) {
             case 'lives': {
+                this.title.x = 92 // quickfix todo improve
                 this.icon.addChild(new Image({
                     position: {x: 0, y: 0},
                     anchor: {x: 0.5, y: 0.5},
@@ -80,6 +81,7 @@ export default class RefillPanel extends Container {
                 break
             }
             case 'coins': {
+                this.title.x = 88 // quickfix todo improve
                 this.icon.addChild(new Image({
                     position: {x: 0, y: 0},
                     anchor: {x: 0.5, y: 0.5},
@@ -96,12 +98,15 @@ export default class RefillPanel extends Container {
             case 'lives': {
                 const label: Label = this.icon.getChildAt(1) as Label // quickfix todo improve
                 label.text = settings.lives
-                if (settings.lives >= 5){
+                if (settings.lives >= 5) {
                     this.title.text = "FULL"
                 } else {
                     this.title.text = ""
                 }
                 break
+            }
+            case 'coins': {
+                this.title.text = settings.coins // quickfix todo improve
             }
         }
     }

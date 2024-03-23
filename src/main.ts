@@ -15,5 +15,6 @@ async function main() {
     // texturePackerExample()
     settings.gender = 'girl'
     settings.lives = 5
+    settings.coins = 88
     navigate(new LevelChooserScreen())
 }
