@@ -3,6 +3,7 @@ import Image from "./views/Image"
 import Button from "./views/Button"
 import Label from "./views/Label"
 import settings from "../features/settings"
+import Progress from "./views/Progress"
 import {
     backgroundGameJpg,
     boosterColorBombPng,
@@ -20,6 +21,7 @@ import {
 
 type Layout = {
     background: Image
+    indicatorProgress: Progress
     panelProgress: Image
     backgroundMoves: Image
     backgroundGoal: Image
@@ -46,6 +48,9 @@ export default class GameScreen extends View<Layout> {
                 position: {x: 0, y: 0},
                 size: {width: 450, height: 800},
                 foreground: backgroundGameJpg,
+            }),
+            indicatorProgress: new Progress({
+                position: {x: 180, y: 140}
             }),
             panelProgress: new Image({
                 position: {x: 0, y: 0},
@@ -205,10 +210,11 @@ export default class GameScreen extends View<Layout> {
             }),
         }
 
-        const {moves, goal, coins} = this.layout
+        const {moves, goal, coins, indicatorProgress} = this.layout
         moves.text = 12
         goal.text = 90
         coins.text = settings.coins
+        indicatorProgress.progress = 0.5
     }
 
 }

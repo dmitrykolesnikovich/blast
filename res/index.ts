@@ -69,6 +69,7 @@ import blockPng from "./images/misc/block.png"
 import dividerPng from "./images/misc/divider.png"
 import logoPng from "./images/misc/logo.png"
 import playPng from "./images/misc/play.png"
+import progressBarPng from "./images/misc/progressBar.png"
 import panelAlert1Png from "./images/panel/panelAlert1.png"
 import panelAlert2Png from "./images/panel/panelAlert2.png"
 import panelBoostersPng from "./images/panel/panelBoosters.png"
@@ -171,6 +172,7 @@ export {
     dividerPng,
     logoPng,
     playPng,
+    progressBarPng,
     panelAlert1Png,
     panelAlert2Png,
     panelBoostersPng,
