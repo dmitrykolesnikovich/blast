@@ -21,8 +21,7 @@ export default class Scroll extends Container {
 
     constructor(options: ScrollOptions) {
         super()
-        this.options = options
-        const {position, size, items, avatar} = options
+        const {position, size, items, avatar} = this.options = options
 
         this.position.copyFrom(position)
         let isDown: boolean = false

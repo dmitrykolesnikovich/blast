@@ -14,5 +14,6 @@ async function main() {
     // nineSlicePlaneExample()
     // texturePackerExample()
     settings.gender = 'girl'
+    settings.lives = 5
     navigate(new LevelChooserScreen())
 }

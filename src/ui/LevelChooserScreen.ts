@@ -1,4 +1,3 @@
-import {Sprite} from "pixi.js"
 import {View} from "../engine"
 import Image from "./views/Image"
 import {
@@ -30,28 +29,25 @@ import {
     starSmallGreyPng,
     starSmallYellowPng
 } from "../../res"
-import Scroll from "./views/Scroll";
-import Avatar from "./views/Avatar";
-import settings from "../features/settings";
-import LevelButton from "./views/LevelButton";
+import Scroll from "./views/Scroll"
+import Avatar from "./views/Avatar"
+import settings from "../features/settings"
+import LevelButton from "./views/LevelButton"
 import clouds from "../features/clouds"
+import Button from "./views/Button"
+import RefillPanel from "./views/RefillPanel"
 
 type Layout = {
     background: Scroll
+    back: Button
+    refillLives: RefillPanel
+    refillCoins: RefillPanel
     // panelTitle: Sprite
     // life1: Sprite
     // coins1: Sprite
     // buttonCircleGreen: Sprite
     // buttonCircleGrey: Sprite
     // iconMore: Sprite
-    // starSmallYellow: Sprite
-    // starSmallGrey: Sprite
-
-    // cloud1: Sprite
-    // cloud2: Sprite
-    // cloud3: Sprite
-    // buttonCircleBlue: Sprite
-    // iconArrowBack: Sprite
 }
 
 export default class LevelChooserScreen extends View<Layout> {
@@ -193,6 +189,22 @@ export default class LevelChooserScreen extends View<Layout> {
                     }),
                 ]
             }),
+            back: new Button({
+                position: {x: 50, y: 700},
+                anchor: {x: 0.5, y: 0.5},
+                size: {width: 32, height: 32},
+                foreground: iconArrowBackPng,
+                background: buttonCircleBluePng,
+                backgroundSize: {width: 64, height: 64}
+            }),
+            refillLives: new RefillPanel({
+                position: {x: 100, y: 50},
+                type: 'lives'
+            }),
+            refillCoins: new RefillPanel({
+                position: {x: 350, y: 50},
+                type: 'coins'
+            }),
             // panelTitle: new Image({
             //     position: {x: 0, y: 0},
             //     size: {width: 100, height: 100},
@@ -261,8 +273,10 @@ export default class LevelChooserScreen extends View<Layout> {
             // }),
         }
 
-        const {background} = this.layout
+        const {background, refillLives, refillCoins} = this.layout
         background.scrollToEnd()
         clouds(background)
+        refillLives.update()
+        refillCoins.update()
     }
 }

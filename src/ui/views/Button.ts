@@ -29,7 +29,6 @@ export default class Button extends Container {
 
     constructor(options: ButtonOptions) {
         super()
-        this.options = options
 
         function setupSprite(sprite: Sprite, size: ISize, anchor?: IPointData, tint?: ColorSource, image?: string) {
             if (image) {
@@ -45,7 +44,7 @@ export default class Button extends Container {
             }
         }
 
-        const {position, size, foreground, anchor, tint, backgroundSize, enabled = true, label} = options
+        const {position, size, foreground, anchor, tint, backgroundSize, enabled = true, label} = this.options = options
         setupClickListener(this)
         this.position = position
         setupSprite(this.backgroundSprite, backgroundSize ?? size, anchor, tint)

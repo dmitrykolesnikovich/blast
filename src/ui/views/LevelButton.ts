@@ -48,8 +48,7 @@ export default class LevelButton extends Container {
 
     constructor(options: LevelButtonOptions) {
         super()
-        this.options = options
-        const {position, enabled = false, active = false, level} = options
+        const {position, enabled = false, active = false, level} = this.options =options
         this.position = position
         this.enabled = enabled
         this.active = active

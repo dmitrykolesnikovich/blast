@@ -1,6 +1,6 @@
 import {ColorSource, IPointData, ISize, Point, Sprite, Texture} from "pixi.js";
 
-type SpriteOptions = {
+type ImageOptions = {
     position?: IPointData,
     size: ISize,
     foreground?: string,
@@ -11,7 +11,7 @@ type SpriteOptions = {
 
 export default class Image extends Sprite {
 
-    constructor(options: SpriteOptions) {
+    constructor(options: ImageOptions) {
         super()
         const {position, size, foreground, anchor, tint, visible} = options
         this.texture = foreground ? Texture.from(foreground) : Texture.EMPTY

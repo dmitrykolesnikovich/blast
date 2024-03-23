@@ -1,16 +1,18 @@
 import {IPointData, ISize, NineSlicePlane, Texture} from "pixi.js"
-import {buttonRectangleRedPng, panelAlert1Png} from "../../res"
+import {buttonRectangleRedPng, panelAlert1Png, panelTitlePng} from "../../res"
 import {Container} from "@pixi/display"
 import {checkSize} from "../engine"
 import Button, {ButtonOptions} from "../ui/views/Button"
+import Label from "../ui/views/Label"
 
-type PopupOptions = {
+type PanelOptions = {
     position: IPointData,
     size: ISize,
+    label?: Label
 }
 
 /** popup minimum size: (400, 240) */
-export function popup1(options: PopupOptions): Container {
+export function popup1(options: PanelOptions): Container {
     checkSize(options.size, {min: {width: 400, height: 240}})
 
     const {position, size} = options
@@ -23,7 +25,23 @@ export function popup1(options: PopupOptions): Container {
     return popup
 }
 
-/** popup minimum size: (60, 0) */
+/** popup minimum size: (90, 50) */
+export function panelTitle(options: PanelOptions): Container {
+    checkSize(options.size, {min: {width: 100, height: 50}})
+
+    const {position, size, label} = options
+    const panel: NineSlicePlane = new NineSlicePlane(Texture.from(panelTitlePng), 25, 25, 25, 25)
+    panel.position = position
+    panel.width = size.width
+    panel.height = size.height
+    panel.pivot.x = panel.width / 2
+    panel.pivot.y = panel.height / 2
+    if (label) {
+        panel.addChild(label)
+    }
+    return panel
+}
+
 export function redButton(options: ButtonOptions): Button {
     const {size} = options
     const image: Container = new NineSlicePlane(Texture.from(buttonRectangleRedPng), 32, 0, 32, 0)
