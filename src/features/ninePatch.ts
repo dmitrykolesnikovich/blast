@@ -9,7 +9,7 @@ import {
     buttonRectangleGreenPng,
     buttonRectangleRedPng, coins1Png,
     panelAlert1Png,
-    panelCoinsPng,
+    panelCoinsPng, panelGoalPng,
     panelInfoPng,
     panelTitlePng
 } from "../../res"
@@ -58,6 +58,12 @@ export function panelTitle(options: PanelOptions): Container {
 export function panelInfo(options: PanelOptions): Container {
     checkSize(options.size, {min: {width: 100, height: 100}})
     return setupPanelOptions(new NineSlicePlane(Texture.from(panelInfoPng), 40, 60, 40, 60), options)
+}
+
+/** panel minimum size: (100, 100) */
+export function panelGoal(options: PanelOptions): Container {
+    checkSize(options.size, {min: {width: 100, height: 100}})
+    return setupPanelOptions(new NineSlicePlane(Texture.from(panelGoalPng), 40, 60, 40, 60), options)
 }
 
 export function buttonColored(color: 'green' | 'red', options: ButtonOptions): Button {

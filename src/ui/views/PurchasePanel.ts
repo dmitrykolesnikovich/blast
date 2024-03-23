@@ -33,9 +33,9 @@ export default class PurchasePanel extends Container {
             foreground: panelListPng,
             size: size,
         }))
-        this.addChild(new Image({
+        const image: Image = this.addChild(new Image({
             position: {x: -size.width / 2, y: 0},
-            anchor: {x: 0.15, y: 0.5},
+            anchor: {x: 0.18, y: 0.5},
             foreground: coinsImage(index),
             size: {width: 109.2, height: 65},
         }))
@@ -73,6 +73,10 @@ export default class PurchasePanel extends Container {
                 }
             })
         }))
+
+        // quickfix todo improve
+        image.width *= 1.2
+        image.height *= 1.2
     }
 
 }
