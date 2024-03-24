@@ -149,7 +149,9 @@ export default class LoseScreen extends View<Layout> {
                 foreground: particlesRainPng
             }),
         }
+    }
 
+    focused() {
         const {cloudLose} = this.layout
         this.titleLevel.text = "Level 11"
         rain({

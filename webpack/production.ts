@@ -48,8 +48,36 @@ export default {
                     globOptions: {
                         ignore: ["**/*.ts"],
                     },
-                    filter: (filepath) => !fs.existsSync(`${path.dirname(filepath).replace("/res/", "/gen/")}.json`)
-                },
+                    filter: (filePath) => {
+                        const resDir: string = path.resolve('./res')
+
+                        function accept(jsonFile: string): boolean {
+                            if (fs.existsSync(jsonFile)) {
+                                const texturePack: any = JSON.parse(fs.readFileSync(jsonFile, 'utf-8'))
+                                for (let frame of Object.keys(texturePack["frames"])) {
+                                    const framePath: string = path.join(resDir, frame)
+                                    if (framePath == path.normalize(filePath)) {
+                                        return false
+                                    }
+                                }
+                            }
+                            return true
+                        }
+
+                        function acceptRecursively(filePath: string): boolean {
+                            const jsonFile: string = `${path.dirname(filePath)}.json`
+                            if (path.normalize(filePath) == path.dirname(resDir)) {
+                                return true
+                            }
+                            if (!accept(jsonFile)) {
+                                return false
+                            }
+                            return acceptRecursively(path.dirname(filePath))
+                        }
+
+                        return acceptRecursively(filePath.replace("/res/", "/gen/"))
+                    }
+                }
             ],
         })
     ]

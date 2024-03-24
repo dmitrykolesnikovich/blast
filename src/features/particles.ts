@@ -1,4 +1,4 @@
-import {Container, IPointData, ISize, Rectangle} from "pixi.js"
+import {Container, IPointData, ISize, Rectangle, Texture} from "pixi.js"
 import {Emitter, upgradeConfig} from "@pixi/particle-emitter"
 import {startTimer} from "../engine"
 import {
@@ -68,7 +68,7 @@ export function rain(options: ParticlesOptions) {
                 w: size.width,
                 h: size.height
             }
-        }, [particlesRainPng]))
+        }, [Texture.from(particlesRainPng)]))
     startTimer(({deltaTime}) => rain.update(deltaTime))
     rain.emit = true
 }

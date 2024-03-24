@@ -1,20 +1,36 @@
 import {bootstrap, context} from "./engine"
 import * as resources from "../res"
-import * as productionResources from "../gen"
+import productionResources from "../res/production"
 import manifest from "./manifest"
-import navigate from "./features/navigate"
 import settings from "./features/settings"
-import WinScreen from "./ui/WinScreen"
+import Navigation from "./features/navigation"
 
 bootstrap(main)
 
 async function main() {
+    console.log(resources)
+    console.log(productionResources)
+    console.log(manifest.build)
     await context.loader.load(manifest.build == 'production' ? productionResources : resources)
-    // dynamiteExample()
-    // nineSlicePlaneExample()
-    // texturePackerExample()
     settings.gender = 'girl'
     settings.lives = 5
     settings.coins = 88
-    navigate(new WinScreen())
+
+    let counter: number = 0
+    const navigation: Navigation = new Navigation()
+    document.onpointerdown = () => {
+        if (counter === 0) navigation.navigateCoinsShopScreen()
+        if (counter === 1) navigation.navigateGameScreen()
+        if (counter === 2) navigation.navigateGoalScreen()
+        if (counter === 3) navigation.navigateLevelChooserScreen()
+        if (counter === 4) navigation.navigateLivesShopScreen()
+        if (counter === 5) navigation.navigateLoseScreen()
+        if (counter === 6) navigation.navigateQuitScreen()
+        if (counter === 7) navigation.navigateSettingsScreen()
+        if (counter === 8) navigation.navigateWelcomeScreen()
+        if (counter === 9) navigation.navigateWinScreen()
+        counter++
+        if (counter > 9) counter = 0
+    }
+
 }
