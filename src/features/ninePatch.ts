@@ -8,8 +8,8 @@ import {
     buttonClosePng, buttonRectangleGreenDarkPng,
     buttonRectangleGreenPng, buttonRectanglePinkPng,
     buttonRectangleRedPng, coins1Png,
-    panelAlert1Png,
-    panelCoinsPng, panelGoalPng,
+    panelAlert1Png, panelAlert2Png,
+    panelCoinsPng, panelGoalPng, panelHeadlinePng,
     panelInfoPng,
     panelTitlePng
 } from "../../res"
@@ -48,10 +48,22 @@ export function popup1(options: PanelOptions): Container {
     return popup
 }
 
+/** popup minimum size: (220, 250) */
+export function popup2(options: PanelOptions): Container {
+    checkSize(options.size, {min: {width: 200, height: 200}})
+    return setupPanelOptions(new NineSlicePlane(Texture.from(panelAlert2Png), 90, 90, 90, 90), options)
+}
+
 /** panel minimum size: (90, 50) */
 export function panelTitle(options: PanelOptions): Container {
     checkSize(options.size, {min: {width: 100, height: 50}})
     return setupPanelOptions(new NineSlicePlane(Texture.from(panelTitlePng), 25, 25, 25, 25), options)
+}
+
+/** panel minimum size: (104, 48) */
+export function panelHeadLine(options: PanelOptions): Container {
+    checkSize(options.size, {min: {width: 104, height: 48}})
+    return setupPanelOptions(new NineSlicePlane(Texture.from(panelHeadlinePng), 32, 24, 32, 24), options)
 }
 
 /** panel minimum size: (100, 100) */
