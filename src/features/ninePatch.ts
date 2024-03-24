@@ -50,7 +50,7 @@ export function popup1(options: PanelOptions): Container {
 
 /** popup minimum size: (220, 250) */
 export function popup2(options: PanelOptions): Container {
-    checkSize(options.size, {min: {width: 200, height: 200}})
+    checkSize(options.size, {min: {width: 180, height: 180}})
     return setupPanelOptions(new NineSlicePlane(Texture.from(panelAlert2Png), 90, 90, 90, 90), options)
 }
 
