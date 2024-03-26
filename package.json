@@ -6,7 +6,8 @@
         "start": "webpack serve --open --config webpack/development.ts",
         "test": "jest",
         "dynamite": "webpack serve --open --config webpack/example.ts --env example=dynamite",
-        "ninePatch": "webpack serve --open --config webpack/example.ts --env example=ninePatch"
+        "ninePatch": "webpack serve --open --config webpack/example.ts --env example=ninePatch",
+        "score": "webpack serve --open --config webpack/example.ts --env example=score"
     },
     "devDependencies": {
         "@babel/core": "7.23.7",

@@ -27,7 +27,7 @@ if (!Container.prototype.isAttached) {
 }
 
 export function containerOf<T extends DisplayObject>(...children: T[]): Container<T> {
-    const container = new Container<T>()
+    const container: Container<T> = new Container<T>()
     container.addChild(...children)
     return container
 }

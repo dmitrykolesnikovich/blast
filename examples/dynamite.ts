@@ -17,7 +17,8 @@ async function dynamite() {
         position: {x: 225, y: 600},
         size: {width: 130, height: 130}
     })
-    emitParticles({
+    emitParticles(dynamite, {
+        textures: particlesGlitterPng,
         pos: {
             x: 0,
             y: -25
@@ -69,8 +70,9 @@ async function dynamite() {
             y: 0,
             r: 1
         }
-    }, dynamite, particlesGlitterPng)
-    emitParticles({
+    })
+    emitParticles(dynamite, {
+        textures: particlesShinePng,
         alpha: {
             start: 0.19,
             end: 1
@@ -122,8 +124,9 @@ async function dynamite() {
             y: 0,
             r: 20
         }
-    }, dynamite, particlesShinePng)
-    emitParticles({
+    })
+    emitParticles(dynamite, {
+        textures: particlesShinePng,
         alpha: {
             start: 0.95,
             end: 0.65
@@ -176,7 +179,7 @@ async function dynamite() {
             w: 1,
             h: 1
         }
-    }, dynamite, particlesShinePng)
+    })
 
     gsap.timeline({repeat: -1})
         .to(dynamite.scale, {x: 1.05, y: 1.05, duration: 1, ease: Power2.easeInOut})
