@@ -10,10 +10,10 @@ export class Context {
 
     set layout(layout: Layout) {
         if (this._layout) {
-            this.app.stage.removeChild(this._layout.container)
+            this.app.stage.removeChild(this._layout.root)
         }
         this._layout = layout
-        this.app.stage.addChildAt(this._layout.container, 0)
+        this.app.stage.addChildAt(this._layout.root, 0)
     }
 
     get layout(): Layout {

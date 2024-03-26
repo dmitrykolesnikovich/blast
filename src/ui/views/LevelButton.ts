@@ -7,10 +7,9 @@ import {
     buttonLevelShinePng
 } from "../../../res"
 
-import gsap from "gsap"
+import gsap, {Power3} from "gsap"
 import {ClickListener, setupClickListener} from "../../features/click"
-import Label from "./Label";
-
+import Label from "./Label"
 
 type LevelButtonOptions = {
     position: IPointData
@@ -43,12 +42,12 @@ export default class LevelButton extends Container {
         anchor: {x: 0.5, y: 0.5},
         size: {width: 96, height: 82},
     }))
-    private readonly shineAnimation: GSAPAnimation = gsap.timeline({ease: 'power3.inOut', repeat: -1})
-        .to(this.shine, {width: 300, height: 263.22, alpha: 0, duration: 1.4}, 0)
+    private readonly shineAnimation: GSAPAnimation = gsap.timeline({repeat: -1})
+        .to(this.shine, {width: 300, height: 263.22, alpha: 0, duration: 1.4, ease: Power3.easeInOut}, 0)
 
     constructor(options: LevelButtonOptions) {
         super()
-        const {position, enabled = false, active = false, level} = this.options =options
+        const {position, enabled = false, active = false, level} = this.options = options
         this.position = position
         this.enabled = enabled
         this.active = active

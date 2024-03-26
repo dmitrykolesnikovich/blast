@@ -1,6 +1,6 @@
 import {context, startTimer, View} from "../src/engine"
 import {Assets, Sprite} from "pixi.js"
-import gsap from "gsap"
+import gsap, {Power2} from "gsap"
 import {boosterDynamitePng} from "../res"
 import Image from "../src/ui/views/Image"
 
@@ -179,9 +179,9 @@ export function dynamiteExample() {
     // fire.emit = true
     // shine.emit = true
 
-    gsap.timeline({ease: 'power2.inOut', repeat: -1})
-        .to(dynamite.scale, {x: 1.05, y: 1.05, duration: 1})
-        .to(dynamite.scale, {x: 1, y: 1, duration: 1})
+    gsap.timeline({repeat: -1})
+        .to(dynamite.scale, {x: 1.05, y: 1.05, duration: 1, ease: Power2.easeInOut})
+        .to(dynamite.scale, {x: 1, y: 1, duration: 1, ease: Power2.easeInOut})
     gsap.timeline({ease: 'circ.inOut', repeat: -1})
         .to(dynamite, {angle: 10, duration: 0.1})
         .to(dynamite, {angle: -10, duration: 0.2})

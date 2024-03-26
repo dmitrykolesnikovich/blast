@@ -13,11 +13,31 @@ import {
     panelInfoPng,
     panelTitlePng
 } from "../../res"
+import {ClickListener} from "./click"
+
+export class Popup extends Container {
+
+    readonly buttonClose: Button = new Button({
+        position: {x: -90, y: 50},
+        anchor: {x: 0.5, y: 0.5},
+        size: {width: 60, height: 60},
+        foreground: buttonClosePng
+    })
+
+    constructor(background: Container) {
+        super()
+        this.addChild(background)
+        background.addChild(this.buttonClose)
+        this.buttonClose.x += background.width
+    }
+
+}
 
 type PanelOptions = {
     position: IPointData,
     size: ISize,
     label?: Label
+    close?: ClickListener
 }
 
 function setupPanelOptions(panel: Container, options: PanelOptions): Container {
@@ -34,22 +54,15 @@ function setupPanelOptions(panel: Container, options: PanelOptions): Container {
 }
 
 /** popup minimum size: (400, 240) */
-export function popup1(options: PanelOptions): Container {
+export function popup(options: PanelOptions): Popup {
     checkSize(options.size, {min: {width: 400, height: 240}})
-    const popup: Container = setupPanelOptions(new NineSlicePlane(Texture.from(panelAlert1Png), 180, 100, 180, 100), options)
-
-    const {size} = options
-    const buttonClose: Image = popup.addChild(new Image({
-        position: {x: size.width - 90, y: 50},
-        anchor: {x: 0.5, y: 0.5},
-        size: {width: 60, height: 60},
-        foreground: buttonClosePng
-    }))
+    const popup: Popup = new Popup(setupPanelOptions(new NineSlicePlane(Texture.from(panelAlert1Png), 180, 100, 180, 100), options))
+    popup.buttonClose.options.click = options.close
     return popup
 }
 
 /** popup minimum size: (220, 250) */
-export function popup2(options: PanelOptions): Container {
+export function panelAlert2(options: PanelOptions): Container {
     checkSize(options.size, {min: {width: 180, height: 180}})
     return setupPanelOptions(new NineSlicePlane(Texture.from(panelAlert2Png), 90, 90, 90, 90), options)
 }

@@ -1,7 +1,7 @@
 import {Container} from "pixi.js"
 import {View} from "../engine"
 import Image from "./views/Image"
-import {panelInfo, popup1} from "../features/ninePatch"
+import {panelInfo, Popup, popup} from "../features/ninePatch"
 import Label from "./views/Label"
 import Button from "./views/Button"
 import Life from "./views/Life"
@@ -12,10 +12,11 @@ import {
     life1Png,
     life3Png,
 } from "../../res"
+import Navigation from "../features/navigation"
 
 type Layout = {
     background: Image
-    panelAlert1: Container
+    popup: Popup
     panelInfo: Container
     descriptionIcon: Image
     description: Label
@@ -30,7 +31,8 @@ type Layout = {
 }
 
 export default class LivesShopScreen extends View<Layout> {
-    constructor() {
+
+    constructor(navigation: Navigation) {
         super({width: 450, height: 800})
         this.layout = {
             background: new Image({
@@ -40,7 +42,7 @@ export default class LivesShopScreen extends View<Layout> {
                 foreground: life1Png,
                 angle: -14.32,
             }),
-            panelAlert1: popup1({
+            popup: popup({
                 position: {x: 225, y: 400},
                 size: {width: 450, height: 490},
             }),

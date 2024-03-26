@@ -1,6 +1,6 @@
 import {View} from "../engine"
 import Image from "./views/Image"
-import {buttonColored, popup1} from "../features/ninePatch"
+import {buttonColored, Popup, popup} from "../features/ninePatch"
 import {Container} from "pixi.js"
 import Button from "./views/Button"
 import Label from "./views/Label"
@@ -9,9 +9,10 @@ import {
     lifeBrokenPng,
     lifeBrokenShadowPng
 } from "../../res"
+import Navigation from "../features/navigation"
 
 type Layout = {
-    panelAlert1: Container
+    popup: Popup
     life: Container
     description: Label
     quit: Button
@@ -20,10 +21,10 @@ type Layout = {
 
 export default class QuitScreen extends View<Layout> {
 
-    constructor() {
+    constructor(navigation: Navigation) {
         super({width: 450, height: 800})
         this.layout = {
-            panelAlert1: popup1({
+            popup: popup({
                 position: {x: 225, y: 400},
                 size: {width: 450, height: 500},
             }),

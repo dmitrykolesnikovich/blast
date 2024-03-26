@@ -18,16 +18,17 @@ import {
     iconResetPng,
     iconSoundPng,
 } from "../../res"
-import {popup1, buttonColored} from "../features/ninePatch"
+import {popup, buttonColored, Popup} from "../features/ninePatch"
 import {Container} from "@pixi/display"
 import RadioButtonGroup from "./views/RadioButtonGroup"
 import Image from "./views/Image"
 import Label from "./views/Label"
 import Button from "./views/Button"
 import Avatar from "./views/Avatar";
+import Navigation from "../features/navigation"
 
 type Layout = {
-    panelAlert1: Container
+    popup: Popup
     avatarGirl: Avatar
     avatarBoy: Avatar
     radioButtons: Container
@@ -49,10 +50,11 @@ type Layout = {
 }
 
 export default class SettingsScreen extends View<Layout> {
-    constructor() {
+
+    constructor(navigation: Navigation) {
         super({width: 450, height: 800})
         this.layout = {
-            panelAlert1: popup1({
+            popup: popup({
                 position: {x: 225, y: 400},
                 size: {width: 450, height: 620},
             }),

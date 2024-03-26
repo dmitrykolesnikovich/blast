@@ -17,6 +17,7 @@ import LevelButton from "./views/LevelButton"
 import clouds from "../features/clouds"
 import Button from "./views/Button"
 import RefillPanel from "./views/RefillPanel"
+import Navigation from "../features/navigation"
 
 type Layout = {
     background: Scroll
@@ -26,7 +27,8 @@ type Layout = {
 }
 
 export default class LevelChooserScreen extends View<Layout> {
-    constructor() {
+
+    constructor(navigation: Navigation) {
         super({width: 450, height: 800})
         this.layout = {
             background: new Scroll({

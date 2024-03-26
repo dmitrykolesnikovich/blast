@@ -1,11 +1,12 @@
-import {View} from "../engine"
-import {panelCoins, popup1} from "../features/ninePatch"
+import {Controller, View} from "../engine"
+import {panelCoins, Popup, popup} from "../features/ninePatch"
 import {Container} from "pixi.js"
 import PurchasePanel from "./views/PurchasePanel"
 import Label from "./views/Label"
+import Navigation from "../features/navigation"
 
 type Layout = {
-    panelAlert1: Container
+    popup: Popup
     panelCoins: Container
     labelCoins: Label
     purchase2: PurchasePanel
@@ -16,12 +17,14 @@ type Layout = {
 }
 
 export default class CoinsShopScreen extends View<Layout> {
-    constructor() {
+
+    constructor(navigation: Navigation) {
         super({width: 450, height: 800})
         this.layout = {
-            panelAlert1: popup1({
+            popup: popup({
                 position: {x: 225, y: 400},
                 size: {width: 450, height: 600},
+                close: () => navigation.hideDialog(this)
             }),
             panelCoins: panelCoins({
                 position: {x: 225, y: 220},
@@ -66,4 +69,5 @@ export default class CoinsShopScreen extends View<Layout> {
             }),
         }
     }
+
 }

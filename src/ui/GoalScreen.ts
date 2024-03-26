@@ -1,13 +1,14 @@
 import {Container} from "pixi.js"
 import {View} from "../engine"
-import {panelGoal, panelInfo, popup1} from "../features/ninePatch"
+import {panelGoal, panelInfo, Popup, popup} from "../features/ninePatch"
 import Button from "./views/Button"
 import Image from "./views/Image"
 import Label from "./views/Label"
 import {buttonRectangleRedPng, life1Png} from "../../res"
+import Navigation from "../features/navigation"
 
 type Layout = {
-    panelAlert1: Container
+    popup: Popup
     title: Label
     goal: Container
     play: Button
@@ -15,10 +16,10 @@ type Layout = {
 
 export default class GoalScreen extends View<Layout> {
 
-    constructor() {
+    constructor(navigation: Navigation) {
         super({width: 450, height: 800})
         this.layout = {
-            panelAlert1: popup1({
+            popup: popup({
                 position: {x: 225, y: 400},
                 size: {width: 450, height: 440},
             }),

@@ -15,6 +15,7 @@ import {
 import Button from "./views/Button"
 import settings from "../features/settings"
 import Image from "./views/Image"
+import Navigation from "../features/navigation"
 
 type Layout = {
     backgroundGame: Image
@@ -28,7 +29,8 @@ type Layout = {
 }
 
 export default class WelcomeScreen extends View<Layout> {
-    constructor() {
+
+    constructor(navigation: Navigation) {
         super({width: 450, height: 800})
         this.layout = {
             backgroundGame: new Image({

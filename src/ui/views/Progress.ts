@@ -1,6 +1,6 @@
 import {Container, Graphics, IPointData} from "pixi.js"
 import Image from "./Image"
-import gsap from "gsap"
+import gsap, {Sine} from "gsap"
 import {
     progressBarPng
 } from "../../../res"
@@ -30,8 +30,8 @@ export default class Progress extends Container {
     set progress(progress: number) {
         const firstTime: boolean = this._progress == -1
         this._progress = progress
-        gsap.timeline({ease: 'linear'})
-            .to(this.progressBar, {width: progress * 220, duration: firstTime ? 0 : 2})
+        gsap.timeline()
+            .to(this.progressBar, {width: progress * 220, duration: firstTime ? 0 : 2, ease: Sine.easeIn})
     }
 
 }

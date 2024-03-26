@@ -1,26 +1,34 @@
 import {Container} from "pixi.js"
 import {View} from "./View"
 import {context} from "./Engine"
+import {containerOf} from "./Pixi"
 
 export class Layout {
 
+    readonly root: Container = new Container()
+    private readonly parents: WeakMap<View, Container> = new WeakMap()
     private views: View[] = []
-    readonly container: Container = new Container()
 
     append(view: View) {
-        this.container.addChild(view.container)
+        const parent: Container = containerOf(view.container)
+        this.root.addChild(parent)
+        this.parents.set(view, parent)
         this.views.push(view)
-        resizeView(view)
+
+        this.resizeView(view)
         view.appended()
         if (context.loader.isCompleted) {
             view.focused()
         }
     }
 
-    appendAt(index: number, view: View) {
-        this.container.addChildAt(view.container, index)
+    appendAt(view: View, index: number) {
+        const parent: Container = containerOf(view.container)
+        this.root.addChildAt(parent, index)
+        this.parents.set(view, parent)
         this.views.push(view)
-        resizeView(view)
+
+        this.resizeView(view)
         view.appended()
         if (context.loader.isCompleted) {
             view.focused()
@@ -32,42 +40,57 @@ export class Layout {
         if (viewToRemove != undefined) {
             this.remove(viewToRemove)
         }
-        this.appendAt(index, view)
+        this.appendAt(view, index)
     }
 
     remove(view: View) {
-        this.container.removeChild(view.container)
+        const parent: Container = this.parents.get(view) as Container
+        this.root.removeChild(parent)
+        this.parents.delete(view)
         this.views.splice(this.views.indexOf(view), 1)
+
         view.removed()
     }
 
     clear() {
-        this.container.removeChildren()
+        this.root.removeChildren()
+        for (let view of this.views) this.parents.delete(view)
         this.views = []
     }
 
     resize() {
-        this.views.forEach((view) => resizeView(view))
+        this.views.forEach((view) => this.resizeView(view))
     }
 
     focus() {
         this.views.forEach((view) => view.focused())
     }
 
-}
-
-function resizeView(view: View) {
-    const canvasWidth = window.innerWidth
-    const canvasHeight = window.innerHeight
-    const {width, height} = view.size
-
-    const wratio: number = canvasWidth / width
-    const hratio: number = canvasHeight / height
-    if (wratio < hratio) {
-        view.container.scale.set(wratio)
-        view.container.position.set(0, (canvasHeight - height * wratio) / 2)
-    } else {
-        view.container.scale.set(hratio)
-        view.container.position.set((canvasWidth - width * hratio) / 2, 0)
+    getView(index: number): View {
+        return this.views[index]
     }
+
+    get size(): number {
+        return this.views.length
+    }
+
+    /*internals*/
+
+    private resizeView(view: View) {
+        const parent: Container = this.parents.get(view) as Container
+        const canvasWidth = window.innerWidth
+        const canvasHeight = window.innerHeight
+        const {width, height} = view.size
+
+        const wratio: number = canvasWidth / width
+        const hratio: number = canvasHeight / height
+        if (wratio < hratio) {
+            parent.scale.set(wratio)
+            parent.position.set(0, (canvasHeight - height * wratio) / 2)
+        } else {
+            parent.scale.set(hratio)
+            parent.position.set((canvasWidth - width * hratio) / 2, 0)
+        }
+    }
+
 }

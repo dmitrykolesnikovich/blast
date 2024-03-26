@@ -1,7 +1,7 @@
 import {View} from "../engine"
 import Image from "./views/Image"
 import {Container} from "pixi.js"
-import {panelHeadLine, popup2} from "../features/ninePatch"
+import {panelHeadLine, panelAlert2} from "../features/ninePatch"
 import Label from "./views/Label"
 import Button from "./views/Button"
 import {
@@ -14,6 +14,7 @@ import {
     particlesRainPng
 } from "../../res"
 import {rain} from "../features/particles"
+import Navigation from "../features/navigation"
 
 type Layout = {
     panelFlagGrey: Image
@@ -43,7 +44,7 @@ export default class LoseScreen extends View<Layout> {
         }
     })
 
-    constructor() {
+    constructor(navigation: Navigation) {
         super({width: 450, height: 800})
         this.layout = {
             panelFlagGrey: new Image({
@@ -64,7 +65,7 @@ export default class LoseScreen extends View<Layout> {
                     }
                 })
             }),
-            panelAlert2: popup2({
+            panelAlert2: panelAlert2({
                 position: {x: 225, y: 470},
                 size: {width: 400, height: 200},
             }),

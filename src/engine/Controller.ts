@@ -1,38 +1,15 @@
 import {Container, IPointData} from "pixi.js"
 import {View} from "./View"
+import {EventBus} from "./EventBus"
 
-type Listener<T extends Controller = any> = (controller: T, args: any) => void
-
-export class Controller {
+export class Controller extends EventBus {
 
     view: View<any>
-
-    private readonly actionMap: Map<string, Listener[]> = new Map()
     private isCanceled: boolean = false
 
     constructor(actions: Object = {}) {
-        for (const [action, listener] of Object.entries(actions)) {
-            this.on(action, this.bindViewModel(listener))
-        }
+        super(Object.fromEntries(Object.entries(actions).map((action, listener) => [action, this.bindViewModel(listener)])))
         bindObjectProperties(this, this.updateViewModel.bind(this))
-    }
-
-    on(action: string, listener: Listener) {
-        const listeners: Listener[] | undefined = this.actionMap.get(action)
-        if (listeners !== undefined) {
-            listeners.push(listener)
-        } else {
-            this.actionMap.set(action, [listener])
-        }
-    }
-
-    emit(action: string, event?: any) {
-        const listeners: Listener[] | undefined = this.actionMap.get(action)
-        if (listeners !== undefined) {
-            for (let listener of listeners) {
-                listener(this, event)
-            }
-        }
     }
 
     cancel() {

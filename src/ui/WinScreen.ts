@@ -1,7 +1,7 @@
 import Image from "./views/Image"
 import {View} from "../engine"
 import {Container} from "pixi.js"
-import {popup2} from "../features/ninePatch"
+import {panelAlert2} from "../features/ninePatch"
 import Label from "./views/Label"
 import Button from "./views/Button"
 import {
@@ -19,6 +19,7 @@ import {
     starBigGreyPng,
     starBigYellowPng
 } from "../../res"
+import Navigation from "../features/navigation"
 
 type Layout = {
     particlesShineRadial1: Image
@@ -35,7 +36,7 @@ type Layout = {
 
 export default class WinScreen extends View<Layout> {
 
-    constructor() {
+    constructor(navigation: Navigation) {
         super({width: 450, height: 800})
         this.layout = {
             particlesShineRadial1: new Image({
@@ -50,7 +51,7 @@ export default class WinScreen extends View<Layout> {
                 size: {width: 900, height: 900},
                 foreground: particlesShineRadial2Png
             }),
-            panelAlert2: popup2({
+            panelAlert2: panelAlert2({
                 position: {x: 225, y: 350},
                 size: {width: 400, height: 190},
             }),

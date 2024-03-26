@@ -18,6 +18,7 @@ import {
     panelMovesPng,
     panelProgressPng,
 } from "../../res"
+import Navigation from "../features/navigation"
 
 type Layout = {
     background: Image
@@ -41,7 +42,8 @@ type Layout = {
 }
 
 export default class GameScreen extends View<Layout> {
-    constructor() {
+
+    constructor(navigation: Navigation) {
         super({width: 450, height: 800})
         this.layout = {
             background: new Image({

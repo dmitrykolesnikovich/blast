@@ -42,14 +42,14 @@ export default function clouds(scroll: Scroll) {
         switch (direction) {
             case 'left': {
                 cloud.position.x = 1000
-                gsap.timeline({ease: 'linear', repeat: -1})
+                gsap.timeline({repeat: -1})
                     .to(cloud.position, {x: -300, duration: randomInt(20, 30), delay: randomInt(2, 8)})
                     .to(cloud.position, {x: 450, duration: 0})
                 break
             }
             case 'right': {
                 cloud.position.x = -500
-                gsap.timeline({ease: 'linear', repeat: -1})
+                gsap.timeline({repeat: -1})
                     .to(cloud.position, {x: 450, duration: randomInt(20, 30), delay: randomInt(2, 8)})
                     .to(cloud.position, {x: -300, duration: 0})
                 break

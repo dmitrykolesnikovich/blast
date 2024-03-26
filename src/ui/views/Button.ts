@@ -75,10 +75,10 @@ export default class Button extends Container {
                 this.foregroundSprite.anchor.x = anchorX
                 this.foregroundSprite.x = positionX
             } else {
-                gsap.timeline({ease: 'sine.inOut'})
-                    .to(this.foregroundSprite.anchor, {x: anchorX, duration: 0.22})
-                gsap.timeline({ease: 'sine.inOut'})
-                    .to(this.foregroundSprite, {x: positionX, duration: 0.22})
+                gsap.timeline()
+                    .to(this.foregroundSprite.anchor, {x: anchorX, duration: 0.22, ease: Sine.easeInOut})
+                gsap.timeline()
+                    .to(this.foregroundSprite, {x: positionX, duration: 0.22, ease: Sine.easeInOut})
             }
         }
         if (!firstTime) {
