@@ -1,4 +1,4 @@
-import {Container, ISize} from "pixi.js"
+import {Container, Graphics, ISize} from "pixi.js"
 import {Controller} from "./Controller"
 
 export class View<Layout extends Object = {}> {
@@ -45,4 +45,18 @@ export class View<Layout extends Object = {}> {
         // no op
     }
 
+    append(child: Container): View {
+        this.container.addChild(child)
+        return this
+    }
+
+}
+
+export function viewOf(size: ISize, ...layout: Container[]): View {
+    return new class extends View {
+        constructor() {
+            super(size)
+            this.layout = Object.fromEntries(layout.map(container => [0, container]))
+        }
+    }()
 }

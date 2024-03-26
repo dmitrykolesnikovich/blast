@@ -4,7 +4,9 @@
     "scripts": {
         "dist": "webpack --config webpack/production.ts",
         "start": "webpack serve --open --config webpack/development.ts",
-        "test": "jest"
+        "test": "jest",
+        "dynamite": "webpack serve --open --config webpack/example.ts --env example=dynamite",
+        "ninePatch": "webpack serve --open --config webpack/example.ts --env example=ninePatch"
     },
     "devDependencies": {
         "@babel/core": "7.23.7",

@@ -1,8 +1,10 @@
 import {NineSlicePlane, Texture} from "pixi.js"
-import {context, View} from '../src/engine'
+import {bootstrap, context, View} from '../src/engine'
 import bradPng from "./res/brad.png"
 
-export default function nineSlicePlaneExample() {
+bootstrap(ninePatch)
+
+function ninePatch() {
     const plane: NineSlicePlane = new NineSlicePlane(Texture.from(bradPng), 350, 250, 350, 250)
     plane.position.x = 225
     plane.position.y = 400

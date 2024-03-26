@@ -9,7 +9,7 @@ export class Layout {
     private readonly parents: WeakMap<View, Container> = new WeakMap()
     private views: View[] = []
 
-    append(view: View) {
+    append(view: View): View {
         const parent: Container = containerOf(view.container)
         this.root.addChild(parent)
         this.parents.set(view, parent)
@@ -20,9 +20,10 @@ export class Layout {
         if (context.loader.isCompleted) {
             view.focused()
         }
+        return view
     }
 
-    appendAt(view: View, index: number) {
+    appendAt(view: View, index: number): View {
         const parent: Container = containerOf(view.container)
         this.root.addChildAt(parent, index)
         this.parents.set(view, parent)
@@ -33,6 +34,7 @@ export class Layout {
         if (context.loader.isCompleted) {
             view.focused()
         }
+        return view
     }
 
     replaceAt(index: number, view: View) {

@@ -8,9 +8,6 @@ import Navigation from "./features/navigation"
 bootstrap(main)
 
 async function main() {
-    console.log(resources)
-    console.log(productionResources)
-    console.log(manifest.build)
     await context.loader.load(manifest.build == 'production' ? productionResources : resources)
     settings.gender = 'girl'
     settings.lives = 5

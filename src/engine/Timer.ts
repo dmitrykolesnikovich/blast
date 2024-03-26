@@ -8,6 +8,8 @@ export class Timer {
     private readonly task: () => void
     deltaTime: number = 0
     currentTime: number = 0
+    onStart?: Function | undefined
+    onStop?: Function | undefined
 
     constructor(ticker: Ticker, onTick: (timer: Timer) => void) {
         this.ticker = ticker
@@ -20,10 +22,16 @@ export class Timer {
 
     start() {
         this.ticker.add(this.task)
+        if (this.onStart !== undefined) {
+            this.onStart()
+        }
     }
 
     stop() {
         this.ticker.remove(this.task)
+        if (this.onStop !== undefined) {
+            this.onStop()
+        }
     }
 
 }
