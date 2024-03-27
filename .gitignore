@@ -1,7 +1,7 @@
 .idea/
 *.js
 *.js.map
-dist/
+docs/
 !docs/**
 node_modules/
 package-lock.json
