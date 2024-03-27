@@ -19,14 +19,15 @@ type Layout = {
     play: Button
 }
 
-export default class QuitScreen extends View<Layout> {
+export default class QuitDialog extends View<Layout> {
 
     constructor(navigation: Navigation) {
         super({width: 450, height: 800})
         this.layout = {
             popup: popup({
                 position: {x: 225, y: 400},
-                size: {width: 450, height: 500},
+                size: {width: 400, height: 500},
+                title: "Quit Level"
             }),
             life: panel({
                 position: {x: 225, y: 330},

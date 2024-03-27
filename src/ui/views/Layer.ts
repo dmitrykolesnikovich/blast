@@ -6,7 +6,7 @@ type LayerOptions = {
     size: ISize
 }
 
-// IMPORTANT used for tests only
+// IMPORTANT not used in production, used only to run examples
 export default function Layer(options: LayerOptions): Container {
     const {position = {x: 0, y: 0}, size} = options
     const view: View = new View(size)

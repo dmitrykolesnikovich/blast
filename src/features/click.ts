@@ -1,4 +1,7 @@
 import {Container} from "pixi.js"
+import gsap, {Back, Elastic} from "gsap"
+import {playSound} from "./audio"
+import {buttonMp3} from "../../res"
 
 type Clickable = Container & { enabled: boolean, options: ClickOptions }
 
@@ -17,7 +20,10 @@ export function setupClickListener(button: Clickable) {
         if (checkbox || toggle) {
             button.enabled = !button.enabled
         } else if (button.enabled) {
-            if (click) click(button)
+            gsap.timeline()
+                .to(button.scale, {x: 1.15, y: 1.15, duration: 0.12, ease: Back.easeOut})
+                .to(button.scale, {x: 1, y: 1, duration: 0.28, ease: Back.easeOut, onComplete: click})
+            playSound(buttonMp3)
         }
     })
 }

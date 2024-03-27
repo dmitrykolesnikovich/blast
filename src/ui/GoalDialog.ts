@@ -14,14 +14,15 @@ type Layout = {
     play: Button
 }
 
-export default class GoalScreen extends View<Layout> {
+export default class GoalDialog extends View<Layout> {
 
     constructor(navigation: Navigation) {
         super({width: 450, height: 800})
         this.layout = {
             popup: popup({
                 position: {x: 225, y: 400},
-                size: {width: 450, height: 440},
+                size: {width: 400, height: 440},
+                title: "Level 10"
             }),
             title: new Label({
                 position: {x: 225, y: 300},

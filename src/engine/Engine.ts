@@ -1,12 +1,15 @@
-import {Application, Assets} from "pixi.js"
+import {Application, Assets, extensions} from "pixi.js"
 import {Context} from "./Context"
 import {Layout} from "./Layout"
 import {Loader} from "./Loader"
 import {Environment} from "./Environment"
+// @ts-ignore
+import howler from 'howler-pixi-loader-middleware'
 
 export const context: Context = new Context()
 
 export function bootstrap(main: () => void) {
+    extensions.add(howler)
     window.parent?.window?.postMessage({playdeck: {method: "loading"}}, "*") // quickfix todo improve
     window.addEventListener('DOMContentLoaded', async () => {
         await initializeEnvironment()

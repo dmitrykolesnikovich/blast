@@ -16,15 +16,16 @@ type Layout = {
     purchase6: PurchasePanel
 }
 
-export default class CoinsShopScreen extends View<Layout> {
+export default class CoinsShopDialog extends View<Layout> {
 
     constructor(navigation: Navigation) {
         super({width: 450, height: 800})
         this.layout = {
             popup: popup({
                 position: {x: 225, y: 400},
-                size: {width: 450, height: 600},
-                close: () => navigation.hideDialog(this)
+                size: {width: 400, height: 600},
+                close: () => navigation.hideDialog(this),
+                title: "Coins Shop"
             }),
             panelCoins: panelCoins({
                 position: {x: 225, y: 220},

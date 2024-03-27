@@ -49,14 +49,15 @@ type Layout = {
     buttonInfo: Button
 }
 
-export default class SettingsScreen extends View<Layout> {
+export default class SettingsDialog extends View<Layout> {
 
     constructor(navigation: Navigation) {
         super({width: 450, height: 800})
         this.layout = {
             popup: popup({
                 position: {x: 225, y: 400},
-                size: {width: 450, height: 620},
+                size: {width: 400, height: 620},
+                title: "Settings"
             }),
             avatarGirl: new Avatar({
                 position: {x: 150, y: 240},

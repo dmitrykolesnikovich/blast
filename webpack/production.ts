@@ -37,17 +37,16 @@ export default {
                 },
                 {
                     from: './gen',
-                    to: './res',
-                    globOptions: {
-                        ignore: ["**/*.ts"],
-                    },
+                    to: './res'
                 },
                 {
                     from: './res/',
                     to: './res',
+                    // ignore `index.ts` and `production.ts`
                     globOptions: {
                         ignore: ["**/*.ts"],
                     },
+                    // aware of texture packer
                     filter: (filePath) => {
                         const resDir: string = path.resolve('./res')
 

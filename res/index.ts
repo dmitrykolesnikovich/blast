@@ -1,3 +1,20 @@
+const backgroundMp3 = "./audio/background.mp3"
+const ballMp3 = "./audio/ball.mp3"
+const blockPressMp3 = "./audio/blockPress.mp3"
+const blockPressErrorMp3 = "./audio/blockPressError.mp3"
+const bombMp3 = "./audio/bomb.mp3"
+const buttonMp3 = "./audio/button.mp3"
+const buttonBuyMp3 = "./audio/buttonBuy.mp3"
+const buttonCoinsMp3 = "./audio/buttonCoins.mp3"
+const colorBombMp3 = "./audio/colorBomb.mp3"
+const dialogHideMp3 = "./audio/dialogHide.mp3"
+const dialogShowMp3 = "./audio/dialogShow.mp3"
+const dynamiteMp3 = "./audio/dynamite.mp3"
+const iceBreakMp3 = "./audio/iceBreak.mp3"
+const loseMp3 = "./audio/lose.mp3"
+const rainMp3 = "./audio/rain.mp3"
+const whooshMp3 = "./audio/whoosh.mp3"
+const winMp3 = "./audio/win.mp3"
 const fredokaOneTtf = "./fonts/fredokaOne.ttf"
 const insanibuTtf = "./fonts/insanibu.ttf"
 import avatarBorderPng from "./images/avatar/avatarBorder.png"
@@ -97,6 +114,23 @@ import starSmallGreyPng from "./images/star/starSmallGrey.png"
 import starSmallYellowPng from "./images/star/starSmallYellow.png"
 
 export {
+    backgroundMp3,
+    ballMp3,
+    blockPressMp3,
+    blockPressErrorMp3,
+    bombMp3,
+    buttonMp3,
+    buttonBuyMp3,
+    buttonCoinsMp3,
+    colorBombMp3,
+    dialogHideMp3,
+    dialogShowMp3,
+    dynamiteMp3,
+    iceBreakMp3,
+    loseMp3,
+    rainMp3,
+    whooshMp3,
+    winMp3,
     fredokaOneTtf,
     insanibuTtf,
     avatarBorderPng,

@@ -1,62 +1,64 @@
-import {context, EventBus, View} from "../engine"
-import CoinsShopScreen from "../ui/CoinsShopScreen"
+import {context, View} from "../engine"
+import CoinsShopDialog from "../ui/CoinsShopDialog"
 import GameScreen from "../ui/GameScreen"
 import LevelChooserScreen from "../ui/LevelChooserScreen"
-import GoalScreen from "../ui/GoalScreen"
-import LivesShopScreen from "../ui/LivesShopScreen"
+import GoalDialog from "../ui/GoalDialog"
+import LivesShopDialog from "../ui/LivesShopDialog"
 import LoseScreen from "../ui/LoseScreen"
-import QuitScreen from "../ui/QuitScreen"
-import SettingsScreen from "../ui/SettingsScreen"
+import QuitDialog from "../ui/QuitDialog"
+import SettingsDialog from "../ui/SettingsDialog"
 import WelcomeScreen from "../ui/WelcomeScreen"
 import WinScreen from "../ui/WinScreen"
 import gsap, {Back, Power2} from "gsap"
 import Curtain from "../ui/views/Curtain"
+import {playSound} from "./audio"
+import {backgroundMp3, dialogHideMp3, dialogShowMp3, loseMp3, whooshMp3} from "../../res"
 
 export default class Navigation {
 
-    private coinsShopScreen: CoinsShopScreen = new CoinsShopScreen(this) // popup
+    private coinsShopDialog: CoinsShopDialog = new CoinsShopDialog(this)
     private gameScreen: GameScreen = new GameScreen(this)
-    private goalScreen: GoalScreen = new GoalScreen(this) // popup
+    private goalDialog: GoalDialog = new GoalDialog(this)
     private levelChooserScreen: LevelChooserScreen = new LevelChooserScreen(this)
-    private livesShopScreen: LivesShopScreen = new LivesShopScreen(this) // popup
+    private livesShopDialog: LivesShopDialog = new LivesShopDialog(this)
     private loseScreen: LoseScreen = new LoseScreen(this)
-    private quitScreen: QuitScreen = new QuitScreen(this) // popup
-    private settingsScreen: SettingsScreen = new SettingsScreen(this) // popup
+    private quitDialog: QuitDialog = new QuitDialog(this)
+    private settingsDialog: SettingsDialog = new SettingsDialog(this)
     private welcomeScreen: WelcomeScreen = new WelcomeScreen(this)
     private winScreen: WinScreen = new WinScreen(this)
     private screen: View | undefined
     private dialog: View | undefined
 
-    navigateCoinsShopScreen(): void {
-        this.navigateDialog(this.coinsShopScreen)
+    navigateCoinsShopDialog(): void {
+        this.navigateDialog(this.coinsShopDialog)
     }
 
     navigateGameScreen(): void {
         this.navigateScreen(this.gameScreen)
     }
 
-    navigateGoalScreen(): void {
-        this.navigateDialog(this.goalScreen)
+    navigateGoalDialog(): void {
+        this.navigateDialog(this.goalDialog)
     }
 
     navigateLevelChooserScreen(): void {
         this.navigateScreen(this.levelChooserScreen)
     }
 
-    navigateLivesShopScreen(): void {
-        this.navigateDialog(this.livesShopScreen)
+    navigateLivesShopDialog(): void {
+        this.navigateDialog(this.livesShopDialog)
     }
 
     navigateLoseScreen(): void {
-        this.navigateScreen(this.loseScreen)
+        this.navigateScreen(this.loseScreen, () => playSound(loseMp3))
     }
 
-    navigateQuitScreen(): void {
-        this.navigateDialog(this.quitScreen)
+    navigateQuitDialog(): void {
+        this.navigateDialog(this.quitDialog)
     }
 
-    navigateSettingsScreen(): void {
-        this.navigateDialog(this.settingsScreen)
+    navigateSettingsDialog(): void {
+        this.navigateDialog(this.settingsDialog)
     }
 
     navigateWelcomeScreen(): void {
@@ -67,7 +69,37 @@ export default class Navigation {
         this.navigateScreen(this.winScreen)
     }
 
+    /*internals*/
+
+    private navigateScreen(screen: View, complete?: Function) {
+        const curtain: Curtain = new Curtain()
+        curtain.background.alpha = 0
+        context.layout.append(curtain)
+        gsap.timeline()
+            .to(curtain.background, {
+                alpha: 1,
+                delay: 0.5,
+                duration: 1,
+                onComplete: () => {
+                    if (this.screen !== undefined) {
+                        context.layout.remove(this.screen)
+                    }
+                    this.screen = screen
+                    context.layout.appendAt(screen, 0)
+                }
+            })
+            .to(curtain.background, {
+                alpha: 0,
+                duration: 1,
+                onComplete: () => {
+                    context.layout.remove(curtain)
+                    if (complete) complete()
+                }
+            })
+    }
+
     private navigateDialog(dialog: View) {
+        playSound(whooshMp3)
         if (this.dialog === dialog) {
             context.layout.remove(dialog)
         } else if (this.dialog !== undefined) {
@@ -77,6 +109,7 @@ export default class Navigation {
     }
 
     hideDialog(dialog: View) {
+        playSound(dialogHideMp3)
         gsap.timeline({
             onComplete: () => {
                 context.layout.remove(dialog)
@@ -100,38 +133,7 @@ export default class Navigation {
         dialog.container.position.set(x, y)
         dialog.container.scale.set(0.2, 0.2)
         gsap.timeline()
-            .to(dialog.container.scale, {
-                x: 1,
-                y: 1,
-                duration: 0.22,
-                ease: Back.easeOut
-            })
-    }
-
-    navigateScreen(screen: View) {
-        const curtain: Curtain = new Curtain()
-        curtain.background.alpha = 0
-        context.layout.append(curtain)
-        gsap.timeline()
-            .to(curtain.background, {
-                alpha: 1,
-                delay: 0.5,
-                duration: 1,
-                onComplete: () => {
-                    if (this.screen !== undefined) {
-                        context.layout.remove(this.screen)
-                    }
-                    this.screen = screen
-                    context.layout.appendAt(screen, 0)
-                }
-            })
-            .to(curtain.background, {
-                alpha: 0,
-                duration: 1,
-                onComplete: () => {
-                    context.layout.remove(curtain)
-                }
-            })
+            .to(dialog.container.scale, {x: 1, y: 1, duration: 0.22, ease: Back.easeOut, onComplete: () => playSound(dialogShowMp3)})
     }
 
 }

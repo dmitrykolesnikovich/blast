@@ -3,7 +3,7 @@ import {Emitter, EmitterConfigV1, EmitterConfigV2, EmitterConfigV3, upgradeConfi
 import {startTimer} from "./Timer"
 import {range} from "./Library"
 
-type ParticlesOptions = (EmitterConfigV1 | EmitterConfigV2) & {
+export type ParticlesOptions = (EmitterConfigV1 | EmitterConfigV2) & {
     textures?: string | string[]
     rows?: number
     columns?: number

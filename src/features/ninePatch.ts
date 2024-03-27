@@ -18,17 +18,34 @@ import {ClickListener} from "./click"
 export class Popup extends Container {
 
     readonly buttonClose: Button = new Button({
-        position: {x: -90, y: 50},
+        position: {x: -64, y: 48},
         anchor: {x: 0.5, y: 0.5},
-        size: {width: 60, height: 60},
+        size: {width: 48, height: 48},
         foreground: buttonClosePng
+    })
+    readonly title: Label = new Label({
+        position: {x: 0, y: 0},
+        anchor: {x: 0.5, y: 0.5},
+        style: {
+            fontSize: 32,
+            fill: 0xFFEA00,
+            align: 'left',
+            fontFamily: 'fredokaOne',
+            fontWeight: '400',
+            dropShadow: true,
+            dropShadowAngle: 0.5,
+            dropShadowDistance: 2,
+            dropShadowBlur: 2,
+        },
     })
 
     constructor(background: Container) {
         super()
         this.addChild(background)
         background.addChild(this.buttonClose)
+        background.addChild(this.title)
         this.buttonClose.x += background.width
+        this.title.position.set(background.width / 2, 48)
     }
 
 }
@@ -38,6 +55,7 @@ type PanelOptions = {
     size: ISize,
     label?: Label
     close?: ClickListener
+    title?: string
 }
 
 function setupPanelOptions(panel: Container, options: PanelOptions): Container {
@@ -53,11 +71,12 @@ function setupPanelOptions(panel: Container, options: PanelOptions): Container {
     return panel
 }
 
-/** popup minimum size: (400, 240) */
+/** popup minimum size: (300, 240) */
 export function popup(options: PanelOptions): Popup {
-    checkSize(options.size, {min: {width: 400, height: 240}})
-    const popup: Popup = new Popup(setupPanelOptions(new NineSlicePlane(Texture.from(panelAlert1Png), 180, 100, 180, 100), options))
+    checkSize(options.size, {min: {width: 300, height: 240}})
+    const popup: Popup = new Popup(setupPanelOptions(new NineSlicePlane(Texture.from(panelAlert1Png), 130, 100, 130, 100), options))
     popup.buttonClose.options.click = options.close
+    popup.title.text = options.title ?? ""
     return popup
 }
 

@@ -30,7 +30,7 @@ type Layout = {
     nextLife: Label
 }
 
-export default class LivesShopScreen extends View<Layout> {
+export default class LivesShopDialog extends View<Layout> {
 
     constructor(navigation: Navigation) {
         super({width: 450, height: 800})
@@ -44,7 +44,9 @@ export default class LivesShopScreen extends View<Layout> {
             }),
             popup: popup({
                 position: {x: 225, y: 400},
-                size: {width: 450, height: 490},
+                size: {width: 400, height: 490},
+                title: "Lives Shop",
+                close: () => navigation.hideDialog(this)
             }),
             panelInfo: panelInfo({
                 position: {x: 225, y: 340},

@@ -7,7 +7,13 @@
         "test": "jest",
         "dynamite": "webpack serve --open --config webpack/example.ts --env example=dynamite",
         "ninePatch": "webpack serve --open --config webpack/example.ts --env example=ninePatch",
-        "score": "webpack serve --open --config webpack/example.ts --env example=score"
+        "score": "webpack serve --open --config webpack/example.ts --env example=score",
+        "navigateCoinsShopDialog": "webpack serve --open --config webpack/example.ts --env example=navigateCoinsShopDialog",
+        "navigateGoalDialog": "webpack serve --open --config webpack/example.ts --env example=navigateGoalDialog",
+        "navigateSettingsDialog": "webpack serve --open --config webpack/example.ts --env example=navigateSettingsDialog",
+        "navigateQuitDialog": "webpack serve --open --config webpack/example.ts --env example=navigateQuitDialog",
+        "navigateLivesShopDialog": "webpack serve --open --config webpack/example.ts --env example=navigateLivesShopDialog",
+        "navigateLoseScreen": "webpack serve --open --config webpack/example.ts --env example=navigateLoseScreen"
     },
     "devDependencies": {
         "@babel/core": "7.23.7",
@@ -28,11 +34,13 @@
         "webpack": "5.89.0",
         "webpack-cli": "5.1.4",
         "webpack-dev-server": "4.15.1",
-        "http-server": "14.1.1"
+        "http-server": "14.1.1",
+        "@types/howler": "2.2.11"
     },
     "dependencies": {
         "@pixi/particle-emitter": "5.0.8",
         "gsap": "3.12.4",
-        "pixi.js": "7.2.4"
+        "pixi.js": "7.2.4",
+        "howler-pixi-loader-middleware": "4.0.3"
     }
 }
