@@ -108,6 +108,8 @@ import particlesRainPng from "./images/particles/particlesRain.png"
 import particlesShinePng from "./images/particles/particlesShine.png"
 import particlesShineRadial1Png from "./images/particles/particlesShineRadial1.png"
 import particlesShineRadial2Png from "./images/particles/particlesShineRadial2.png"
+import particlesShineRadial3Png from "./images/particles/particlesShineRadial3.png"
+import particlesShineRadial4Png from "./images/particles/particlesShineRadial4.png"
 import starBigGreyPng from "./images/star/starBigGrey.png"
 import starBigYellowPng from "./images/star/starBigYellow.png"
 import starSmallGreyPng from "./images/star/starSmallGrey.png"
@@ -224,6 +226,8 @@ export {
     particlesShinePng,
     particlesShineRadial1Png,
     particlesShineRadial2Png,
+    particlesShineRadial3Png,
+    particlesShineRadial4Png,
     starBigGreyPng,
     starBigYellowPng,
     starSmallGreyPng,

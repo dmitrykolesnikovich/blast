@@ -1,3 +1,4 @@
+export * from './Animation'
 export * from './Audio'
 export * from './Context'
 export * from './Controller'

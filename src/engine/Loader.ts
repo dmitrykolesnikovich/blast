@@ -3,6 +3,7 @@ import {delay} from "./Timer"
 import {Environment} from "./Environment"
 import {debug} from "./Debug"
 import {quickfixSpritesheetForProduction} from "./Production"
+import {context} from "./Engine"
 
 type FontInstance = { url: string, family: string, weight: string }
 
@@ -40,7 +41,8 @@ export class Loader {
         return this
     }
 
-    async load(resources: Resources) {
+    async load(resources: Resources, ...complete: Function[]) {
+        context.loader.completeListeners.push(...complete)
         await this.add(resources).complete()
     }
 

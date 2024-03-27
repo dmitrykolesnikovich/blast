@@ -1,9 +1,9 @@
 import {Container} from "pixi.js"
-import gsap, {Back, Elastic} from "gsap"
+import gsap, {Back} from "gsap"
 import {buttonMp3} from "../../res"
-import {playSound} from "../engine"
+import {clearAnimations, playSound} from "../engine"
 
-type Clickable = Container & { enabled: boolean, options: ClickOptions }
+export type Clickable = Container & { enabled: boolean, options: ClickOptions }
 
 type ClickOptions = {
     checkbox?: boolean
@@ -20,9 +20,14 @@ export function setupClickListener(button: Clickable) {
         if (checkbox || toggle) {
             button.enabled = !button.enabled
         } else if (button.enabled) {
+            clearAnimations(button)
             gsap.timeline()
                 .to(button.scale, {x: 1.2, y: 1.08, duration: 0.1, ease: Back.easeOut})
-                .to(button.scale, {x: 1, y: 1, duration: 0.22, ease: Back.easeOut, onComplete: click})
+                .to(button.scale, {
+                    x: 1, y: 1, duration: 0.22, ease: Back.easeOut, onComplete: () => {
+                        if (click) click(button)
+                    }
+                })
             playSound(buttonMp3)
         }
     })

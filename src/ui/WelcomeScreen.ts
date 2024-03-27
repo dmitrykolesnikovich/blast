@@ -1,4 +1,4 @@
-import {View} from "../engine"
+import {Controller, View} from "../engine"
 import {
     backgroundGameJpg,
     buttonCircleGreenPng,
@@ -7,15 +7,16 @@ import {
     iconMusicPng,
     iconSettingsPng,
     iconSoundPng,
-    logoPng,
+    logoPng, particlesShinePng,
     particlesShineRadial1Png,
-    particlesShineRadial2Png,
+    particlesShineRadial2Png, particlesShineRadial3Png, particlesShineRadial4Png,
     playPng
 } from "../../res"
 import Button from "./views/Button"
 import settings from "../features/settings"
 import Image from "./views/Image"
 import Navigation from "../features/navigation"
+import {animateHeartBeat, animateRadialShine} from "../features/animations"
 
 type Layout = {
     backgroundGame: Image
@@ -42,13 +43,13 @@ export default class WelcomeScreen extends View<Layout> {
                 position: {x: 225, y: 220},
                 anchor: {x: 0.5, y: 0.5},
                 size: {width: 900, height: 900},
-                foreground: particlesShineRadial1Png
+                foreground: particlesShineRadial3Png
             }),
             particlesShineRadial2: new Image({
                 position: {x: 225, y: 220},
                 anchor: {x: 0.5, y: 0.5},
                 size: {width: 900, height: 900},
-                foreground: particlesShineRadial2Png
+                foreground: particlesShineRadial4Png
             }),
             logo: new Image({
                 position: {x: 225, y: 200},
@@ -59,12 +60,12 @@ export default class WelcomeScreen extends View<Layout> {
             play: new Button({
                 position: {x: 225, y: 550},
                 anchor: {x: 0.5, y: 0.5},
-                size: {width: 174.75, height: 78.375},
+                size: {width: 174.75 * 0.77, height: 78.375 * 0.77},
                 foreground: playPng,
                 background: buttonRectangleGreenSmallPng,
-                backgroundSize: {width: 290, height: 128.9},
-                click: () => {
-                    console.log("play!!!")
+                backgroundSize: {width: 290 * 0.77, height: 128.9 * 0.77},
+                click: (button) => {
+                    console.log(`play: ${button.width}`)
                 },
             }),
             iconSettings: new Button({
@@ -108,5 +109,10 @@ export default class WelcomeScreen extends View<Layout> {
                 },
             })
         }
+
+        const {play, particlesShineRadial1, particlesShineRadial2} = this.layout
+        animateHeartBeat(play)
+        animateRadialShine(particlesShineRadial1, particlesShineRadial2)
     }
+
 }
