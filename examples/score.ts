@@ -1,22 +1,36 @@
 import {bootstrap, context, startTimer, View, viewOf} from "../src/engine"
 import {Container, Graphics, Sprite, Texture} from "pixi.js"
 import gsap, {Power2, Circ} from "gsap"
-import {boosterDynamitePng, particlesBlockRedPng, particlesGlitterPng, particlesShinePng} from "../res"
+import {
+    blockPng,
+    boosterDynamitePng,
+    particlesBlockPng,
+    particlesGlitterPng,
+    particlesShinePng
+} from "../res"
 import Image from "../src/ui/views/Image"
 import {Emitter, upgradeConfig} from "@pixi/particle-emitter"
 import {emitParticles} from "../src/engine/Particles"
 import Layer from "../src/ui/views/Layer"
+import {greenColor, purpleColor, redColor, yellowColor} from "../src/features/style"
 
 bootstrap(score)
 
 async function score() {
-    await context.loader.load([particlesBlockRedPng])
+    const COLOR: string = redColor
+    await context.loader.load([particlesBlockPng])
     const particles: View = context.layout.append(Layer({
         position: {x: 225, y: 400},
         size: {width: 450, height: 800}
+    })).append(new Image({
+        position: {x: 225, y: 30},
+        anchor: {x: 0.5, y: 0.5},
+        size: {width: 171 / 2, height: 192 / 2},
+        foreground: blockPng,
+        tint: COLOR
     }))
     emitParticles(particles.container, {
-        textures: particlesBlockRedPng,
+        textures: particlesBlockPng,
         rows: 2,
         columns: 1,
         alpha: {
@@ -29,8 +43,8 @@ async function score() {
             minimumScaleMultiplier: 1
         },
         color: {
-            start: "#ffffff",
-            end: "#ffffff"
+            start: COLOR,
+            end: COLOR
         },
         speed: {
             start: 1,

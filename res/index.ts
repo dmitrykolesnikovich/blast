@@ -84,11 +84,7 @@ import panelListPng from "./images/panel/panelList.png"
 import panelMovesPng from "./images/panel/panelMoves.png"
 import panelProgressPng from "./images/panel/panelProgress.png"
 import panelTitlePng from "./images/panel/panelTitle.png"
-import particlesBlockBluePng from "./images/particles/particlesBlockBlue.png"
-import particlesBlockGreenPng from "./images/particles/particlesBlockGreen.png"
-import particlesBlockPurplePng from "./images/particles/particlesBlockPurple.png"
-import particlesBlockRedPng from "./images/particles/particlesBlockRed.png"
-import particlesBlockYellowPng from "./images/particles/particlesBlockYellow.png"
+import particlesBlockPng from "./images/particles/particlesBlock.png"
 import particlesColorBombPng from "./images/particles/particlesColorBomb.png"
 import particlesGlitterPng from "./images/particles/particlesGlitter.png"
 import particlesRainPng from "./images/particles/particlesRain.png"
@@ -187,11 +183,7 @@ export {
     panelMovesPng,
     panelProgressPng,
     panelTitlePng,
-    particlesBlockBluePng,
-    particlesBlockGreenPng,
-    particlesBlockPurplePng,
-    particlesBlockRedPng,
-    particlesBlockYellowPng,
+    particlesBlockPng,
     particlesColorBombPng,
     particlesGlitterPng,
     particlesRainPng,

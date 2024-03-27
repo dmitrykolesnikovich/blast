@@ -5,3 +5,4 @@ dist/
 !docs/**
 node_modules/
 package-lock.json
+GAMEPLAY.mp4
