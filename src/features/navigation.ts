@@ -1,4 +1,4 @@
-import {context, playSound, View} from "../engine"
+import {context, playSoundEffect, playSoundLoop, View} from "../engine"
 import CoinsShopDialog from "../ui/CoinsShopDialog"
 import GameScreen from "../ui/GameScreen"
 import LevelChooserScreen from "../ui/LevelChooserScreen"
@@ -33,7 +33,7 @@ export default class Navigation {
     }
 
     navigateGameScreen(): void {
-        this.navigateScreen(this.gameScreen, () => playSound(backgroundMp3))
+        this.navigateScreen(this.gameScreen, () => playSoundLoop(backgroundMp3))
     }
 
     navigateGoalDialog(): void {
@@ -41,7 +41,7 @@ export default class Navigation {
     }
 
     navigateLevelChooserScreen(): void {
-        this.navigateScreen(this.levelChooserScreen, () => playSound(backgroundMp3))
+        this.navigateScreen(this.levelChooserScreen, () => playSoundLoop(backgroundMp3))
     }
 
     navigateLivesShopDialog(): void {
@@ -49,7 +49,7 @@ export default class Navigation {
     }
 
     navigateLoseScreen(): void {
-        this.navigateScreen(this.loseScreen, () => playSound(loseMp3))
+        this.navigateScreen(this.loseScreen, () => playSoundEffect(loseMp3))
     }
 
     navigateQuitDialog(): void {
@@ -61,11 +61,11 @@ export default class Navigation {
     }
 
     navigateWelcomeScreen(): void {
-        this.navigateScreen(this.welcomeScreen, () => playSound(backgroundMp3))
+        this.navigateScreen(this.welcomeScreen, () => playSoundLoop(backgroundMp3))
     }
 
     navigateWinScreen(): void {
-        this.navigateScreen(this.winScreen, () => playSound(winMp3))
+        this.navigateScreen(this.winScreen, () => playSoundEffect(winMp3))
     }
 
     /*internals*/
@@ -83,6 +83,9 @@ export default class Navigation {
                     if (this.screen !== undefined) {
                         context.layout.remove(this.screen)
                     }
+                    if (this.dialog !== undefined) {
+                        context.layout.remove(this.dialog)
+                    }
                     this.screen = screen
                     context.layout.appendAt(screen, 0)
                 }
@@ -98,7 +101,7 @@ export default class Navigation {
     }
 
     private navigateDialog(dialog: View) {
-        playSound(whooshMp3)
+        playSoundEffect(dialogShowMp3)
         if (this.dialog === dialog) {
             context.layout.remove(dialog)
         } else if (this.dialog !== undefined) {
@@ -108,7 +111,7 @@ export default class Navigation {
     }
 
     hideDialog(dialog: View) {
-        playSound(dialogHideMp3)
+        playSoundEffect(dialogHideMp3)
         gsap.timeline({
             onComplete: () => {
                 context.layout.remove(dialog)
@@ -132,7 +135,7 @@ export default class Navigation {
         dialog.container.position.set(x, y)
         dialog.container.scale.set(0.2, 0.2)
         gsap.timeline()
-            .to(dialog.container.scale, {x: 1, y: 1, duration: 0.22, ease: Back.easeOut, onComplete: () => playSound(dialogShowMp3)})
+            .to(dialog.container.scale, {x: 1, y: 1, duration: 0.22, ease: Back.easeOut})
     }
 
 }

@@ -83,6 +83,7 @@ export default class LevelChooserScreen extends View<Layout> {
                         level: index + 1,
                         enabled: settings.level > index,
                         active: settings.level === index + 1,
+                        click: () => navigation.navigateGoalDialog()
                     }))
                 ]
             }),
@@ -92,15 +93,18 @@ export default class LevelChooserScreen extends View<Layout> {
                 size: {width: 32, height: 32},
                 foreground: iconArrowBackPng,
                 background: buttonCircleBluePng,
-                backgroundSize: {width: 64, height: 64}
+                backgroundSize: {width: 64, height: 64},
+                click: () => navigation.navigateWelcomeScreen()
             }),
             refillLives: new RefillPanel({
                 position: {x: 110, y: 50},
-                type: 'lives'
+                type: 'lives',
+                click: () => navigation.navigateLivesShopDialog()
             }),
             refillCoins: new RefillPanel({
                 position: {x: 355, y: 50},
-                type: 'coins'
+                type: 'coins',
+                click: () => navigation.navigateCoinsShopDialog()
             }),
         }
 

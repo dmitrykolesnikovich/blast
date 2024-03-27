@@ -24,8 +24,8 @@ export default class CoinsShopDialog extends View<Layout> {
             popup: popup({
                 position: {x: 225, y: 400},
                 size: {width: 400, height: 600},
+                title: "Coins Shop",
                 close: () => navigation.hideDialog(this),
-                title: "Coins Shop"
             }),
             panelCoins: panelCoins({
                 position: {x: 225, y: 220},

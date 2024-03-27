@@ -6,6 +6,7 @@ import Image from "./views/Image"
 import Label from "./views/Label"
 import {buttonRectangleRedPng, life1Png} from "../../res"
 import Navigation from "../features/navigation"
+import {animateHeartBeat} from "../features/animations"
 
 type Layout = {
     popup: Popup
@@ -22,7 +23,8 @@ export default class GoalDialog extends View<Layout> {
             popup: popup({
                 position: {x: 225, y: 400},
                 size: {width: 400, height: 440},
-                title: "Level 10"
+                title: "Level 10",
+                close: () => navigation.hideDialog(this),
             }),
             title: new Label({
                 position: {x: 225, y: 300},
@@ -64,9 +66,13 @@ export default class GoalDialog extends View<Layout> {
                         fontFamily: 'fredokaOne',
                         fontWeight: '400',
                     }
-                })
+                }),
+                click: () => navigation.navigateGameScreen()
             }),
         }
+
+        const {play} = this.layout
+        animateHeartBeat(play)
     }
 
 }

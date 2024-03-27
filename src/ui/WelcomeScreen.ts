@@ -25,9 +25,9 @@ type Layout = {
     particlesShineRadial2: Image
     logo: Image
     play: Button
-    iconSettings: Button
-    iconSound: Button
-    iconMusic: Button
+    buttonSettings: Button
+    checkboxSound: Button
+    checkboxMusic: Button
 }
 
 export default class WelcomeScreen extends View<Layout> {
@@ -66,11 +66,11 @@ export default class WelcomeScreen extends View<Layout> {
                 foreground: playPng,
                 background: buttonRectangleGreenSmallPng,
                 backgroundSize: {width: 290 * 0.77, height: 128.9 * 0.77},
-                click: (button) => {
-                    console.log(`play: ${button.width}`)
+                click: () => {
+                    navigation.navigateLevelChooserScreen()
                 },
             }),
-            iconSettings: new Button({
+            buttonSettings: new Button({
                 position: {x: 125, y: 700},
                 anchor: {x: 0.5, y: 0.5},
                 size: {width: 40, height: 40},
@@ -78,11 +78,9 @@ export default class WelcomeScreen extends View<Layout> {
                 background: buttonCircleGreenPng,
                 backgroundDisabled: buttonCircleGreyPng,
                 backgroundSize: {width: 80, height: 80},
-                click: () => {
-                    console.log("settings")
-                },
+                click: () => navigation.navigateSettingsDialog()
             }),
-            iconSound: new Button({
+            checkboxSound: new Button({
                 position: {x: 225, y: 700},
                 anchor: {x: 0.5, y: 0.5},
                 size: {width: 40, height: 40},
@@ -102,7 +100,7 @@ export default class WelcomeScreen extends View<Layout> {
                     }
                 },
             }),
-            iconMusic: new Button({
+            checkboxMusic: new Button({
                 position: {x: 325, y: 700},
                 anchor: {x: 0.5, y: 0.5},
                 size: {width: 40, height: 40},

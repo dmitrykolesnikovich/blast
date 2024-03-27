@@ -27,7 +27,8 @@ export default class QuitDialog extends View<Layout> {
             popup: popup({
                 position: {x: 225, y: 400},
                 size: {width: 400, height: 500},
-                title: "Quit Level"
+                title: "Quit Level",
+                close: () => navigation.hideDialog(this),
             }),
             life: panel({
                 position: {x: 225, y: 330},

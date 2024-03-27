@@ -57,7 +57,8 @@ export default class SettingsDialog extends View<Layout> {
             popup: popup({
                 position: {x: 225, y: 400},
                 size: {width: 400, height: 620},
-                title: "Settings"
+                title: "Settings",
+                close: () => navigation.hideDialog(this)
             }),
             avatarGirl: new Avatar({
                 position: {x: 150, y: 240},

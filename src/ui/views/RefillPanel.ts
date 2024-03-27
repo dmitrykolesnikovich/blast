@@ -12,12 +12,15 @@ import {
     iconMorePng,
     life1Png
 } from "../../../res"
+import {cli} from "webpack"
+import {ClickListener} from "../../features/click"
 
 type RefillPanelType = 'coins' | 'lives'
 
 type RefillPanelOptions = {
     position: IPointData
     type: RefillPanelType
+    click: ClickListener
 }
 
 export default class RefillPanel extends Container {
@@ -54,8 +57,9 @@ export default class RefillPanel extends Container {
 
     constructor(options: RefillPanelOptions) {
         super()
-        const {position, type} = this.options = options
+        const {position, type, click} = this.options = options
         this.position = position
+        this.button.options.click = click
 
         switch (type) {
             case 'lives': {
