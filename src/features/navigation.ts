@@ -1,4 +1,4 @@
-import {context, View} from "../engine"
+import {context, playSound, View} from "../engine"
 import CoinsShopDialog from "../ui/CoinsShopDialog"
 import GameScreen from "../ui/GameScreen"
 import LevelChooserScreen from "../ui/LevelChooserScreen"
@@ -11,8 +11,7 @@ import WelcomeScreen from "../ui/WelcomeScreen"
 import WinScreen from "../ui/WinScreen"
 import gsap, {Back, Power2} from "gsap"
 import Curtain from "../ui/views/Curtain"
-import {playSound} from "./audio"
-import {backgroundMp3, dialogHideMp3, dialogShowMp3, loseMp3, whooshMp3} from "../../res"
+import {backgroundMp3, dialogHideMp3, dialogShowMp3, loseMp3, whooshMp3, winMp3} from "../../res"
 
 export default class Navigation {
 
@@ -34,7 +33,7 @@ export default class Navigation {
     }
 
     navigateGameScreen(): void {
-        this.navigateScreen(this.gameScreen)
+        this.navigateScreen(this.gameScreen, () => playSound(backgroundMp3))
     }
 
     navigateGoalDialog(): void {
@@ -42,7 +41,7 @@ export default class Navigation {
     }
 
     navigateLevelChooserScreen(): void {
-        this.navigateScreen(this.levelChooserScreen)
+        this.navigateScreen(this.levelChooserScreen, () => playSound(backgroundMp3))
     }
 
     navigateLivesShopDialog(): void {
@@ -62,11 +61,11 @@ export default class Navigation {
     }
 
     navigateWelcomeScreen(): void {
-        this.navigateScreen(this.welcomeScreen)
+        this.navigateScreen(this.welcomeScreen, () => playSound(backgroundMp3))
     }
 
     navigateWinScreen(): void {
-        this.navigateScreen(this.winScreen)
+        this.navigateScreen(this.winScreen, () => playSound(winMp3))
     }
 
     /*internals*/

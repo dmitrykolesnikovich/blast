@@ -3,13 +3,11 @@ import {Context} from "./Context"
 import {Layout} from "./Layout"
 import {Loader} from "./Loader"
 import {Environment} from "./Environment"
-// @ts-ignore
-import howler from 'howler-pixi-loader-middleware'
+import {initializeAudio} from "./Audio"
 
 export const context: Context = new Context()
 
 export function bootstrap(main: () => void) {
-    extensions.add(howler)
     window.parent?.window?.postMessage({playdeck: {method: "loading"}}, "*") // quickfix todo improve
     window.addEventListener('DOMContentLoaded', async () => {
         await initializeEnvironment()
@@ -43,6 +41,7 @@ function initializeContext(): Context {
     })
     context.loader = new Loader(context.app)
     context.layout = initializeLayout()
+    initializeAudio()
 
     return context
 }

@@ -1,3 +1,4 @@
+export * from './Audio'
 export * from './Context'
 export * from './Controller'
 export * from './Debug'

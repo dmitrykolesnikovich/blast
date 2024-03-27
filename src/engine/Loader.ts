@@ -17,7 +17,8 @@ export class Loader {
     private readonly fonts: FontInstance[] = []
     private _isCompleted = false
 
-    // readonly listeners: ProgressListener[] = []
+    readonly listeners: ProgressListener[] = []
+    readonly completeListeners: Function[] = []
 
     constructor(app: Application) {
         this.app = app
@@ -77,7 +78,10 @@ export class Loader {
     /*internals*/
 
     private onProgress(progress: number) {
-        // todo
+        this.listeners.forEach(listener => listener(progress))
+        if (progress === 1) {
+            this.completeListeners.forEach(listener => listener(progress))
+        }
     }
 
     private async clearFontCaches(duration: number) {

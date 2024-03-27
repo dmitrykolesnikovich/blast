@@ -30,10 +30,12 @@ type Layout = {
     titleMoves: Image
     titleGoal: Image
     titleCoins: Image
+    titleScore: Label
     moves: Label
     goal: Label
     coins: Label
     exit: Button
+    score: Label
     panelBoosters: Image
     boosterHorizontalBomb: Button
     boosterVerticalBomb: Button
@@ -87,7 +89,7 @@ export default class GameScreen extends View<Layout> {
                     anchor: {x: 0.5, y: 0.5},
                     text: "Moves",
                     style: {
-                        fontSize: 32,
+                        fontSize: 40,
                         fill: 'white',
                         align: 'left',
                         fontFamily: 'fredokaOne',
@@ -105,7 +107,7 @@ export default class GameScreen extends View<Layout> {
                     anchor: {x: 0.5, y: 0.5},
                     text: "Goal",
                     style: {
-                        fontSize: 32,
+                        fontSize: 40,
                         fill: 'white',
                         align: 'left',
                         fontFamily: 'fredokaOne',
@@ -123,13 +125,25 @@ export default class GameScreen extends View<Layout> {
                     anchor: {x: 0.5, y: 0.5},
                     text: "Coins",
                     style: {
-                        fontSize: 32,
+                        fontSize: 40,
                         fill: 'white',
                         align: 'left',
                         fontFamily: 'fredokaOne',
                         fontWeight: '400',
                     }
                 })
+            }),
+            titleScore: new Label({
+                position: {x: 86, y: 154},
+                anchor: {x: 0.5, y: 0.5},
+                style: {
+                    fontSize: 18,
+                    fill: 0x50BDFA,
+                    align: 'left',
+                    fontFamily: 'fredokaOne',
+                    fontWeight: '400',
+                },
+                text: "Score:"
             }),
             moves: new Label({
                 position: {x: 85, y: 85},
@@ -171,6 +185,18 @@ export default class GameScreen extends View<Layout> {
                 foreground: iconExitPng,
                 background: buttonCircleBluePng,
                 backgroundSize: {width: 64, height: 64}
+            }),
+            score: new Label({
+                position: {x: 120, y: 154},
+                anchor: {x: 0, y: 0.5},
+                style: {
+                    fontSize: 18,
+                    fill: 'white',
+                    align: 'left',
+                    fontFamily: 'fredokaOne',
+                    fontWeight: '400',
+                },
+                text: "123"
             }),
             panelBoosters: new Image({
                 position: {x: 98, y: 720},
