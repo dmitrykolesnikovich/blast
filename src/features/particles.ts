@@ -11,7 +11,7 @@ type ParticlesOptions = {
     size: ISize
 }
 
-export function rain(options: ParticlesOptions) {
+export function rain(options: ParticlesOptions): Emitter {
     const {container, position, size} = options
     const bounds: Rectangle = container.getLocalBounds()
     const rain: Emitter = new Emitter(container,
@@ -71,4 +71,5 @@ export function rain(options: ParticlesOptions) {
         }, [Texture.from(particlesRainPng)]))
     startTimer(({deltaTime}) => rain.update(deltaTime))
     rain.emit = true
+    return rain
 }

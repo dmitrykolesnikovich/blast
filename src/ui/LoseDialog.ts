@@ -18,6 +18,7 @@ import {
 } from "../../res"
 import {rain} from "../features/particles"
 import Navigation from "../features/navigation"
+import {Emitter} from "@pixi/particle-emitter"
 
 type Layout = {
     panelFlagGrey: Image
@@ -29,11 +30,14 @@ type Layout = {
     goal: Label
     menu: Button
     repeat: Button
-    particlesRain: Image
     cloudLose: Image
 }
 
+const cloudY: number = 100
+
 export default class LoseDialog extends View<Layout> {
+
+    private rainEmitter: Emitter
 
     private readonly titleLevel: Label = new Label({
         position: {x: 70, y: 24},
@@ -144,16 +148,10 @@ export default class LoseDialog extends View<Layout> {
                 click: () => this.close(navigation)
             }),
             cloudLose: new Image({
-                position: {x: 225, y: 100},
+                position: {x: 225, y: cloudY},
                 anchor: {x: 0.5, y: 0.5},
                 size: {width: 300, height: 135.3},
                 foreground: cloudLosePng,
-                visible: false
-            }),
-            particlesRain: new Image({
-                position: {x: 0, y: 0},
-                size: {width: 100, height: 100},
-                foreground: particlesRainPng
             }),
         }
         this.titleLevel.text = "Level 11"
@@ -161,38 +159,36 @@ export default class LoseDialog extends View<Layout> {
 
     focused() {
         const {cloudLose} = this.layout
-        cloudLose.visible = true
+        cloudLose.y = cloudY - 200
         playSoundEffect(loseMp3)
-        rain({
+        this.rainEmitter = rain({
             container: cloudLose,
             position: {x: 64, y: 128},
             size: {width: 450 - 128, height: 64},
         })
         gsap.timeline()
-            .set(cloudLose, {alpha: 0.22, y: cloudLose.y - 200})
+            .set(cloudLose, {alpha: 0.22, y: cloudY - 200})
             .to(cloudLose, {
-                alpha: 1, y: cloudLose.y, duration: 1.5, ease: Power3.easeInOut, onComplete: () => {
+                alpha: 1, y: cloudY, duration: 1.5, ease: Power3.easeInOut, onComplete: () => {
                     playSoundEffect(rainMp3)
                 }
             })
     }
 
     removed() {
-        const {cloudLose} = this.layout
-        cloudLose.visible = false
         stopSoundEffect(loseMp3)
         stopSoundLoop(rainMp3)
+        this.rainEmitter.cleanup()
+        this.rainEmitter.destroy()
     }
 
     close(navigation: Navigation) {
         const {cloudLose} = this.layout
-        const startY: number = cloudLose.y
         gsap.timeline()
-            .set(cloudLose, {alpha: 1, y: startY})
+            .set(cloudLose, {alpha: 1, y: cloudY})
             .to(cloudLose, {
-                alpha: 0, y: startY - 200, duration: 0.22, ease: Power3.easeInOut, onComplete: () => {
+                alpha: 0, y: cloudY - 100, duration: 0.2, ease: Power3.easeInOut, onComplete: () => {
                     navigation.hideDialog(this)
-                    cloudLose.y = startY
                 }
             })
     }

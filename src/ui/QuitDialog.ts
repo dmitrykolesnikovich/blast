@@ -1,4 +1,4 @@
-import {View} from "../engine"
+import {clearAnimations, View} from "../engine"
 import Image from "./views/Image"
 import {buttonColored, Popup, popup} from "../features/ninePatch"
 import {Container} from "pixi.js"
@@ -10,6 +10,7 @@ import {
     lifeBrokenShadowPng
 } from "../../res"
 import Navigation from "../features/navigation"
+import {animateHeartBeat} from "../features/animations"
 
 type Layout = {
     popup: Popup
@@ -32,18 +33,17 @@ export default class QuitDialog extends View<Layout> {
             }),
             life: panel({
                 position: {x: 225, y: 330},
-                scale: 0.8,
                 items: [
                     new Image({
                         anchor: {x: 0.5, y: 0.5},
-                        size: {width: 342, height: 311},
+                        size: {width: 273.6, height: 248.8},
                         foreground: lifeBrokenShadowPng,
                         tint: 0x0F0813,
                         alpha: 0.5,
                     }),
                     new Image({
                         anchor: {x: 0.5, y: 0.5},
-                        size: {width: 225, height: 185.5},
+                        size: {width: 180, height: 148.4},
                         foreground: lifeBrokenPng,
                     }),
                 ]
@@ -97,6 +97,16 @@ export default class QuitDialog extends View<Layout> {
                 click: () => navigation.hideDialog(this),
             }),
         }
+    }
+
+    focused() {
+        const {life} = this.layout
+        animateHeartBeat(life)
+    }
+
+    removed() {
+        const {life} = this.layout
+        clearAnimations(life)
     }
 
 }

@@ -1,4 +1,4 @@
-import {Controller, View} from "../engine"
+import {clearAnimations, Controller, View} from "../engine"
 import {
     backgroundGameJpg,
     buttonCircleGreenPng,
@@ -121,10 +121,17 @@ export default class WelcomeScreen extends View<Layout> {
                 },
             })
         }
+    }
 
+    focused() {
         const {play, particlesShineRadial1, particlesShineRadial2} = this.layout
         animateHeartBeat(play)
         animateRadialShine(particlesShineRadial1, particlesShineRadial2)
+    }
+
+    removed() {
+        const {play, particlesShineRadial1, particlesShineRadial2} = this.layout
+        clearAnimations(play, particlesShineRadial1, particlesShineRadial2)
     }
 
 }

@@ -3,10 +3,11 @@ import gsap, {Back, Linear, Power2, Power3, Sine} from "gsap"
 
 /**animation duration: 1.4*/
 export function animateHeartBeat(target: Container) {
+    target.scale.set(1) // quickfix todo improve
     gsap.timeline({repeat: -1})
         .animate(target)
-        .to(target.scale, {x: 1.06, y: 1, duration: 0.35, ease: Back.easeOut})
-        .to(target.scale, {x: 1.03, y: 1.03, duration: 0.42, ease: Power2.easeOut})
+        .to(target.scale, {x: 1.07, y: 1, duration: 0.35, ease: Back.easeOut})
+        .to(target.scale, {x: 1.035, y: 1.035, duration: 0.42, ease: Power2.easeOut})
         .to(target.scale, {x: 1, y: 1, duration: 0.21, ease: Linear.easeIn})
 }
 

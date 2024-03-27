@@ -1,5 +1,5 @@
 import Image from "./views/Image"
-import {playSoundEffect, View} from "../engine"
+import {clearAnimations, playSoundEffect, View} from "../engine"
 import {Container} from "pixi.js"
 import {panelAlert2} from "../features/ninePatch"
 import Label from "./views/Label"
@@ -144,13 +144,17 @@ export default class WinDialog extends View<Layout> {
                 click: () => navigation.navigateGameScreen()
             }),
         }
-
-        const {particlesShineRadial1, particlesShineRadial2} = this.layout
-        // animateRadialShine(particlesShineRadial1, particlesShineRadial2)
     }
 
     focused() {
+        const {particlesShineRadial1, particlesShineRadial2} = this.layout
+        animateRadialShine(particlesShineRadial1, particlesShineRadial2)
         playSoundEffect(winMp3)
+    }
+
+    removed() {
+        const {particlesShineRadial1, particlesShineRadial2} = this.layout
+        clearAnimations(particlesShineRadial1, particlesShineRadial2)
     }
 
 }

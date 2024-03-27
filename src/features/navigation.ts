@@ -77,8 +77,8 @@ export default class Navigation {
         gsap.timeline()
             .to(curtain.background, {
                 alpha: 1,
-                delay: 0.22,
-                duration: 0.6,
+                delay: 0.12,
+                duration: 0.5,
                 onComplete: () => {
                     if (this.screen !== undefined) {
                         context.layout.remove(this.screen)
@@ -93,7 +93,7 @@ export default class Navigation {
             })
             .to(curtain.background, {
                 alpha: 0,
-                duration: 0.6,
+                duration: 0.95,
                 onComplete: () => {
                     context.layout.remove(curtain)
                     if (complete) complete()
@@ -120,9 +120,9 @@ export default class Navigation {
             }
         })
             .to(dialog.container.scale, {
-                x: 0.2,
-                y: 0.2,
-                duration: 0.15,
+                x: 0.1,
+                y: 0.1,
+                duration: 0.1,
                 ease: Power2.easeIn
             })
     }
