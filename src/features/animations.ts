@@ -5,9 +5,9 @@ import gsap, {Back, Linear, Power2, Power3, Sine} from "gsap"
 export function animateHeartBeat(target: Container) {
     gsap.timeline({repeat: -1})
         .animate(target)
-        .to(target.scale, {x: 1.06, y: 1, duration: 0.5, ease: Back.easeOut})
-        .to(target.scale, {x: 1.03, y: 1.03, duration: 0.6, ease: Power2.easeOut})
-        .to(target.scale, {x: 1, y: 1, duration: 0.3, ease: Linear.easeIn})
+        .to(target.scale, {x: 1.06, y: 1, duration: 0.35, ease: Back.easeOut})
+        .to(target.scale, {x: 1.03, y: 1.03, duration: 0.42, ease: Power2.easeOut})
+        .to(target.scale, {x: 1, y: 1, duration: 0.21, ease: Linear.easeIn})
 }
 
 export function animateRadialShine(...target: Container[]) {

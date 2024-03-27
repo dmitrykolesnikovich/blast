@@ -48,7 +48,7 @@ export default class RefillPanel extends Container {
         backgroundDisabled: buttonCircleGreyPng,
         backgroundSize: {width: 40, height: 40},
     }))
-    private icon: Container = this.addChild(panel({
+    readonly icon: Container = this.addChild(panel({
         position: {x: -64, y: 0}
     }))
 

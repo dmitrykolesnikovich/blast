@@ -19,6 +19,7 @@ import Button from "./views/Button"
 import RefillPanel from "./views/RefillPanel"
 import Navigation from "../features/navigation"
 import {LEVEL_BUTTON_PATH} from "../features/levels"
+import {animateHeartBeat} from "../features/animations"
 
 type Layout = {
     background: Scroll
@@ -109,5 +110,6 @@ export default class LevelChooserScreen extends View<Layout> {
         refillLives.update()
         refillCoins.update()
         background.options.avatar.level = settings.level
+        animateHeartBeat(refillLives.icon)
     }
 }
