@@ -17,6 +17,7 @@ import settings from "../features/settings"
 import Image from "./views/Image"
 import Navigation from "../features/navigation"
 import {animateHeartBeat, animateRadialShine} from "../features/animations"
+import {disableMusic, disableSound, enableMusic, enableSound} from "../features/sounds"
 
 type Layout = {
     backgroundGame: Image
@@ -49,7 +50,8 @@ export default class WelcomeScreen extends View<Layout> {
                 position: {x: 225, y: 220},
                 anchor: {x: 0.5, y: 0.5},
                 size: {width: 900, height: 900},
-                foreground: particlesShineRadial4Png
+                foreground: particlesShineRadial4Png,
+                angle: 20
             }),
             logo: new Image({
                 position: {x: 225, y: 200},
@@ -90,8 +92,14 @@ export default class WelcomeScreen extends View<Layout> {
                 backgroundSize: {width: 80, height: 80},
                 checkbox: true,
                 enabled: settings.soundEnabled,
-                click: (button) => {
-                    console.log(`sound: ${button.enabled}`)
+                click: () => {
+                    if (settings.soundEnabled) {
+                        settings.soundEnabled = false
+                        disableSound()
+                    } else {
+                        settings.soundEnabled = true
+                        enableSound()
+                    }
                 },
             }),
             iconMusic: new Button({
@@ -104,8 +112,14 @@ export default class WelcomeScreen extends View<Layout> {
                 backgroundSize: {width: 80, height: 80},
                 checkbox: true,
                 enabled: settings.musicEnabled,
-                click: (button) => {
-                    console.log(`music: ${button.enabled}`)
+                click: () => {
+                    if (settings.musicEnabled) {
+                        settings.musicEnabled = false
+                        disableMusic()
+                    } else {
+                        settings.musicEnabled = true
+                        enableMusic()
+                    }
                 },
             })
         }

@@ -18,6 +18,7 @@ import clouds from "../features/clouds"
 import Button from "./views/Button"
 import RefillPanel from "./views/RefillPanel"
 import Navigation from "../features/navigation"
+import {LEVEL_BUTTON_PATH} from "../features/levels"
 
 type Layout = {
     background: Scroll
@@ -76,94 +77,12 @@ export default class LevelChooserScreen extends View<Layout> {
                         size: {width: 450, height: 250},
                         foreground: cloudLevelPng
                     }),
-
-                    // buttons
-                    new LevelButton({
-                        position: {x: 130, y: 3950},
-                        level: 1,
-                        enabled: true,
-                        click: () => background.options.avatar.level = 1
-                    }),
-                    new LevelButton({
-                        position: {x: 105, y: 3890},
-                        level: 2,
-                        enabled: true,
-                        click: () => background.options.avatar.level = 2
-                    }),
-                    new LevelButton({
-                        position: {x: 112, y: 3828},
-                        level: 3,
-                        enabled: true,
-                        click: () => background.options.avatar.level = 3
-                    }),
-                    new LevelButton({
-                        position: {x: 172, y: 3784},
-                        level: 4,
-                        enabled: true,
-                        click: () => background.options.avatar.level = 4
-                    }),
-                    new LevelButton({
-                        position: {x: 255, y: 3730},
-                        level: 5,
-                        enabled: true,
-                        click: () => background.options.avatar.level = 5
-                    }),
-                    new LevelButton({
-                        position: {x: 224, y: 3676},
-                        level: 6,
-                        enabled: true,
-                        click: () => background.options.avatar.level = 6
-                    }),
-                    new LevelButton({
-                        position: {x: 176, y: 3647},
-                        level: 7,
-                        enabled: true,
-                        click: () => background.options.avatar.level = 7
-                    }),
-                    new LevelButton({
-                        position: {x: 140, y: 3609},
-                        level: 8,
-                        enabled: true,
-                        click: () => background.options.avatar.level = 8
-                    }),
-                    new LevelButton({
-                        position: {x: 110, y: 3561},
-                        level: 9,
-                        enabled: true,
-                        click: () => background.options.avatar.level = 9
-                    }),
-                    new LevelButton({
-                        position: {x: 143, y: 3506},
-                        level: 10,
-                        enabled: true,
-                        click: () => background.options.avatar.level = 10
-                    }),
-                    new LevelButton({
-                        position: {x: 195, y: 3472},
-                        level: 11,
-                        enabled: true,
-                        click: () => background.options.avatar.level = 11
-                    }),
-                    new LevelButton({
-                        position: {x: 240, y: 3440},
-                        level: 12,
-                    }),
-                    new LevelButton({
-                        position: {x: 286, y: 3400},
-                        level: 13,
-                    }),
-                    new LevelButton({
-                        position: {x: 302, y: 3344},
-                        level: 14,
-                    }),
-                    new LevelButton({
-                        position: {x: 290, y: 3290},
-                        level: 15,
-                    }),
-                    new LevelButton({
-                        position: {x: 269, y: 3247},
-                        level: 16,
-                    }),
+                    ...LEVEL_BUTTON_PATH.map((position, index) => new LevelButton({
+                        position: position,
+                        level: index + 1,
+                        enabled: settings.level > index,
+                        active: settings.level === index + 1,
+                    }))
                 ]
             }),
             back: new Button({
@@ -184,10 +103,11 @@ export default class LevelChooserScreen extends View<Layout> {
             }),
         }
 
-        const {background, refillLives, refillCoins} = this.layout
+        const {background, refillLives, refillCoins, } = this.layout
         background.scrollToEnd()
         clouds(background)
         refillLives.update()
         refillCoins.update()
+        background.options.avatar.level = settings.level
     }
 }

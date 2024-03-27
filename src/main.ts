@@ -11,9 +11,6 @@ bootstrap(main)
 async function main() {
     context.loader.completeListeners.push(setupAudio)
     await context.loader.load(manifest.build == 'production' ? productionResources : resources)
-    settings.gender = 'girl'
-    settings.lives = 5
-    settings.coins = 88
     const navigation: Navigation = new Navigation()
     navigation.navigateWelcomeScreen()
 }

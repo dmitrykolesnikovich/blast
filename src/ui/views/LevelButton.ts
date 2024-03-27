@@ -24,26 +24,22 @@ export default class LevelButton extends Container {
     private _isEnabled: boolean = false
     private _isActive: boolean = false
     readonly options: LevelButtonOptions
-    private readonly buttonLevelShadow: Image = this.addChild(new Image({
-        position: {x: 0, y: 19},
-        anchor: {x: 0.5, y: 0.5},
-        size: {width: 100, height: 69.6},
-        foreground: buttonLevelShadowPng
-    }))
+
     private readonly shine: Image = this.addChild(new Image({
         position: {x: 0, y: 0},
         anchor: {x: 0.5, y: 0.5},
-        size: {width: 100, height: 87.74},
+        size: {width: 50, height: 43.87},
         foreground: buttonLevelShinePng,
         visible: false
     }))
     private readonly image: Image = this.addChild(new Image({
         position: {x: 0, y: 0},
         anchor: {x: 0.5, y: 0.5},
-        size: {width: 96, height: 82},
+        size: {width: 48, height: 41},
     }))
     private readonly shineAnimation: GSAPAnimation = gsap.timeline({repeat: -1})
-        .to(this.shine, {width: 300, height: 263.22, alpha: 0, duration: 1.4, ease: Power3.easeInOut}, 0)
+        .set(this.shine, {width: 24, height: 20.4, alpha: 1})
+        .to(this.shine, {width: 120, height: 105.288, alpha: 0, duration: 2, ease: Power3.easeInOut})
 
     constructor(options: LevelButtonOptions) {
         super()
@@ -57,14 +53,13 @@ export default class LevelButton extends Container {
             anchor: {x: 0.4, y: 0.75},
             text: `${level}`,
             style: {
-                fontSize: 28,
+                fontSize: 14,
                 fill: 'white',
                 align: 'left',
                 fontFamily: 'fredokaOne',
                 fontWeight: '400'
             }
         }))
-        this.scale.set(0.5)
     }
 
     set enabled(enabled: boolean) {

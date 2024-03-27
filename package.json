@@ -16,7 +16,8 @@
         "navigateLoseScreen": "webpack serve --open --config webpack/example.ts --env example=navigateLoseScreen",
         "navigateGameScreen": "webpack serve --open --config webpack/example.ts --env example=navigateGameScreen",
         "navigateWinScreen": "webpack serve --open --config webpack/example.ts --env example=navigateWinScreen",
-        "navigateWelcomeScreen": "webpack serve --open --config webpack/example.ts --env example=navigateWelcomeScreen"
+        "navigateWelcomeScreen": "webpack serve --open --config webpack/example.ts --env example=navigateWelcomeScreen",
+        "navigateLevelChooserScreen": "webpack serve --open --config webpack/example.ts --env example=navigateLevelChooserScreen"
     },
     "devDependencies": {
         "@babel/core": "7.23.7",

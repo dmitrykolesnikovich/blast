@@ -6,6 +6,7 @@ const bombMp3 = "./audio/bomb.mp3"
 const buttonMp3 = "./audio/button.mp3"
 const buttonBuyMp3 = "./audio/buttonBuy.mp3"
 const buttonCoinsMp3 = "./audio/buttonCoins.mp3"
+const buttonDisabledMp3 = "./audio/buttonDisabled.mp3"
 const colorBombMp3 = "./audio/colorBomb.mp3"
 const dialogHideMp3 = "./audio/dialogHide.mp3"
 const dialogShowMp3 = "./audio/dialogShow.mp3"
@@ -124,6 +125,7 @@ export {
     buttonMp3,
     buttonBuyMp3,
     buttonCoinsMp3,
+    buttonDisabledMp3,
     colorBombMp3,
     dialogHideMp3,
     dialogShowMp3,

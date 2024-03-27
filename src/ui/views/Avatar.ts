@@ -1,4 +1,4 @@
-import Image from "./Image";
+import Image from "./Image"
 import {
     avatarBorderPng,
     avatarBorderShadowPng,
@@ -7,10 +7,11 @@ import {
     avatarIndicatorPng,
     avatarIndicatorShinePng
 } from "../../../res"
-import {Container, IPointData, Point} from "pixi.js";
-import Scroll from "./Scroll";
-import LevelButton from "./LevelButton";
-import {IPoint} from "@pixi/math/lib/IPoint";
+import {Container, IPointData, Point} from "pixi.js"
+import Scroll from "./Scroll"
+import LevelButton from "./LevelButton"
+import {IPoint} from "@pixi/math/lib/IPoint"
+import {animatePointer} from "../../features/animations"
 
 export type Gender = 'boy' | 'girl'
 
@@ -59,19 +60,20 @@ export default class Avatar extends Container {
             this.avatarBorder1.size = {width: 100, height: 100}
             this.image.position.y = 0
         }
+        this.scale.set(0.6)
     }
 
     set level(level: number) {
-        if (this.parent?.parent !instanceof Scroll) return // quickfix todo improve
         const scroll: Scroll = this.parent?.parent as Scroll
-        const buttonIndex = level - 1;
+        const buttonIndex = level - 1
         const buttons: LevelButton[] = scroll.buttons
-        const button: LevelButton = buttons[buttonIndex];
-        const buttonPosition: IPoint = button.position;
+        const button: LevelButton = buttons[buttonIndex]
+        const buttonPosition: IPoint = button.position
         this.position.x = buttonPosition.x
-        this.position.y = buttonPosition.y - this.height / 2
+        this.position.y = buttonPosition.y - this.height / 2 - 8
         for (let button of buttons) button.active = false
         button.active = true
+        animatePointer(this)
     }
 
 }
