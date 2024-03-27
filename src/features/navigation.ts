@@ -130,8 +130,8 @@ export default class Navigation {
     private showDialog(dialog: View) {
         this.dialog = dialog
         context.layout.append(dialog)
-        const x: number = dialog.container.width / 2
-        const y: number = dialog.container.height / 2
+        const x: number = dialog.size.width / 2
+        const y: number = dialog.size.height / 2
         dialog.container.pivot.set(x, y)
         dialog.container.position.set(x, y)
         dialog.container.scale.set(0.2, 0.2)

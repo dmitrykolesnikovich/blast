@@ -3,7 +3,8 @@ import {Controller} from "./Controller"
 
 export class View<Layout extends Object = {}> {
 
-    readonly container: Container = new Container()
+    readonly _resizeBox: Container = new Container()
+    readonly container: Container = this._resizeBox.addChild(new Container())
     private _layout: Layout
     readonly size: ISize
     isInitialized: boolean = false // todo make setter private

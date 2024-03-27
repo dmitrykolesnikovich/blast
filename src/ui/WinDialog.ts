@@ -146,7 +146,7 @@ export default class WinDialog extends View<Layout> {
         }
 
         const {particlesShineRadial1, particlesShineRadial2} = this.layout
-        animateRadialShine(particlesShineRadial1, particlesShineRadial2)
+        // animateRadialShine(particlesShineRadial1, particlesShineRadial2)
     }
 
     focused() {
