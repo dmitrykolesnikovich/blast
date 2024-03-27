@@ -2,8 +2,9 @@ import {Application, Assets, Container, Spritesheet, Text} from "pixi.js"
 import {delay} from "./Timer"
 import {Environment} from "./Environment"
 import {debug} from "./Debug"
-import {quickfixSpritesheetForProduction} from "./Production"
+import {quickfixSoundForProduction, quickfixSpritesheetForProduction} from "./Production"
 import {context} from "./Engine"
+import {Howl} from "howler"
 
 type FontInstance = { url: string, family: string, weight: string }
 
@@ -52,6 +53,7 @@ export class Loader {
             debug(`load: ${url}`)
             const asset: any = await Assets.load(url)
             if (asset instanceof Spritesheet) quickfixSpritesheetForProduction(asset) // todo improve
+            if (asset instanceof Howl) quickfixSoundForProduction(url, asset) // todo improve
             const progress: number = this.urls.indexOf(url) / this.urls.length
             this.onProgress(progress)
         }
