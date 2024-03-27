@@ -76,6 +76,7 @@ export default class QuitDialog extends View<Layout> {
                         fontWeight: '400',
                     }
                 }),
+                click: () => navigation.navigateLoseDialog()
             }),
             play: buttonColored('greenDark', {
                 position: {x: 300, y: 520},
@@ -93,6 +94,7 @@ export default class QuitDialog extends View<Layout> {
                         fontWeight: '400',
                     }
                 }),
+                click: () => navigation.hideDialog(this),
             }),
         }
     }

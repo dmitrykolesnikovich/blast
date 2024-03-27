@@ -8,7 +8,7 @@ type Layout = {
 
 export default class Curtain extends View {
 
-    background: Graphics = new Graphics().beginFill('green').drawRect(-2000, -2000, 4000, 4000).endFill()
+    background: Graphics = new Graphics().beginFill('black').drawRect(-2000, -2000, 4000, 4000).endFill()
 
     constructor() {
         super({width: 450, height: 800})

@@ -1,5 +1,5 @@
 import Image from "./views/Image"
-import {View} from "../engine"
+import {playSoundEffect, View} from "../engine"
 import {Container} from "pixi.js"
 import {panelAlert2} from "../features/ninePatch"
 import Label from "./views/Label"
@@ -17,9 +17,10 @@ import {
     particlesShineRadial1Png,
     particlesShineRadial2Png,
     starBigGreyPng,
-    starBigYellowPng
+    starBigYellowPng, winMp3
 } from "../../res"
 import Navigation from "../features/navigation"
+import {animateRadialShine} from "../features/animations"
 
 type Layout = {
     particlesShineRadial1: Image
@@ -34,7 +35,7 @@ type Layout = {
     next: Button
 }
 
-export default class WinScreen extends View<Layout> {
+export default class WinDialog extends View<Layout> {
 
     constructor(navigation: Navigation) {
         super({width: 450, height: 800})
@@ -121,7 +122,8 @@ export default class WinScreen extends View<Layout> {
                 size: {width: 32, height: 32},
                 foreground: iconLevelPng,
                 background: buttonCircleRedPng,
-                backgroundSize: {width: 64, height: 64}
+                backgroundSize: {width: 64, height: 64},
+                click: () => navigation.navigateLevelChooserScreen()
             }),
             repeat: new Button({
                 position: {x: 225, y: 455},
@@ -129,7 +131,8 @@ export default class WinScreen extends View<Layout> {
                 size: {width: 32, height: 32},
                 foreground: iconRepeatPng,
                 background: buttonCircleGreenPng,
-                backgroundSize: {width: 64, height: 64}
+                backgroundSize: {width: 64, height: 64},
+                click: () => navigation.hideDialog(this)
             }),
             next: new Button({
                 position: {x: 315, y: 455},
@@ -137,10 +140,17 @@ export default class WinScreen extends View<Layout> {
                 size: {width: 32, height: 32},
                 foreground: iconNextPng,
                 background: buttonCircleGreenPng,
-                backgroundSize: {width: 64, height: 64}
+                backgroundSize: {width: 64, height: 64},
+                click: () => navigation.navigateGameScreen()
             }),
-
         }
+
+        const {particlesShineRadial1, particlesShineRadial2} = this.layout
+        animateRadialShine(particlesShineRadial1, particlesShineRadial2)
+    }
+
+    focused() {
+        playSoundEffect(winMp3)
     }
 
 }

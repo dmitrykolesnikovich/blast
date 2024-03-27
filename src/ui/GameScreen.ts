@@ -184,7 +184,8 @@ export default class GameScreen extends View<Layout> {
                 size: {width: 32, height: 32},
                 foreground: iconExitPng,
                 background: buttonCircleBluePng,
-                backgroundSize: {width: 64, height: 64}
+                backgroundSize: {width: 64, height: 64},
+                click: () => navigation.navigateQuitDialog()
             }),
             score: new Label({
                 position: {x: 120, y: 154},
@@ -235,6 +236,7 @@ export default class GameScreen extends View<Layout> {
                 foreground: boosterColorBombPng,
                 background: buttonBoosterPng,
                 backgroundSize: {width: 72, height: 72},
+                click: () => navigation.navigateWinDialog()
             }),
         }
 

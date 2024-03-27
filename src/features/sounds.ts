@@ -40,6 +40,7 @@ const SOUNDS: string[] = [
 
 export function setupAudio() {
     getSound(backgroundMp3).loop(true).volume(0.33)
+    getSound(rainMp3).loop(true).volume(1)
 }
 
 export function disableMusic() {

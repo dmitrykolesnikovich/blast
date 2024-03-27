@@ -5,8 +5,6 @@ import {Howl} from "howler"
 
 export type Sound = Howl
 
-const loops: Map<string, number> = new Map()
-
 export function initializeAudio() {
     extensions.add(howler)
 }
@@ -19,10 +17,18 @@ export function playSoundEffect(sound: string) {
     getSound(sound).play()
 }
 
+export function stopSoundEffect(sound: string) {
+    getSound(sound).stop()
+}
+
 export function playSoundLoop(sound: string) {
     if (!getSound(sound).playing()) {
         getSound(sound).play()
     }
+}
+
+export function stopSoundLoop(sound: string) {
+    getSound(sound).pause()
 }
 
 export function muteSounds(...sounds: string[]) {

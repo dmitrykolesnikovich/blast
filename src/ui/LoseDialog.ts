@@ -1,17 +1,20 @@
-import {View} from "../engine"
+import {playSoundEffect, stopSoundEffect, stopSoundLoop, View} from "../engine"
 import Image from "./views/Image"
 import {Container} from "pixi.js"
-import {panelHeadLine, panelAlert2} from "../features/ninePatch"
+import {panelAlert2, panelHeadLine} from "../features/ninePatch"
 import Label from "./views/Label"
 import Button from "./views/Button"
+import gsap, {Back, Elastic, Power3} from "gsap"
 import {
     buttonCircleGreenPng,
     buttonCircleRedPng,
     cloudLosePng,
     iconLevelPng,
     iconRepeatPng,
+    loseMp3,
     panelFlagGreyPng,
-    particlesRainPng
+    particlesRainPng,
+    rainMp3
 } from "../../res"
 import {rain} from "../features/particles"
 import Navigation from "../features/navigation"
@@ -30,7 +33,7 @@ type Layout = {
     cloudLose: Image
 }
 
-export default class LoseScreen extends View<Layout> {
+export default class LoseDialog extends View<Layout> {
 
     private readonly titleLevel: Label = new Label({
         position: {x: 70, y: 24},
@@ -128,7 +131,8 @@ export default class LoseScreen extends View<Layout> {
                 size: {width: 32, height: 32},
                 foreground: iconLevelPng,
                 background: buttonCircleRedPng,
-                backgroundSize: {width: 64, height: 64}
+                backgroundSize: {width: 64, height: 64},
+                click: () => navigation.navigateLevelChooserScreen()
             }),
             repeat: new Button({
                 position: {x: 270, y: 580},
@@ -136,13 +140,15 @@ export default class LoseScreen extends View<Layout> {
                 size: {width: 32, height: 32},
                 foreground: iconRepeatPng,
                 background: buttonCircleGreenPng,
-                backgroundSize: {width: 64, height: 64}
+                backgroundSize: {width: 64, height: 64},
+                click: () => this.close(navigation)
             }),
             cloudLose: new Image({
                 position: {x: 225, y: 100},
                 anchor: {x: 0.5, y: 0.5},
                 size: {width: 300, height: 135.3},
-                foreground: cloudLosePng
+                foreground: cloudLosePng,
+                visible: false
             }),
             particlesRain: new Image({
                 position: {x: 0, y: 0},
@@ -150,16 +156,45 @@ export default class LoseScreen extends View<Layout> {
                 foreground: particlesRainPng
             }),
         }
+        this.titleLevel.text = "Level 11"
     }
 
     focused() {
         const {cloudLose} = this.layout
-        this.titleLevel.text = "Level 11"
+        cloudLose.visible = true
+        playSoundEffect(loseMp3)
         rain({
             container: cloudLose,
             position: {x: 64, y: 128},
             size: {width: 450 - 128, height: 64},
         })
+        gsap.timeline()
+            .set(cloudLose, {alpha: 0.22, y: cloudLose.y - 200})
+            .to(cloudLose, {
+                alpha: 1, y: cloudLose.y, duration: 1.5, ease: Power3.easeInOut, onComplete: () => {
+                    playSoundEffect(rainMp3)
+                }
+            })
+    }
+
+    removed() {
+        const {cloudLose} = this.layout
+        cloudLose.visible = false
+        stopSoundEffect(loseMp3)
+        stopSoundLoop(rainMp3)
+    }
+
+    close(navigation: Navigation) {
+        const {cloudLose} = this.layout
+        const startY: number = cloudLose.y
+        gsap.timeline()
+            .set(cloudLose, {alpha: 1, y: startY})
+            .to(cloudLose, {
+                alpha: 0, y: startY - 200, duration: 0.22, ease: Power3.easeInOut, onComplete: () => {
+                    navigation.hideDialog(this)
+                    cloudLose.y = startY
+                }
+            })
     }
 
 }

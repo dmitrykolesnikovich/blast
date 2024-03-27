@@ -4,11 +4,11 @@ import GameScreen from "../ui/GameScreen"
 import LevelChooserScreen from "../ui/LevelChooserScreen"
 import GoalDialog from "../ui/GoalDialog"
 import LivesShopDialog from "../ui/LivesShopDialog"
-import LoseScreen from "../ui/LoseScreen"
+import LoseDialog from "../ui/LoseDialog"
 import QuitDialog from "../ui/QuitDialog"
 import SettingsDialog from "../ui/SettingsDialog"
 import WelcomeScreen from "../ui/WelcomeScreen"
-import WinScreen from "../ui/WinScreen"
+import WinDialog from "../ui/WinDialog"
 import gsap, {Back, Power2} from "gsap"
 import Curtain from "../ui/views/Curtain"
 import {backgroundMp3, dialogHideMp3, dialogShowMp3, loseMp3, whooshMp3, winMp3} from "../../res"
@@ -20,11 +20,11 @@ export default class Navigation {
     private goalDialog: GoalDialog = new GoalDialog(this)
     private levelChooserScreen: LevelChooserScreen = new LevelChooserScreen(this)
     private livesShopDialog: LivesShopDialog = new LivesShopDialog(this)
-    private loseScreen: LoseScreen = new LoseScreen(this)
+    private loseDialog: LoseDialog = new LoseDialog(this)
     private quitDialog: QuitDialog = new QuitDialog(this)
     private settingsDialog: SettingsDialog = new SettingsDialog(this)
     private welcomeScreen: WelcomeScreen = new WelcomeScreen(this)
-    private winScreen: WinScreen = new WinScreen(this)
+    private winDialog: WinDialog = new WinDialog(this)
     private screen: View | undefined
     private dialog: View | undefined
 
@@ -48,8 +48,8 @@ export default class Navigation {
         this.navigateDialog(this.livesShopDialog)
     }
 
-    navigateLoseScreen(): void {
-        this.navigateScreen(this.loseScreen, () => playSoundEffect(loseMp3))
+    navigateLoseDialog(): void {
+        this.navigateDialog(this.loseDialog)
     }
 
     navigateQuitDialog(): void {
@@ -64,8 +64,8 @@ export default class Navigation {
         this.navigateScreen(this.welcomeScreen, () => playSoundLoop(backgroundMp3))
     }
 
-    navigateWinScreen(): void {
-        this.navigateScreen(this.winScreen, () => playSoundEffect(winMp3))
+    navigateWinDialog(): void {
+        this.navigateDialog(this.winDialog)
     }
 
     /*internals*/
@@ -77,14 +77,15 @@ export default class Navigation {
         gsap.timeline()
             .to(curtain.background, {
                 alpha: 1,
-                delay: 0.5,
-                duration: 1,
+                delay: 0.22,
+                duration: 0.6,
                 onComplete: () => {
                     if (this.screen !== undefined) {
                         context.layout.remove(this.screen)
                     }
                     if (this.dialog !== undefined) {
                         context.layout.remove(this.dialog)
+                        this.dialog = undefined
                     }
                     this.screen = screen
                     context.layout.appendAt(screen, 0)
@@ -92,7 +93,7 @@ export default class Navigation {
             })
             .to(curtain.background, {
                 alpha: 0,
-                duration: 1,
+                duration: 0.6,
                 onComplete: () => {
                     context.layout.remove(curtain)
                     if (complete) complete()

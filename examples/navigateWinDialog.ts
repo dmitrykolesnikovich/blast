@@ -4,14 +4,14 @@ import settings from "../src/features/settings"
 import Navigation from "../src/features/navigation"
 import {setupAudio} from "../src/features/sounds"
 
-bootstrap(navigateWinScreen)
+bootstrap(navigateWinDialog)
 
-async function navigateWinScreen() {
+async function navigateWinDialog() {
     context.loader.completeListeners.push(setupAudio)
     await context.loader.load(resources)
     settings.gender = 'girl'
     settings.lives = 5
     settings.coins = 88
     const navigation: Navigation = new Navigation()
-    navigation.navigateWinScreen()
+    navigation.navigateWinDialog()
 }

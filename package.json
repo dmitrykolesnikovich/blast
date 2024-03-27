@@ -13,9 +13,9 @@
         "navigateSettingsDialog": "webpack serve --open --config webpack/example.ts --env example=navigateSettingsDialog",
         "navigateQuitDialog": "webpack serve --open --config webpack/example.ts --env example=navigateQuitDialog",
         "navigateLivesShopDialog": "webpack serve --open --config webpack/example.ts --env example=navigateLivesShopDialog",
-        "navigateLoseScreen": "webpack serve --open --config webpack/example.ts --env example=navigateLoseScreen",
+        "navigateLoseDialog": "webpack serve --open --config webpack/example.ts --env example=navigateLoseDialog",
         "navigateGameScreen": "webpack serve --open --config webpack/example.ts --env example=navigateGameScreen",
-        "navigateWinScreen": "webpack serve --open --config webpack/example.ts --env example=navigateWinScreen",
+        "navigateWinDialog": "webpack serve --open --config webpack/example.ts --env example=navigateWinDialog",
         "navigateWelcomeScreen": "webpack serve --open --config webpack/example.ts --env example=navigateWelcomeScreen",
         "navigateLevelChooserScreen": "webpack serve --open --config webpack/example.ts --env example=navigateLevelChooserScreen"
     },
