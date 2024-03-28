@@ -40,7 +40,7 @@ export default function clouds(scroll: Scroll) {
         if (flip) {
             flipSpriteHorizontally(cloud)
         }
-        scroll.items.addChild(cloud)
+        scroll.foreground.content.addChild(cloud)
 
         switch (direction) {
             case 'left': {

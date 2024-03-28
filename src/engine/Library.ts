@@ -1,5 +1,4 @@
 import {Container, IPointData, ISize} from "pixi.js"
-import {stopSoundEffect} from "./Audio"
 
 export function range(begin: number, end: number): number[] {
     return [...Array(end - begin + 1).keys()].map(i => i + begin)
@@ -66,4 +65,16 @@ export function adapt<T extends { size: ISize }>(layout: T, container?: Containe
         ...layout,
         contentRatio
     }
+}
+
+export class AdaptiveContainer extends Container {
+
+    readonly layout: Adaptive
+    readonly content: Container = this.addChild(new Container())
+
+    constructor(layout: Adaptive) {
+        super()
+        this.layout = layout
+    }
+
 }

@@ -1,5 +1,6 @@
 import {Container, Graphics, ISize} from "pixi.js"
 import {Controller} from "./Controller"
+import {isAdaptive} from "./Library"
 
 export class View<Layout extends Object = {}> {
 
@@ -20,6 +21,11 @@ export class View<Layout extends Object = {}> {
                 this.content.addChild(object)
             }
         })
+
+        const canvasWidth: number = window.innerWidth
+        const canvasHeight: number = window.innerHeight
+        const size: ISize = {width: canvasWidth / this._resizeBox.scale.x, height: canvasHeight / this._resizeBox.scale.y}
+        this.adaptElements(size)
     }
 
     get layout(): Layout {
@@ -53,6 +59,14 @@ export class View<Layout extends Object = {}> {
 
     resize(size: ISize) {
         // no op
+    }
+
+    adaptElements(size: ISize) {
+        this.content.children.forEach(child => {
+            if (isAdaptive(child)) {
+                child.adaptElement(size)
+            }
+        })
     }
 
 }

@@ -64,7 +64,7 @@ export default class Avatar extends Container {
     }
 
     set level(level: number) {
-        const scroll: Scroll = this.parent?.parent as Scroll
+        const scroll: Scroll = this.parent?.parent?.parent as Scroll
         const buttonIndex = level - 1
         const buttons: LevelButton[] = scroll.buttons
         const button: LevelButton = buttons[buttonIndex]

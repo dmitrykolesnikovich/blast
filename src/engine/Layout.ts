@@ -1,7 +1,7 @@
 import {Container, ISize} from "pixi.js"
 import {View} from "./View"
 import {context} from "./Engine"
-import {Adaptive, Direction, isAdaptive, Orientation, AdaptiveElement} from "./Library"
+import {AdaptiveContainer, Direction, Orientation} from "./Library"
 
 export class Layout {
 
@@ -77,11 +77,7 @@ export class Layout {
         setupContainerLayout(view._resizeBox, canvasSize, view.size)
         const size: ISize = {width: canvasWidth / view._resizeBox.scale.x, height: canvasHeight / view._resizeBox.scale.y}
         view.resize(size)
-        view.content.children.forEach(child => {
-            if (isAdaptive(child)) {
-                child.adaptElement(size)
-            }
-        })
+        view.adaptElements(size)
     }
 
 }
@@ -98,15 +94,21 @@ export function setupContainerLayout(container: Container, outer: ISize, inner: 
     }
 }
 
-export function setupContainerAdaptiveLayout(container: Container & { layout: Adaptive }, options: { size: ISize, fill?: Orientation, gravity?: Direction }) {
+export function setupAdaptiveContainerLayout(container: AdaptiveContainer, options: { size: ISize, fill?: Orientation, gravity?: Direction }, ...sync: AdaptiveContainer[]) {
     const {size, fill, gravity} = options
+    const {layout} = container
 
-    // fill content
-    const contentRatio: number = container.layout.contentRatio()
+    // fill
+    const contentRatio: number = layout.contentRatio()
     switch (fill) {
         case "horizontal": {
-            container.width = size.width
-            container.height = container.width / contentRatio
+            if (container.mask !== null) {
+                container.width = size.width * container.width / (container.mask as Container).width / container.scale.x
+                container.height = container.width / contentRatio
+            } else {
+                container.width = size.width
+                container.height = container.width / contentRatio
+            }
             break
         }
         case "vertical":
@@ -115,8 +117,8 @@ export function setupContainerAdaptiveLayout(container: Container & { layout: Ad
             break
     }
 
-    // center layout
-    const layoutRatio: number = container.layout.size.width / container.layout.size.height
+    // center
+    const layoutRatio: number = layout.size.width / layout.size.height
     let layoutWidth: number
     let layoutHeight: number
     switch (fill) {
@@ -130,14 +132,14 @@ export function setupContainerAdaptiveLayout(container: Container & { layout: Ad
             layoutWidth = layoutHeight * layoutRatio
             break
         default: {
-            layoutWidth = container.layout.size.width
-            layoutHeight = container.layout.size.height
+            layoutWidth = layout.size.width
+            layoutHeight = layout.size.height
             break
         }
     }
-    container.position.copyFrom(container.layout.position)
-    const dx: number = (layoutWidth - container.layout.size.width) / 2
-    const dy: number = (layoutHeight - container.layout.size.height) / 2
+    container.position.copyFrom(layout.position)
+    const dx: number = (layoutWidth - layout.size.width) / 2
+    const dy: number = (layoutHeight - layout.size.height) / 2
     container.x -= dx
     container.y -= dy
 
@@ -168,4 +170,10 @@ export function setupContainerAdaptiveLayout(container: Container & { layout: Ad
             break
         }
     }
+
+    // sync
+    sync.forEach(it => {
+        it.position.copyFrom(container.position)
+        it.scale.copyFrom(container.scale)
+    })
 }

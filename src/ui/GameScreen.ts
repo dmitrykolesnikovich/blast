@@ -1,4 +1,4 @@
-import {setupContainerAdaptiveLayout, View} from "../engine"
+import {setupAdaptiveContainerLayout, View} from "../engine"
 import Image from "./views/Image"
 import Button from "./views/Button"
 import Label from "./views/Label"

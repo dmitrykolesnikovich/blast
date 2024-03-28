@@ -1,4 +1,4 @@
-import {Adaptive, clearAnimations, Controller, setupContainerLayout, setupContainerAdaptiveLayout, View} from "../engine"
+import {Adaptive, clearAnimations, Controller, setupContainerLayout, setupAdaptiveContainerLayout, View} from "../engine"
 import {
     backgroundGameJpg,
     buttonCircleGreenPng,

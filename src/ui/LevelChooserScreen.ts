@@ -1,4 +1,4 @@
-import {debug, setupContainerAdaptiveLayout, View} from "../engine"
+import {debug, setupAdaptiveContainerLayout, View} from "../engine"
 import Image from "./views/Image"
 import {
     background1Jpg,
@@ -113,7 +113,7 @@ export default class LevelChooserScreen extends View<Layout> {
 
         const {scroll, refillLives, refillCoins, } = this.layout
         scroll.scrollToEnd()
-        // clouds(scroll)
+        clouds(scroll)
         refillLives.update()
         refillCoins.update()
         scroll.layout.avatar.level = settings.level
