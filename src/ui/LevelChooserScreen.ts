@@ -37,7 +37,7 @@ export default class LevelChooserScreen extends View<Layout> {
             scroll: new Scroll({
                 position: {x: 0, y: 0},
                 size: {width: 450, height: 800},
-                range: {min: -3200, max: 0},
+                range: {min: -3300, max: 0},
                 fill: 'horizontal',
                 gravity: 'down',
                 avatar: new Avatar({

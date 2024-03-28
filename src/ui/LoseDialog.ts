@@ -169,7 +169,7 @@ export default class LoseDialog extends View<Layout> {
         gsap.timeline()
             .set(cloudLose, {alpha: 0.22, y: cloudY - 200})
             .to(cloudLose, {
-                alpha: 1, y: cloudY, duration: 1.5, ease: Power3.easeInOut, onComplete: () => {
+                alpha: 1, y: cloudY, duration: 1, ease: Power3.easeInOut, onComplete: () => {
                     playSoundEffect(rainMp3)
                 }
             })
