@@ -1,6 +1,6 @@
 {
     "title": "Blast",
-    "version": "2",
+    "version": "3",
     "scripts": {
         "dist": "webpack --config webpack/production.ts",
         "start": "webpack serve --open --config webpack/development.ts",
