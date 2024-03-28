@@ -1,4 +1,4 @@
-import {View} from "../engine"
+import {setupContainerAdaptiveLayout, View} from "../engine"
 import Image from "./views/Image"
 import Button from "./views/Button"
 import Label from "./views/Label"
@@ -19,6 +19,7 @@ import {
     panelProgressPng,
 } from "../../res"
 import Navigation from "../features/navigation"
+import {ISize} from "pixi.js"
 
 type Layout = {
     background: Image
@@ -245,6 +246,11 @@ export default class GameScreen extends View<Layout> {
         goal.text = 90
         coins.text = settings.coins
         indicatorProgress.progress = 0.5
+    }
+
+    resize(size: ISize) {
+        const {background} = this.layout
+        setupContainerAdaptiveLayout(background, {size, fill: "horizontal", gravity: "up"})
     }
 
 }

@@ -120,18 +120,7 @@ export default class LevelChooserScreen extends View<Layout> {
 
     resize(size: ISize) {
         const {scroll} = this.layout
-        scroll.width = size.width
-        scroll.height = scroll.width / scroll.layout.contentRatio()
         setupContainerAdaptiveLayout(scroll, {size, fill: 'horizontal', gravity: 'down'})
-        // scroll.x = (scroll.layout.size.width - scroll.width) / 2
-        // scroll.y = scroll.x / (450 / 800) * 2
-
-        debug()
-        // if (size.height < scroll.height) {
-        //     scroll.y = 400 + (size.height - scroll.height) / 2
-        // } else {
-        //     scroll.y = 400
-        // }
     }
 
 }
