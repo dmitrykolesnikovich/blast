@@ -5,7 +5,6 @@ import {Particle} from "@pixi/particle-emitter"
 declare module "pixi.js" {
     interface Container {
         root(): Container
-
         isAttached(): boolean
     }
 }

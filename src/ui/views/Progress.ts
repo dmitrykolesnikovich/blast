@@ -5,7 +5,7 @@ import {
     progressBarPng
 } from "../../../res"
 
-type ProgressOptions = {
+type ProgressLayout = {
     position: IPointData
 }
 
@@ -19,9 +19,9 @@ export default class Progress extends Container {
         foreground: progressBarPng
     })
 
-    constructor(options: ProgressOptions) {
+    constructor(layout: ProgressLayout) {
         super()
-        const {position} = options
+        const {position} = layout
         this.position = position
         this.addChild(new Graphics().beginFill(0xFAD8AE).drawRect(0, 0, 220, 25).endFill())
         this.addChild(this.progressBar)

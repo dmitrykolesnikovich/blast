@@ -2,16 +2,16 @@ import {Container, IPointData, ISize} from "pixi.js"
 import Image from "./Image"
 import {life1Png, life1ShadowPng} from "../../../res"
 
-type LifeOptions = {
+type LifeLayout = {
     position: IPointData
     size: ISize
 }
 
 export default class Life extends Container {
 
-    constructor(options: LifeOptions) {
+    constructor(layout: LifeLayout) {
         super()
-        const {position, size} = options
+        const {position, size} = layout
         this.position = position
 
         this.addChild(new Image({

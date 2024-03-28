@@ -1,4 +1,4 @@
-import {clearAnimations, Controller, View} from "../engine"
+import {Adaptive, clearAnimations, Controller, setupContainerLayout, setupContainerAdaptiveLayout, View} from "../engine"
 import {
     backgroundGameJpg,
     buttonCircleGreenPng,
@@ -18,6 +18,7 @@ import Image from "./views/Image"
 import Navigation from "../features/navigation"
 import {animateHeartBeat, animateRadialShine} from "../features/animations"
 import {disableMusic, disableSound, enableMusic, enableSound} from "../features/sounds"
+import {Container, ISize} from "pixi.js"
 
 type Layout = {
     backgroundGame: Image
@@ -134,4 +135,10 @@ export default class WelcomeScreen extends View<Layout> {
         clearAnimations(play, particlesShineRadial1, particlesShineRadial2)
     }
 
+    resize(size: ISize) {
+        const {backgroundGame} = this.layout
+        setupContainerAdaptiveLayout(backgroundGame, {size, fill: 'horizontal', gravity: 'down'})
+    }
+
 }
+

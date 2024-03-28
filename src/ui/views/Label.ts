@@ -2,7 +2,7 @@ import {IPointData, ITextStyle, Text} from "pixi.js"
 
 export type LabelStyle = Partial<ITextStyle>
 
-type LabelOptions = {
+type LabelLayout = {
     text?: string,
     position: IPointData,
     anchor?: IPointData,
@@ -12,9 +12,9 @@ type LabelOptions = {
 
 export default class Label extends Text {
 
-    constructor(options: LabelOptions) {
+    constructor(layout: LabelLayout) {
         super()
-        const {text, position, anchor, style, visible} = options
+        const {text, position, anchor, style, visible} = layout
         this.position = position
         if (text !== undefined) {
             this.text = text

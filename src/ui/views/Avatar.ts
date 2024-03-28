@@ -15,7 +15,7 @@ import {animatePointer} from "../../features/animations"
 
 export type Gender = 'boy' | 'girl'
 
-type AvatarOptions = {
+type AvatarLayout = {
     position: IPointData
     gender: Gender
     indicator?: boolean
@@ -39,9 +39,9 @@ export default class Avatar extends Container {
         size: {width: 100, height: 100}
     }))
 
-    constructor(options: AvatarOptions) {
+    constructor(layout: AvatarLayout) {
         super()
-        const {position, gender, indicator = false} = options
+        const {position, gender, indicator = false} = layout
         this.position = position
         this.image.foreground = gender === 'girl' ? avatarGirlPng : avatarBoyPng
 

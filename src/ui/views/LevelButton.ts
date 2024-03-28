@@ -11,7 +11,7 @@ import gsap, {Power3} from "gsap"
 import {ClickListener, setupClickListener} from "../../features/click"
 import Label from "./Label"
 
-type LevelButtonOptions = {
+type LevelButtonLayout = {
     position: IPointData
     enabled?: boolean
     active?: boolean
@@ -23,7 +23,7 @@ export default class LevelButton extends Container {
 
     private _isEnabled: boolean = false
     private _isActive: boolean = false
-    readonly options: LevelButtonOptions
+    readonly layout: LevelButtonLayout
 
     private readonly shine: Image = this.addChild(new Image({
         position: {x: 0, y: 0},
@@ -41,9 +41,9 @@ export default class LevelButton extends Container {
         .set(this.shine, {width: 24, height: 20.4, alpha: 1})
         .to(this.shine, {width: 120, height: 105.288, alpha: 0, duration: 2, ease: Power3.easeInOut})
 
-    constructor(options: LevelButtonOptions) {
+    constructor(layout: LevelButtonLayout) {
         super()
-        const {position, enabled = false, active = false, level} = this.options = options
+        const {position, enabled = false, active = false, level} = this.layout = layout
         this.position = position
         this.enabled = enabled
         this.active = active

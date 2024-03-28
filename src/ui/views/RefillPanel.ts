@@ -17,7 +17,7 @@ import {ClickListener} from "../../features/click"
 
 type RefillPanelType = 'coins' | 'lives'
 
-type RefillPanelOptions = {
+type RefillPanelLayout = {
     position: IPointData
     type: RefillPanelType
     click: ClickListener
@@ -25,7 +25,7 @@ type RefillPanelOptions = {
 
 export default class RefillPanel extends Container {
 
-    private readonly options: RefillPanelOptions
+    private readonly layout: RefillPanelLayout
     private readonly title: Label = new Label({
         position: {x: 0, y: 25},
         anchor: {x: 0.5, y: 0.5},
@@ -55,11 +55,11 @@ export default class RefillPanel extends Container {
         position: {x: -64, y: 0}
     }))
 
-    constructor(options: RefillPanelOptions) {
+    constructor(layout: RefillPanelLayout) {
         super()
-        const {position, type, click} = this.options = options
+        const {position, type, click} = this.layout = layout
         this.position = position
-        this.button.options.click = click
+        this.button.layout.click = click
 
         switch (type) {
             case 'lives': {
@@ -99,7 +99,7 @@ export default class RefillPanel extends Container {
     }
 
     update() {
-        const {type} = this.options
+        const {type} = this.layout
         switch (type) {
             case 'lives': {
                 const label: Label = this.icon.getChildAt(1) as Label // quickfix todo improve

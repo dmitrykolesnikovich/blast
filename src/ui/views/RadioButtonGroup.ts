@@ -10,7 +10,7 @@ class RadioButton extends Container {
     text: Text
 }
 
-type RadioButtonGroupOptions = {
+type RadioButtonGroupLayout = {
     position: IPointData
     size: ISize
     image: string,
@@ -26,19 +26,21 @@ export default class RadioButtonGroup extends Container {
     private selectedIndex: number
     private buttons: Array<RadioButton> = []
 
-    constructor(options: RadioButtonGroupOptions) {
+    constructor(layout: RadioButtonGroupLayout) {
         super()
-        const {position, size, image, indicator, orientation, items, padding, style} = options
+        const {position, size, image, indicator, orientation, items, padding, style} = layout
         this.position = position
         for (let [index, item] of enumerate(items)) {
             const button: RadioButton = this.addChild(new RadioButton())
 
             button.background = button.addChild(new Image({
+                position: {x: 0, y: 0},
                 size: size,
                 foreground: buttonRadioPng,
                 anchor: {x: 0.5, y: 0.5}
             }))
             button.foreground = button.addChild(new Image({
+                position: {x: 0, y: 0},
                 size: {width: size.width * 0.5, height: size.height * 0.5},
                 foreground: indicator,
                 anchor: {x: 0.5, y: 0.5},

@@ -1,4 +1,5 @@
-import {ISize} from "pixi.js";
+import {Container, IPointData, ISize} from "pixi.js"
+import {stopSoundEffect} from "./Audio"
 
 export function range(begin: number, end: number): number[] {
     return [...Array(end - begin + 1).keys()].map(i => i + begin)
@@ -36,3 +37,24 @@ export function checkSize(size: ISize, range: { min?: ISize, max?: ISize }) {
 export type Orientation = 'horizontal' | 'vertical'
 
 export type Direction = 'left' | 'right' | 'up' | 'down'
+
+export type Adaptive<T = { position: IPointData, size: ISize }> = T & { contentRatio: () => number }
+
+export function adapt<T extends { size: ISize }>(layout: T, container?: Container): Adaptive<T> {
+    let _contentRatio: number | undefined
+    const contentRatio = () => {
+        if (_contentRatio === undefined) {
+            if (container !== undefined) {
+                _contentRatio = container.width / container.height
+            } else {
+                _contentRatio = layout.size.width / layout.size.height
+            }
+        }
+        return _contentRatio
+    }
+
+    return {
+        ...layout,
+        contentRatio
+    }
+}

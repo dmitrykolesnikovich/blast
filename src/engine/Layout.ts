@@ -1,6 +1,7 @@
-import {Container} from "pixi.js"
+import {Container, ISize} from "pixi.js"
 import {View} from "./View"
 import {context} from "./Engine"
+import {Adaptive, Direction, Orientation, TODO} from "./Library"
 
 export class Layout {
 
@@ -70,19 +71,90 @@ export class Layout {
     /*internals*/
 
     private resizeView(view: View) {
-        const canvasWidth = window.innerWidth
-        const canvasHeight = window.innerHeight
-        const {width, height} = view.size
-
-        const wratio: number = canvasWidth / width
-        const hratio: number = canvasHeight / height
-        if (wratio < hratio) {
-            view._resizeBox.scale.set(wratio)
-            view._resizeBox.position.set(0, (canvasHeight - height * wratio) / 2)
-        } else {
-            view._resizeBox.scale.set(hratio)
-            view._resizeBox.position.set((canvasWidth - width * hratio) / 2, 0)
-        }
+        const canvasWidth: number = window.innerWidth
+        const canvasHeight: number = window.innerHeight
+        const canvasSize: ISize = {width: canvasWidth, height: canvasHeight}
+        setupContainerLayout(view._resizeBox, canvasSize, view.size)
+        view.resize({width: canvasWidth / view._resizeBox.scale.x, height: canvasHeight / view._resizeBox.scale.y})
     }
 
+}
+
+export function setupContainerLayout(container: Container, outer: ISize, inner: ISize) {
+    const wratio: number = outer.width / inner.width
+    const hratio: number = outer.height / inner.height
+    if (wratio < hratio) {
+        container.scale.set(wratio)
+        container.position.set(0, (outer.height - inner.height * wratio) / 2)
+    } else {
+        container.scale.set(hratio)
+        container.position.set((outer.width - inner.width * hratio) / 2, 0)
+    }
+}
+
+export function setupContainerAdaptiveLayout(container: Container & { layout: Adaptive }, options: { size: ISize, fill: Orientation, gravity: Direction }) {
+    const {size, fill, gravity} = options
+
+    // fill content
+    const contentRatio: number = container.layout.contentRatio()
+    switch (fill) {
+        case "horizontal": {
+            container.width = size.width
+            container.height = container.width / contentRatio
+            break
+        }
+        case "vertical":
+            container.height = size.height
+            container.width = container.height * contentRatio
+            break
+    }
+
+    // center layout
+    const layoutRatio: number = container.layout.size.width / container.layout.size.height
+    let layoutWidth: number
+    let layoutHeight: number
+    switch (fill) {
+        case "horizontal": {
+            layoutWidth = size.width
+            layoutHeight = layoutWidth / layoutRatio
+            break
+        }
+        case "vertical":
+            layoutHeight = size.height
+            layoutWidth = layoutHeight * layoutRatio
+            break
+    }
+    container.position.copyFrom(container.layout.position)
+    const dx: number = (layoutWidth - container.layout.size.width) / 2
+    const dy: number = (layoutHeight - container.layout.size.height) / 2
+    container.x -= dx
+    container.y -= dy
+
+    // gravity
+    switch (gravity) {
+        case "down": {
+            if (container.height > size.height) {
+                container.y -= dy
+            }
+            break
+        }
+        case "up": {
+            if (container.height > size.height) {
+                container.y += dy
+            }
+            break
+        }
+        case "left": {
+            if (container.height > size.height) {
+                container.x -= dx
+            }
+            break
+        }
+        case "right": {
+            if (container.height > size.height) {
+                container.x += dx
+            }
+            break
+        }
+    }
 }

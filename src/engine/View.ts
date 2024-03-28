@@ -51,6 +51,10 @@ export class View<Layout extends Object = {}> {
         return this
     }
 
+    resize(size: ISize) {
+        // no op
+    }
+
 }
 
 export function viewOf(size: ISize, ...layout: Container[]): View {

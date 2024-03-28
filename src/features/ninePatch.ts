@@ -1,7 +1,7 @@
 import {IPointData, ISize, NineSlicePlane, Texture} from "pixi.js"
 import {Container} from "@pixi/display"
 import {checkSize} from "../engine"
-import Button, {ButtonOptions} from "../ui/views/Button"
+import Button, {ButtonLayout} from "../ui/views/Button"
 import Label from "../ui/views/Label"
 import Image from "../ui/views/Image"
 import {
@@ -75,7 +75,7 @@ function setupPanelOptions(panel: Container, options: PanelOptions): Container {
 export function popup(options: PanelOptions): Popup {
     checkSize(options.size, {min: {width: 300, height: 240}})
     const popup: Popup = new Popup(setupPanelOptions(new NineSlicePlane(Texture.from(panelAlert1Png), 130, 100, 130, 100), options))
-    popup.buttonClose.options.click = options.close
+    popup.buttonClose.layout.click = options.close
     popup.title.text = options.title ?? ""
     return popup
 }
@@ -110,7 +110,7 @@ export function panelGoal(options: PanelOptions): Container {
     return setupPanelOptions(new NineSlicePlane(Texture.from(panelGoalPng), 40, 60, 40, 60), options)
 }
 
-export function buttonColored(color: 'green' | 'greenDark' | 'pink' | 'red', options: ButtonOptions): Button {
+export function buttonColored(color: 'green' | 'greenDark' | 'pink' | 'red', options: ButtonLayout): Button {
     const {size} = options
     let imagePath: string
     switch (color) {

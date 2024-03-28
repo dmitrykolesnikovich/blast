@@ -16,7 +16,7 @@ export function animateRadialShine(...target: Container[]) {
         const startAngle: number = container.angle
         gsap.timeline({repeat: -1})
             .set(container, {angle: startAngle})
-            .to(container, {angle: startAngle + 10, duration: 1.2, ease: Sine.easeInOut})
+            .to(container, {angle: startAngle + 6, duration: 1.2, ease: Sine.easeInOut})
             .to(container, {angle: startAngle, duration: 1.2, ease: Sine.easeInOut})
         gsap.timeline({repeat: -1})
             .set(container, {alpha: 1})

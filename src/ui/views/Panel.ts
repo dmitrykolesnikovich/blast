@@ -1,12 +1,12 @@
 import {Container, IPointData} from "pixi.js"
 
-type PanelOptions = {
+type PanelLayout = {
     position: IPointData
     items?: Array<Container>
 }
 
-export default function panel(options: PanelOptions): Container {
-    const {position, items} = options
+export default function panel(layout: PanelLayout): Container {
+    const {position, items} = layout
     const container: Container = new Container()
     container.position = position
     if (items) {

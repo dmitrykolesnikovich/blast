@@ -4,7 +4,7 @@ import Label from "./Label";
 import {ClickListener, setupClickListener} from "../../features/click";
 import Image from "./Image"
 
-export type ButtonOptions = {
+export type ButtonLayout = {
     position: IPointData
     size: ISize
     foreground?: string
@@ -24,12 +24,12 @@ export type ButtonOptions = {
 
 export default class Button extends Container {
 
-    readonly options: ButtonOptions
+    readonly layout: ButtonLayout
     private _isEnabled: boolean
     private backgroundSprite: Sprite = this.addChild(new Sprite())
     private foregroundSprite: Sprite = this.addChild(new Sprite())
 
-    constructor(options: ButtonOptions) {
+    constructor(layout: ButtonLayout) {
         super()
 
         function setupSprite(sprite: Sprite, size: ISize, anchor?: IPointData, tint?: ColorSource, image?: string) {
@@ -46,7 +46,7 @@ export default class Button extends Container {
             }
         }
 
-        const {position, size, foreground, backgroundAnchor, anchor, tint, backgroundSize, enabled = true, label, icons} = this.options = options
+        const {position, size, foreground, backgroundAnchor, anchor, tint, backgroundSize, enabled = true, label, icons} = this.layout = layout
         setupClickListener(this)
         this.position = position
         setupSprite(this.backgroundSprite, backgroundSize ?? size, backgroundAnchor ?? anchor, tint)
@@ -64,7 +64,7 @@ export default class Button extends Container {
         const firstTime: boolean = this._isEnabled === undefined
         this._isEnabled = enabled
 
-        const {background, backgroundSize, backgroundDisabled, checkbox, toggle, click, size} = this.options
+        const {background, backgroundSize, backgroundDisabled, checkbox, toggle, click, size} = this.layout
         this.backgroundImage = enabled ? background : (backgroundDisabled ?? background)
         if (toggle) {
             const bounds: Rectangle = this.backgroundSprite.getLocalBounds();

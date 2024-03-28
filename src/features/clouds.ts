@@ -11,16 +11,19 @@ export default function clouds(scroll: Scroll) {
         switch (cloudIndex) {
             case 0:
                 return new Image({
+                    position: {x: 0, y: 0},
                     foreground: cloud1Png,
                     size: {width: 275, height: 225}
                 })
             case 1:
                 return new Image({
+                    position: {x: 0, y: 0},
                     foreground: cloud2Png,
                     size: {width: 225, height: 175}
                 })
             case 2:
                 return new Image({
+                    position: {x: 0, y: 0},
                     foreground: cloud3Png,
                     size: {width: 300, height: 250}
                 })

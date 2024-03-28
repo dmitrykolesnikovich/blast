@@ -1,8 +1,9 @@
 import {ColorSource, IPointData, ISize, Point, Sprite, Texture} from "pixi.js"
 import Label from "./Label"
+import {adapt, Adaptive} from "../../engine"
 
-type ImageOptions = {
-    position?: IPointData,
+type ImageLayout = {
+    position: IPointData,
     size: ISize,
     foreground?: string,
     anchor?: IPointData,
@@ -11,17 +12,18 @@ type ImageOptions = {
     angle?: number
     alpha?: number
     label?: Label
+    fillParent?: boolean
 }
 
 export default class Image extends Sprite {
 
-    private readonly options: ImageOptions
+    readonly layout: Adaptive<ImageLayout>
 
-    constructor(options: ImageOptions) {
+    constructor(layout: ImageLayout) {
         super()
-        const {position, size, foreground, anchor, tint, visible, angle, alpha, label} = this.options = options
+        const {position, size, foreground, anchor, tint, visible, angle, alpha, label, fillParent} = this.layout = adapt(layout)
         this.texture = foreground ? Texture.from(foreground) : Texture.EMPTY
-        this.position = position ?? new Point()
+        this.position = position
         this.width = size.width
         this.height = size.height
         if (anchor !== undefined) {
@@ -42,6 +44,9 @@ export default class Image extends Sprite {
         if (label !== undefined) {
             this.addChild(label)
         }
+        if (fillParent !== undefined) {
+
+        }
     }
 
     set foreground(foreground: string) {
@@ -53,8 +58,12 @@ export default class Image extends Sprite {
         this.height = size.height
     }
 
+    get size(): ISize {
+        return this.layout.size
+    }
+
     set text(text: string | number) {
-        const label: Label | undefined = this.options.label
+        const label: Label | undefined = this.layout.label
         if (label !== undefined) {
             label.text = text
         }

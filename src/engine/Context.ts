@@ -13,7 +13,7 @@ export class Context {
             this.app.stage.removeChild(this._layout.root)
         }
         this._layout = layout
-        this.app.stage.addChildAt(this._layout.root, 0)
+        this.app.stage.addChild(this._layout.root)
     }
 
     get layout(): Layout {

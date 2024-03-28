@@ -9,7 +9,7 @@ export function enableDebug() {
     })
 }
 
-export function debug(message: string) {
+export function debug(message?: string) {
     if (Environment.isDebugEnabled) {
         console.log(message)
     }

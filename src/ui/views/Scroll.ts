@@ -1,9 +1,9 @@
 import {Container, Graphics, IPointData, ISize, Rectangle} from "pixi.js"
-import {animate, async, clamp, Environment} from "../../engine"
-import Avatar from "./Avatar";
-import LevelButton from "./LevelButton";
+import {adapt, Adaptive, animate, async, clamp, Environment} from "../../engine"
+import Avatar from "./Avatar"
+import LevelButton from "./LevelButton"
 
-type ScrollOptions = {
+type ScrollLayout = {
     position: IPointData
     size: ISize
     avatar: Avatar,
@@ -15,13 +15,13 @@ const MARGIN: number = 500
 
 export default class Scroll extends Container {
 
-    readonly options: ScrollOptions
+    readonly layout: Adaptive<ScrollLayout>
     private readonly background: Graphics = this.addChild(new Graphics())
     readonly items: Container = this.addChild(new Container())
 
-    constructor(options: ScrollOptions) {
+    constructor(layout: ScrollLayout) {
         super()
-        const {position, size, items, avatar} = this.options = options
+        const {position, size, items, avatar} = this.layout = adapt(layout, this)
 
         this.position.copyFrom(position)
         let isDown: boolean = false
@@ -76,12 +76,12 @@ export default class Scroll extends Container {
     }
 
     private clampScrollY(scrollY: number, margin: number = 0): number {
-        const {range} = this.options
+        const {range} = this.layout
         return clamp(scrollY, Math.max(this.minY, range.min) - margin, Math.min(0, range.max) + margin)
     }
 
     private get minY(): number {
-        const {size} = this.options
+        const {size} = this.layout
         return size.height - this.items.height
     }
 

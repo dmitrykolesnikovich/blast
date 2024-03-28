@@ -14,7 +14,7 @@ import {
 
 type PurchasePanelIndex = 2 | 3 | 4 | 5 | 6
 
-type PurchasePanelOptions = {
+type PurchasePanelLayout = {
     position: IPointData
     size: ISize
     index: PurchasePanelIndex
@@ -22,9 +22,9 @@ type PurchasePanelOptions = {
 
 export default class PurchasePanel extends Container {
 
-    constructor(options: PurchasePanelOptions) {
+    constructor(layout: PurchasePanelLayout) {
         super()
-        const {position, size, index} = options
+        const {position, size, index} = layout
         this.position = position
 
         this.addChild(new Image({

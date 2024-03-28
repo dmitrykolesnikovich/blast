@@ -1,4 +1,4 @@
-import {View} from "../engine"
+import {debug, setupContainerAdaptiveLayout, View} from "../engine"
 import Image from "./views/Image"
 import {
     background1Jpg,
@@ -20,9 +20,10 @@ import RefillPanel from "./views/RefillPanel"
 import Navigation from "../features/navigation"
 import {LEVEL_BUTTON_PATH} from "../features/levels"
 import {animateHeartBeat} from "../features/animations"
+import {ISize} from "pixi.js"
 
 type Layout = {
-    background: Scroll
+    scroll: Scroll
     back: Button
     refillLives: RefillPanel
     refillCoins: RefillPanel
@@ -33,7 +34,7 @@ export default class LevelChooserScreen extends View<Layout> {
     constructor(navigation: Navigation) {
         super({width: 450, height: 800})
         this.layout = {
-            background: new Scroll({
+            scroll: new Scroll({
                 position: {x: 0, y: 0},
                 size: {width: 450, height: 800},
                 range: {min: -3200, max: 0},
@@ -108,12 +109,29 @@ export default class LevelChooserScreen extends View<Layout> {
             }),
         }
 
-        const {background, refillLives, refillCoins, } = this.layout
-        background.scrollToEnd()
-        clouds(background)
+        const {scroll, refillLives, refillCoins, } = this.layout
+        scroll.scrollToEnd()
+        // clouds(scroll)
         refillLives.update()
         refillCoins.update()
-        background.options.avatar.level = settings.level
+        scroll.layout.avatar.level = settings.level
         animateHeartBeat(refillLives.icon)
     }
+
+    resize(size: ISize) {
+        const {scroll} = this.layout
+        scroll.width = size.width
+        scroll.height = scroll.width / scroll.layout.contentRatio()
+        setupContainerAdaptiveLayout(scroll, {size, fill: 'horizontal', gravity: 'down'})
+        // scroll.x = (scroll.layout.size.width - scroll.width) / 2
+        // scroll.y = scroll.x / (450 / 800) * 2
+
+        debug()
+        // if (size.height < scroll.height) {
+        //     scroll.y = 400 + (size.height - scroll.height) / 2
+        // } else {
+        //     scroll.y = 400
+        // }
+    }
+
 }

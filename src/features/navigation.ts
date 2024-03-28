@@ -12,6 +12,7 @@ import WinDialog from "../ui/WinDialog"
 import gsap, {Back, Power2} from "gsap"
 import Curtain from "../ui/views/Curtain"
 import {backgroundMp3, dialogHideMp3, dialogShowMp3, loseMp3, whooshMp3, winMp3} from "../../res"
+import Image from "../ui/views/Image"
 
 export default class Navigation {
 

@@ -35,6 +35,7 @@ export default class QuitDialog extends View<Layout> {
                 position: {x: 225, y: 330},
                 items: [
                     new Image({
+                        position: {x: 0, y: 0},
                         anchor: {x: 0.5, y: 0.5},
                         size: {width: 273.6, height: 248.8},
                         foreground: lifeBrokenShadowPng,
@@ -42,6 +43,7 @@ export default class QuitDialog extends View<Layout> {
                         alpha: 0.5,
                     }),
                     new Image({
+                        position: {x: 0, y: 0},
                         anchor: {x: 0.5, y: 0.5},
                         size: {width: 180, height: 148.4},
                         foreground: lifeBrokenPng,

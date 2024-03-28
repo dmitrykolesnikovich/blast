@@ -3,7 +3,7 @@ import gsap, {Back} from "gsap"
 import {buttonDisabledMp3, buttonMp3} from "../../res"
 import {clearAnimations, playSoundEffect} from "../engine"
 
-export type Clickable = Container & { enabled: boolean, options: ClickOptions }
+export type Clickable = Container & { enabled: boolean, layout: ClickOptions }
 
 type ClickOptions = {
     checkbox?: boolean
@@ -18,7 +18,7 @@ export function setupClickListener(button: Clickable) {
     button.on("pointerdown", (pointer) => {
         pointer.stopPropagation()
         clearAnimations(button)
-        const {checkbox, toggle, click} = button.options
+        const {checkbox, toggle, click} = button.layout
         if (toggle) {
             button.enabled = !button.enabled
         } else {
