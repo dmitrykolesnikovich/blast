@@ -8,13 +8,11 @@ import {initializeAudio} from "./Audio"
 export const context: Context = new Context()
 
 export function bootstrap(main: () => void) {
-    window.parent?.window?.postMessage({playdeck: {method: "loading"}}, "*") // quickfix todo improve
     window.addEventListener('DOMContentLoaded', async () => {
         await initializeEnvironment()
         initializeContext()
         await animateLoading(async () => {
             await main()
-            context.loader.loadingCompleted()
         })
     })
 }

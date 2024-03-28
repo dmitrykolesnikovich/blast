@@ -27,6 +27,7 @@ export default class Navigation {
     private winDialog: WinDialog = new WinDialog(this)
     private screen: View | undefined
     private dialog: View | undefined
+    private isFirstScreen: boolean = true
 
     navigateCoinsShopDialog(): void {
         this.navigateDialog(this.coinsShopDialog)
@@ -74,31 +75,38 @@ export default class Navigation {
         const curtain: Curtain = new Curtain()
         curtain.background.alpha = 0
         context.layout.append(curtain)
-        gsap.timeline()
-            .to(curtain.background, {
-                alpha: 1,
-                delay: 0.12,
-                duration: 0.5,
-                onComplete: () => {
-                    if (this.screen !== undefined) {
-                        context.layout.remove(this.screen)
+        if (this.isFirstScreen) {
+            this.screen = screen
+            context.layout.appendAt(screen, 0)
+            if (complete) complete()
+            this.isFirstScreen = false
+        } else {
+            gsap.timeline()
+                .to(curtain.background, {
+                    alpha: 1,
+                    delay: 0.12,
+                    duration: 0.5,
+                    onComplete: () => {
+                        if (this.screen !== undefined) {
+                            context.layout.remove(this.screen)
+                        }
+                        if (this.dialog !== undefined) {
+                            context.layout.remove(this.dialog)
+                            this.dialog = undefined
+                        }
+                        this.screen = screen
+                        context.layout.appendAt(screen, 0)
                     }
-                    if (this.dialog !== undefined) {
-                        context.layout.remove(this.dialog)
-                        this.dialog = undefined
+                })
+                .to(curtain.background, {
+                    alpha: 0,
+                    duration: 0.95,
+                    onComplete: () => {
+                        context.layout.remove(curtain)
+                        if (complete) complete()
                     }
-                    this.screen = screen
-                    context.layout.appendAt(screen, 0)
-                }
-            })
-            .to(curtain.background, {
-                alpha: 0,
-                duration: 0.95,
-                onComplete: () => {
-                    context.layout.remove(curtain)
-                    if (complete) complete()
-                }
-            })
+                })
+        }
     }
 
     private navigateDialog(dialog: View) {

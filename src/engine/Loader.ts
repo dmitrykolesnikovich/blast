@@ -17,9 +17,9 @@ export class Loader {
     private readonly app: Application
     private readonly urls: string[] = []
     private readonly fonts: FontInstance[] = []
-    private _isCompleted = false
+    private _isCompleted: boolean = false
 
-    readonly listeners: ProgressListener[] = []
+    readonly progressListeners: ProgressListener[] = []
     readonly completeListeners: Function[] = []
 
     constructor(app: Application) {
@@ -57,6 +57,7 @@ export class Loader {
             const progress: number = this.urls.indexOf(url) / this.urls.length
             this.onProgress(progress)
         }
+        this.loadingCompleted()
         await this.clearFontCaches(Environment.cacheAwareDuration)
     }
 
@@ -82,7 +83,7 @@ export class Loader {
     /*internals*/
 
     private onProgress(progress: number) {
-        this.listeners.forEach(listener => listener(progress))
+        this.progressListeners.forEach(listener => listener(progress))
         if (progress === 1) {
             this.completeListeners.forEach(listener => listener(progress))
         }
