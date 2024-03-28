@@ -5,11 +5,11 @@ import {Adaptive, Direction, isAdaptive, Orientation, AdaptiveElement} from "./L
 
 export class Layout {
 
-    readonly root: Container = new Container()
+    readonly _resizeBox: Container = new Container()
     private views: View[] = []
 
     append(view: View): View {
-        this.root.addChild(view._resizeBox)
+        this._resizeBox.addChild(view._resizeBox)
         this.views.push(view)
 
         this.resizeView(view)
@@ -21,7 +21,7 @@ export class Layout {
     }
 
     appendAt(view: View, index: number): View {
-        this.root.addChildAt(view._resizeBox, index)
+        this._resizeBox.addChildAt(view._resizeBox, index)
         this.views.push(view)
 
         this.resizeView(view)
@@ -41,14 +41,14 @@ export class Layout {
     }
 
     remove(view: View) {
-        this.root.removeChild(view._resizeBox)
+        this._resizeBox.removeChild(view._resizeBox)
         this.views.splice(this.views.indexOf(view), 1)
 
         view.removed()
     }
 
     clear() {
-        this.root.removeChildren()
+        this._resizeBox.removeChildren()
         this.views = []
     }
 
