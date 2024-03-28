@@ -1,6 +1,6 @@
 import {ColorSource, IPointData, ISize, Point, Sprite, Texture} from "pixi.js"
 import Label from "./Label"
-import {adapt, Adaptive} from "../../engine"
+import {adapt, Adaptive, Direction, Orientation, AdaptiveElement, setupContainerAdaptiveLayout} from "../../engine"
 
 type ImageLayout = {
     position: IPointData,
@@ -12,16 +12,17 @@ type ImageLayout = {
     angle?: number
     alpha?: number
     label?: Label
-    fillParent?: boolean
+    fill?: Orientation
+    gravity?: Direction
 }
 
-export default class Image extends Sprite {
+export default class Image extends Sprite implements AdaptiveElement {
 
     readonly layout: Adaptive<ImageLayout>
 
     constructor(layout: ImageLayout) {
         super()
-        const {position, size, foreground, anchor, tint, visible, angle, alpha, label, fillParent} = this.layout = adapt(layout)
+        const {position, size, foreground, anchor, tint, visible, angle, alpha, label, fill, gravity} = this.layout = adapt(layout)
         this.texture = foreground ? Texture.from(foreground) : Texture.EMPTY
         this.position = position
         this.width = size.width
@@ -44,9 +45,6 @@ export default class Image extends Sprite {
         if (label !== undefined) {
             this.addChild(label)
         }
-        if (fillParent !== undefined) {
-
-        }
     }
 
     set foreground(foreground: string) {
@@ -67,6 +65,11 @@ export default class Image extends Sprite {
         if (label !== undefined) {
             label.text = text
         }
+    }
+
+    adaptElement(size: ISize) {
+        const {fill, gravity} = this.layout
+        setupContainerAdaptiveLayout(this, {size, fill, gravity})
     }
 
 }

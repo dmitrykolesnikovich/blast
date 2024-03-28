@@ -39,7 +39,9 @@ export default class WelcomeScreen extends View<Layout> {
             backgroundGame: new Image({
                 position: {x: -27.5, y: 0},
                 size: {width: 505, height: 800},
-                foreground: backgroundGameJpg
+                foreground: backgroundGameJpg,
+                fill: 'horizontal',
+                gravity: 'down'
             }),
             particlesShineRadial1: new Image({
                 position: {x: 225, y: 220},
@@ -133,11 +135,6 @@ export default class WelcomeScreen extends View<Layout> {
     removed() {
         const {play, particlesShineRadial1, particlesShineRadial2} = this.layout
         clearAnimations(play, particlesShineRadial1, particlesShineRadial2)
-    }
-
-    resize(size: ISize) {
-        const {backgroundGame} = this.layout
-        setupContainerAdaptiveLayout(backgroundGame, {size, fill: 'horizontal', gravity: 'down'})
     }
 
 }

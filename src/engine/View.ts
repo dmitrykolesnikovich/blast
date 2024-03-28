@@ -4,7 +4,7 @@ import {Controller} from "./Controller"
 export class View<Layout extends Object = {}> {
 
     readonly _resizeBox: Container = new Container()
-    readonly container: Container = this._resizeBox.addChild(new Container())
+    readonly content: Container = this._resizeBox.addChild(new Container())
     private _layout: Layout
     readonly size: ISize
     isInitialized: boolean = false // todo make setter private
@@ -17,7 +17,7 @@ export class View<Layout extends Object = {}> {
         this._layout = layout
         Object.values(layout).forEach((object) => {
             if (object != null) {
-                this.container.addChild(object)
+                this.content.addChild(object)
             }
         })
     }
@@ -47,7 +47,7 @@ export class View<Layout extends Object = {}> {
     }
 
     append(child: Container): View {
-        this.container.addChild(child)
+        this.content.addChild(child)
         return this
     }
 

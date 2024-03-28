@@ -125,10 +125,10 @@ export default class Navigation {
         gsap.timeline({
             onComplete: () => {
                 context.layout.remove(dialog)
-                dialog.container.scale.set(1, 1)
+                dialog.content.scale.set(1, 1)
             }
         })
-            .to(dialog.container.scale, {
+            .to(dialog.content.scale, {
                 x: 0.1,
                 y: 0.1,
                 duration: 0.1,
@@ -141,11 +141,11 @@ export default class Navigation {
         context.layout.append(dialog)
         const x: number = dialog.size.width / 2
         const y: number = dialog.size.height / 2
-        dialog.container.pivot.set(x, y)
-        dialog.container.position.set(x, y)
-        dialog.container.scale.set(0.2, 0.2)
+        dialog.content.pivot.set(x, y)
+        dialog.content.position.set(x, y)
+        dialog.content.scale.set(0.2, 0.2)
         gsap.timeline()
-            .to(dialog.container.scale, {x: 1, y: 1, duration: 0.22, ease: Back.easeOut})
+            .to(dialog.content.scale, {x: 1, y: 1, duration: 0.22, ease: Back.easeOut})
     }
 
 }

@@ -1,7 +1,7 @@
 import {Container, ISize} from "pixi.js"
 import {View} from "./View"
 import {context} from "./Engine"
-import {Adaptive, Direction, Orientation, TODO} from "./Library"
+import {Adaptive, Direction, isAdaptive, Orientation, AdaptiveElement} from "./Library"
 
 export class Layout {
 
@@ -75,7 +75,13 @@ export class Layout {
         const canvasHeight: number = window.innerHeight
         const canvasSize: ISize = {width: canvasWidth, height: canvasHeight}
         setupContainerLayout(view._resizeBox, canvasSize, view.size)
-        view.resize({width: canvasWidth / view._resizeBox.scale.x, height: canvasHeight / view._resizeBox.scale.y})
+        const size: ISize = {width: canvasWidth / view._resizeBox.scale.x, height: canvasHeight / view._resizeBox.scale.y}
+        view.resize(size)
+        view.content.children.forEach(child => {
+            if (isAdaptive(child)) {
+                child.adaptElement(size)
+            }
+        })
     }
 
 }
@@ -92,7 +98,7 @@ export function setupContainerLayout(container: Container, outer: ISize, inner: 
     }
 }
 
-export function setupContainerAdaptiveLayout(container: Container & { layout: Adaptive }, options: { size: ISize, fill: Orientation, gravity: Direction }) {
+export function setupContainerAdaptiveLayout(container: Container & { layout: Adaptive }, options: { size: ISize, fill?: Orientation, gravity?: Direction }) {
     const {size, fill, gravity} = options
 
     // fill content
@@ -123,6 +129,11 @@ export function setupContainerAdaptiveLayout(container: Container & { layout: Ad
             layoutHeight = size.height
             layoutWidth = layoutHeight * layoutRatio
             break
+        default: {
+            layoutWidth = container.layout.size.width
+            layoutHeight = container.layout.size.height
+            break
+        }
     }
     container.position.copyFrom(container.layout.position)
     const dx: number = (layoutWidth - container.layout.size.width) / 2

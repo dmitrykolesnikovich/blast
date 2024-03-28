@@ -53,6 +53,8 @@ export default class GameScreen extends View<Layout> {
                 position: {x: 0, y: 0},
                 size: {width: 450, height: 800},
                 foreground: backgroundGameJpg,
+                fill: "horizontal",
+                gravity: "up"
             }),
             indicatorProgress: new Progress({
                 position: {x: 180, y: 140}
@@ -248,9 +250,5 @@ export default class GameScreen extends View<Layout> {
         indicatorProgress.progress = 0.5
     }
 
-    resize(size: ISize) {
-        const {background} = this.layout
-        setupContainerAdaptiveLayout(background, {size, fill: "horizontal", gravity: "up"})
-    }
 
 }

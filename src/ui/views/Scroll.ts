@@ -1,5 +1,5 @@
 import {Container, Graphics, IPointData, ISize, Rectangle} from "pixi.js"
-import {adapt, Adaptive, animate, async, clamp, Environment} from "../../engine"
+import {adapt, Adaptive, animate, async, clamp, Direction, Environment, Orientation, AdaptiveElement, setupContainerAdaptiveLayout} from "../../engine"
 import Avatar from "./Avatar"
 import LevelButton from "./LevelButton"
 
@@ -9,11 +9,13 @@ type ScrollLayout = {
     avatar: Avatar,
     items: Array<Container>
     range: { min: number, max: number }
+    fill?: Orientation
+    gravity?: Direction
 }
 
 const MARGIN: number = 500
 
-export default class Scroll extends Container {
+export default class Scroll extends Container implements AdaptiveElement {
 
     readonly layout: Adaptive<ScrollLayout>
     private readonly background: Graphics = this.addChild(new Graphics())
@@ -91,6 +93,11 @@ export default class Scroll extends Container {
 
     get buttons(): Array<LevelButton> {
         return this.items.children.filter(it => it instanceof LevelButton) as LevelButton[]
+    }
+
+    adaptElement(size: ISize) {
+        const {fill, gravity} = this.layout
+        setupContainerAdaptiveLayout(this, {size, fill, gravity})
     }
 
 }

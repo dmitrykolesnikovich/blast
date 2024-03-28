@@ -38,6 +38,15 @@ export type Orientation = 'horizontal' | 'vertical'
 
 export type Direction = 'left' | 'right' | 'up' | 'down'
 
+export interface AdaptiveElement {
+    adaptElement(size: ISize): void
+}
+
+// https://stackoverflow.com/a/14426274/909169
+export function isAdaptive(element: any): element is AdaptiveElement {
+    return 'adaptElement' in element
+}
+
 export type Adaptive<T = { position: IPointData, size: ISize }> = T & { contentRatio: () => number }
 
 export function adapt<T extends { size: ISize }>(layout: T, container?: Container): Adaptive<T> {

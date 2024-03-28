@@ -38,6 +38,8 @@ export default class LevelChooserScreen extends View<Layout> {
                 position: {x: 0, y: 0},
                 size: {width: 450, height: 800},
                 range: {min: -3200, max: 0},
+                fill: 'horizontal',
+                gravity: 'down',
                 avatar: new Avatar({
                     position: {x: 225, y: 400},
                     gender: settings.gender,
@@ -116,11 +118,6 @@ export default class LevelChooserScreen extends View<Layout> {
         refillCoins.update()
         scroll.layout.avatar.level = settings.level
         animateHeartBeat(refillLives.icon)
-    }
-
-    resize(size: ISize) {
-        const {scroll} = this.layout
-        setupContainerAdaptiveLayout(scroll, {size, fill: 'horizontal', gravity: 'down'})
     }
 
 }
