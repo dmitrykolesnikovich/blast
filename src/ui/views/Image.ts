@@ -1,6 +1,6 @@
-import {ColorSource, IPointData, ISize, Point, Sprite, Texture} from "pixi.js"
+import {ColorSource, IPointData, ISize, Sprite, Texture} from "pixi.js"
 import Label from "./Label"
-import {adapt, Adaptive, Direction, Orientation, AdaptiveElement, setupAdaptiveContainerLayout, AdaptiveContainer} from "../../engine"
+import {adapt, Adaptive, AdaptiveElement, Direction, Orientation, setupAdaptiveContainerLayout} from "../../engine"
 
 type ImageLayout = {
     position: IPointData,
@@ -19,12 +19,11 @@ type ImageLayout = {
 export default class Image extends Sprite implements AdaptiveElement {
 
     readonly layout: Adaptive<ImageLayout>
-    readonly adaptive: AdaptiveContainer
 
     constructor(layout: ImageLayout) {
         super()
         const {position, size, foreground, anchor, tint, visible, angle, alpha, label, fill, gravity} = this.layout = adapt(layout)
-        this.adaptive = this.addChild(new AdaptiveContainer(this.layout))
+
         this.texture = foreground ? Texture.from(foreground) : Texture.EMPTY
         this.position = position
         this.width = size.width
@@ -71,7 +70,7 @@ export default class Image extends Sprite implements AdaptiveElement {
 
     adaptElement(size: ISize) {
         const {fill, gravity} = this.layout
-        setupAdaptiveContainerLayout(this.adaptive, {size, fill, gravity})
+        setupAdaptiveContainerLayout(this, {size, fill, gravity})
     }
 
 }

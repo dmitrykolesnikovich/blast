@@ -1,7 +1,7 @@
 import {Container, ISize} from "pixi.js"
 import {View} from "./View"
 import {context} from "./Engine"
-import {AdaptiveContainer, Direction, Orientation} from "./Library"
+import {Adaptive, AdaptiveContainer, Direction, Orientation} from "./Library"
 
 export class Layout {
 
@@ -94,7 +94,7 @@ export function setupContainerLayout(container: Container, outer: ISize, inner: 
     }
 }
 
-export function setupAdaptiveContainerLayout(container: AdaptiveContainer, options: { size: ISize, fill?: Orientation, gravity?: Direction }, ...sync: AdaptiveContainer[]) {
+export function setupAdaptiveContainerLayout(container: Container & {layout: Adaptive}, options: { size: ISize, fill?: Orientation, gravity?: Direction }, ...sync: AdaptiveContainer[]) {
     const {size, fill, gravity} = options
     const {layout} = container
 
