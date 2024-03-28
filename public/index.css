@@ -39,6 +39,11 @@ canvas {
     background-color: #2acf1d
 }
 
+#app-version {
+    margin-top: 16px;
+    text-align: center;
+}
+
 /*fonts*/
 
 @font-face {

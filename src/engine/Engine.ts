@@ -59,7 +59,7 @@ async function animateLoading(block: () => void) {
     if (loader) loader.style.display = 'flex'
     canvas.style.display = 'none'
     await block()
-    if (loader) loader.style.display = 'none'
-    canvas.style.display = 'flex'
+    // if (loader) loader.style.display = 'none'
+    // canvas.style.display = 'flex'
     window.dispatchEvent(new Event('resize'))
 }
